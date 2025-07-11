@@ -276,25 +276,28 @@
       form {
         width: 90%;
       }
+
+      .nav-links {
+       transition: all 0.3s ease;
+      }
     }
   </style>
 </head>
 <body>
   <nav>
-    <h1>Rajdeep</h1>
-      <ul class="nav-links">
-    <div class="nav-toggle" id="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  <h1>Rajdeep</h1>
+  <div class="nav-toggle" id="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
   <header>
     <h2>Hello, I'm Rajdeep</h2>
@@ -465,6 +468,14 @@
   </footer>
 
   <script>
+
+    const toggleBtn = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
     document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = this;
