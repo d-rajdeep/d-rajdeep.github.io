@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+
   <style>
     * {
       margin: 0;
@@ -137,27 +142,37 @@
     }
 
     .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
 
-    .skills-grid div {
-      background: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
+.skills-grid div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-    .skills-grid div:hover {
-      background: #00f7ff;
-      color: #111;
-      border-color: #00f7ff;
-      transform: translateY(-3px);
-    }
+.skills-grid div:hover {
+  background: #00f7ff;
+  color: #111;
+  border-color: #00f7ff;
+  transform: translateY(-3px);
+}
+
+.skills-grid i {
+  font-size: 20px;
+}
+
+
 
     .projects-grid {
       display: grid;
@@ -169,7 +184,7 @@
     .project-card {
       background: white;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       padding: 20px;
       transition: transform 0.3s ease;
     }
@@ -193,7 +208,8 @@
       margin: 30px auto 0;
     }
 
-    input, textarea {
+    input,
+    textarea {
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
@@ -278,27 +294,28 @@
       }
 
       .nav-links {
-       transition: all 0.3s ease;
+        transition: all 0.3s ease;
       }
     }
   </style>
 </head>
+
 <body>
   <nav>
-  <h1>Rajdeep</h1>
-  <div class="nav-toggle" id="nav-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div class="nav-links" id="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-	<a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <h1>Rajdeep</h1>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
   <header>
     <h2>Hello, I'm Rajdeep</h2>
@@ -308,167 +325,215 @@
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Results-driven Developer with 4+ years of experience in designing, developing, and maintaining high-performance, responsive, and user-friendly websites. Recently expanding into Laravel development, working on hands-on projects including CRUD applications, blog CMS platforms, landing pages, and CRM software. Proficient in custom WordPress themes and plugins, and now building full-stack Laravel solutions with a focus on clean code, scalability, and user-centric design. Eager to grow as a Laravel developer while leveraging strong design, content management, and client collaboration skills.</p>
+    <p>Results-driven Developer with 4+ years of experience in designing, developing, and maintaining high-performance,
+      responsive, and user-friendly websites. Recently expanding into Laravel development, working on hands-on projects
+      including CRUD applications, blog CMS platforms, landing pages, and CRM software. Proficient in custom WordPress
+      themes and plugins, and now building full-stack Laravel solutions with a focus on clean code, scalability, and
+      user-centric design. Eager to grow as a Laravel developer while leveraging strong design, content management, and
+      client collaboration skills.</p>
   </section>
 
   <section id="skills" class="section">
-    <h2>Skills</h2><br>
-    <div class="skills-grid">
-      <div>HTML</div>
-      <div>CSS</div>
-      <div>JavaScript</div>
-      <div>Bootstrap</div>
-      <div>Git & GitHub</div>
-      <div>PHP</div>
-      <div>WordPress</div>
-      <div>WooCommerce</div>
-      <div>Tailwind CSS</div>
-      <div>Laravel</div>
-      <div>MySql</div>
-      <div>Figma</div>
-      <div>Elementor Pro</div>
-      <div>SEO</div>
-      <div>Logo Design</div>
-      <div>Graphics Design</div>
-      <div>Responsive Design</div>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-  <h2>WordPress Projects</h2>
-  <div class="projects-grid">
-    
-    <div class="project-card">
-      <img src="images/project1.png" alt="WordPress Site Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Petshop Website</h3>
-      <p>Woocommerce Website with payment & shipping API integration.</p>
-      <a href="https://nextlevelpets.in/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/project2.png" alt="PHP Landing Page Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Online Medicine Order</h3>
-      <p>Woocommerce responsive website with order management website.</p>
-      <a href="https://oukhodexpress.com/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/project3.png" alt="CRM Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Digital Agency</h3>
-      <p>Portfolio and Service based website with responsive design.</p>
-      <a href="https://adceleb.in/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/project4.png" alt="Blog Site Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>E-Commerce Website</h3>
-      <p>Responsive website includes product veriation switches.</p>
-      <a href="https://kwiltmattress.com/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/project5.png" alt="CRM Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Real Estate</h3>
-      <p>Custom CRM built using WordPress & project showcase.</p>
-      <a href="https://a2zflats.com/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/project6.png" alt="Blog Site Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Personal Blog</h3>
-      <p>Single user content showcase with commenting blog.</p>
-      <a href="https://prideofapen.in/" target="_blank">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/blog-cms-laravel.jpg" alt="Laravel Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Blog CMS</h3>
-      <p>Simple one user blog post view on index with one admin panel.</p>
-      <a href="https://github.com/d-rajdeep/blog-cms-laravel.git" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height: 20px;">
-      View on GitHub
-      </a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/crud-app-laravel.png" alt="Laravel Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Laravel CRUD App</h3>
-      <p>Daily track your activity with this CRUD App user friendly design.</p>
-      <a href="https://github.com/d-rajdeep/crud-app-laravel.git" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height: 20px;">
-      View on GitHub
-      </a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/blog-app.png" alt="Laravel Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Multiuser Blog App</h3>
-      <p>Role-based user management and content approval panel built using Laravel.</p>
-      <a href="https://github.com/d-rajdeep/blog-app.git" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height: 20px;">
-      View on GitHub
-      </a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/inventory-system-php.jpg" alt="Laravel Project Screenshot" style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-      <h3>Inventory System</h3>
-      <p>Role-based user to manage inventory and billing of the product.</p>
-      <a href="https://github.com/d-rajdeep/inventory-system-php.git" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height: 20px;">
-      View on GitHub
-      </a>
-    </div>
-
-
+  <h2>Skills</h2><br>
+  <div class="skills-grid">
+    <div><i class="devicon-html5-plain colored"></i> HTML</div>
+    <div><i class="devicon-css3-plain colored"></i> CSS</div>
+    <div><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+    <div><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+    <div><i class="devicon-git-plain colored"></i> Git & GitHub</div>
+    <div><i class="devicon-php-plain colored"></i> PHP</div>
+    <div><i class="fa-solid fa-plug"></i> APIs</div>
+    <div><i class="devicon-wordpress-plain colored"></i> WordPress</div>
+    <div><i class="devicon-woocommerce-plain colored"></i> WooCommerce</div>
+    <div><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
+    <div><i class="devicon-laravel-plain colored"></i> Laravel</div>
+    <div><i class="devicon-mysql-plain colored"></i> MySQL</div>
+    <div><i class="devicon-figma-plain colored"></i> Figma</div>
+    <div><i class="fa-solid fa-layer-group"></i> Elementor Pro</div>
+    <div><i class="fa-solid fa-magnifying-glass"></i> SEO</div>
+    <div><i class="fa-solid fa-pen-nib"></i> Logo Design</div>
+    <div><i class="fa-solid fa-paintbrush"></i> Graphics Design</div>
+    <div><i class="fa-solid fa-mobile-screen"></i> Responsive Design</div>
   </div>
 </section>
-<!-- Resume Section -->
 
-<section id="resume" class="section">
-  <h2>Resume</h2>
-  <div class="container" style="max-width: 900px; margin: auto; background: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 8px; text-align: left;">
-    <h1 style="font-size: 28px; margin-bottom: 5px;">Rajdeep Dutta</h1>
-    <p>Email: designme.rajdeep@gmail.com<br>
-    Phone: +91 8638116318<br>
-    Location: Guwahati, Assam<br>
-    
+  <section id="projects" class="section">
+    <h2>WordPress Projects</h2>
+    <div class="projects-grid">
 
-    <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Professional Summary</h2>
-    <p>Experienced Web Developer transitioning into Laravel, building projects like CRUD apps, blog CMS, landing pages, and CRM tools. Skilled in custom themes, plugins, and client-focused web solutions.</p>
+      <div class="project-card">
+        <img src="images/project1.png" alt="WordPress Site Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Petshop Website</h3>
+        <p>Woocommerce Website with payment & shipping API integration.</p>
+        <a href="https://nextlevelpets.in/" target="_blank">Live Demo</a>
+      </div>
 
-    <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Skills</h2>
-    <ul style="padding-left: 20px;">
-      <li>HTML, CSS, JavaScript, Bootstrap, Tailwind CSS</li>
-      <li>PHP, Laravel, MySQL</li>
-      <li>WordPress, WooCommerce, Elementor Pro</li>
-      <li>Git & GitHub, Figma</li>
-      <li>SEO, Digital Marketing</li>
-      <li>Graphics & Logo Design</li>
-    </ul>
+      <div class="project-card">
+        <img src="images/project2.png" alt="PHP Landing Page Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Online Medicine Order</h3>
+        <p>Woocommerce responsive website with order management website.</p>
+        <a href="https://oukhodexpress.com/" target="_blank">Live Demo</a>
+      </div>
 
-    <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Experience</h2>
-    <h3 style="margin-top: 10px;">Software Developer | April 2025 - Present at <a href="https://siqes.com/">SIQES</a></h3>
-    <ul style="padding-left: 20px;">
-      <li>Full time Software developer, focusing on Laravel</li>
-      
-    </ul><br>
-    <h3 style="margin-top: 10px;">Php and WordPress Developer | Nov 2021 - Dec 2024 at <a href="https://adceleb.in/">Adceleb</a></h3>
-    <ul style="padding-left: 20px;">
-      <li>Developed and maintained responsive WordPress websites with performance optimization, error resolution, domain management, and hosting setup (cPanel, FTP, SSH)</li>
-      <li>Integrated Razorpay with WooCommerce and automated shipping workflows using the Shiprocket API</li>
-      <li>Built multiple web apps using PHP & MySQL, including an Inventory System, Blog CMS with authentication, and a To-Do App with task tracking and reminders</li>
-      <li>Developed a Laravel CRUD app with authentication, validation, and role-based access using Eloquent ORM</li>
-    </ul><br>
-	<h3 style="margin-top: 10px;">Web Designer & Developer | Feb 2020 - May 2021 at <a href="https://indiawebdesigns.in/">India Web Designs</a></h3>
-    <ul style="padding-left: 20px;">
-      <li>Developed and maintained WordPress websites, including custom designs and functionality</li>
-      <li>Diagnosed and fixed technical issues, including plugin conflicts and server errors</li>
-      <li>Managed website migrations and domain configurations</li>
-	   <li>Provided ongoing support and training to clients for website management</li>
-    </ul>
+      <div class="project-card">
+        <img src="images/project3.png" alt="CRM Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Digital Agency</h3>
+        <p>Portfolio and Service based website with responsive design.</p>
+        <a href="https://adceleb.in/" target="_blank">Live Demo</a>
+      </div>
 
-    <!-- <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Projects</h2>
+      <div class="project-card">
+        <img src="images/project4.png" alt="Blog Site Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>E-Commerce Website</h3>
+        <p>Responsive website includes product veriation switches.</p>
+        <a href="https://kwiltmattress.com/" target="_blank">Live Demo</a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project5.png" alt="CRM Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Real Estate</h3>
+        <p>Custom CRM built using WordPress & project showcase.</p>
+        <a href="https://a2zflats.com/" target="_blank">Live Demo</a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project6.png" alt="Blog Site Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Personal Blog</h3>
+        <p>Single user content showcase with commenting blog.</p>
+        <a href="https://prideofapen.in/" target="_blank">Live Demo</a>
+      </div>
+    </div><br><br>
+    <h2>Laravel Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="images/blog-cms-laravel.jpg" alt="Laravel Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Blog CMS</h3>
+        <p>Simple one user blog post view on index with one admin panel.</p>
+        <a href="https://github.com/d-rajdeep/blog-cms-laravel.git" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+            style="height: 20px;">
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/crud-app-laravel.png" alt="Laravel Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Laravel CRUD App</h3>
+        <p>Daily track your activity with this CRUD App user friendly design.</p>
+        <a href="https://github.com/d-rajdeep/crud-app-laravel.git" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+            style="height: 20px;">
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/blog-app.png" alt="Laravel Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Multiuser Blog App</h3>
+        <p>Role-based user management and content approval panel built using Laravel.</p>
+        <a href="https://github.com/d-rajdeep/blog-app.git" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+            style="height: 20px;">
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/inventory-system-php.jpg" alt="Laravel Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>Inventory System</h3>
+        <p>Role-based user to manage inventory and billing of the product.</p>
+        <a href="https://github.com/d-rajdeep/inventory-system-php.git" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+            style="height: 20px;">
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/Ecommerce-Solutions.jpg" alt="Laravel Project Screenshot"
+          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
+        <h3>E-Commerce Website</h3>
+        <p>Admin and customer based plateform with all e-commerce facilities.</p>
+        <a href="https://github.com/d-rajdeep/tech_store.git" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+            style="height: 20px;">
+          View on GitHub
+        </a>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- Resume Section -->
+
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <div class="container"
+      style="max-width: 900px; margin: auto; background: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 8px; text-align: left;">
+      <h1 style="font-size: 28px; margin-bottom: 5px;">Rajdeep Dutta</h1>
+      <p>Email: designme.rajdeep@gmail.com<br>
+        Phone: +91 8638116318<br>
+        Location: Guwahati, Assam<br>
+
+
+      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Professional
+        Summary</h2>
+      <p>Experienced Web Developer transitioning into Laravel, building projects like CRUD apps, blog CMS, landing
+        pages, and CRM tools. Skilled in custom themes, plugins, and client-focused web solutions.</p>
+
+      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Skills</h2>
+      <ul style="padding-left: 20px;">
+        <li>HTML, CSS, JavaScript, Bootstrap, Tailwind CSS</li>
+        <li>PHP, Laravel, MySQL</li>
+        <li>WordPress, WooCommerce, Elementor Pro</li>
+        <li>Git & GitHub, Figma</li>
+        <li>SEO, Digital Marketing</li>
+        <li>Graphics & Logo Design</li>
+      </ul>
+
+      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Experience</h2>
+      <h3 style="margin-top: 10px;">Software Developer | April 2025 - Present at <a href="https://siqes.com/">SIQES</a>
+      </h3>
+      <ul style="padding-left: 20px;">
+        <li>Full time Software developer, focusing on Laravel</li>
+
+      </ul><br>
+      <h3 style="margin-top: 10px;">Php and WordPress Developer | Nov 2021 - Dec 2024 at <a
+          href="https://adceleb.in/">Adceleb</a></h3>
+      <ul style="padding-left: 20px;">
+        <li>Developed and maintained responsive WordPress websites with performance optimization, error resolution,
+          domain management, and hosting setup (cPanel, FTP, SSH)</li>
+        <li>Integrated Razorpay with WooCommerce and automated shipping workflows using the Shiprocket API</li>
+        <li>Built multiple web apps using PHP & MySQL, including an Inventory System, Blog CMS with authentication, and
+          a To-Do App with task tracking and reminders</li>
+        <li>Developed a Laravel CRUD app with authentication, validation, and role-based access using Eloquent ORM</li>
+      </ul><br>
+      <h3 style="margin-top: 10px;">Web Designer & Developer | Feb 2020 - May 2021 at <a
+          href="https://indiawebdesigns.in/">India Web Designs</a></h3>
+      <ul style="padding-left: 20px;">
+        <li>Developed and maintained WordPress websites, including custom designs and functionality</li>
+        <li>Diagnosed and fixed technical issues, including plugin conflicts and server errors</li>
+        <li>Managed website migrations and domain configurations</li>
+        <li>Provided ongoing support and training to clients for website management</li>
+      </ul>
+
+      <!-- <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Projects</h2>
     <ul style="padding-left: 20px;">
       <li><strong>Next Level Pets:</strong> WooCommerce site with shipping and payment gateway integration</li>
       <li><strong>AdCeleb:</strong> Digital agency portfolio site</li>
@@ -476,54 +541,60 @@
       <li><strong>Pride of a Pen:</strong> Blog site with commenting system</li>
     </ul> -->
 
-    <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Education</h2>
-    <p><strong>Bachelor of Computer Application</strong><br>Tihu College, Gauhati University<br>2016 – 2019</p>
+      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Education</h2>
+      <p><strong>Bachelor of Computer Application</strong><br>Tihu College, Gauhati University<br>2016 – 2019</p>
 
-    <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Certifications</h2>
-    <ul style="padding-left: 20px;">
-      <li>Internship of Web Development – <a href="https://cssghy.in">Convergence Software Solution</a></li>
-    </ul>
-  </div>
-</section>
+      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Certifications
+      </h2>
+      <ul style="padding-left: 20px;">
+        <li>Internship of Web Development – <a href="https://cssghy.in">Convergence Software Solution</a></li>
+      </ul>
+    </div>
+  </section>
 
 
   <section id="contact" class="section">
-  <h2>You Think, We Build</h2>
-  <p>Share your idea</p>
-  <form id="contact-form" action="mailer.php" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="tel" name="phone" placeholder="Your Contact Number" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <select name="service" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
-      <option value="">Select Service</option>
-      <option value="Website">Website</option>
-      <option value="Software">Software</option>
-      <option value="SEO">SEO</option>
-      <option value="Digital Marketing">Digital Marketing</option>
-      <option value="General Enquiry">General Enquiry</option>
-    </select>
-    <textarea name="message" rows="5" placeholder="Your Message (Optional)"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-  
+    <h2>You Think, We Build</h2>
+    <p>Share your idea</p>
+    <form id="contact-form" action="mailer.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Your Contact Number" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <select name="service" required
+        style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
+        <option value="">Select Service</option>
+        <option value="Website">Website</option>
+        <option value="Software">Software</option>
+        <option value="SEO">SEO</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="General Enquiry">General Enquiry</option>
+      </select>
+      <textarea name="message" rows="5" placeholder="Your Message (Optional)"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
     <div class="social-links">
       <a href="https://wa.me/8638116318" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="X" style="height: 24px;">
-  </a>
-  <a href="https://www.instagram.com/d_rajdeep_/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="height: 24px;">
-  </a>
-  <a href="https://www.linkedin.com/in/d-rajdeep/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="height: 24px;">
-  </a>
-  <a href="https://github.com/d-rajdeep" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height: 24px;">
-  </a>
-  <a href="https://x.com/d_rajdeep_" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" style="height: 24px;">
-  </a>
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="X"
+          style="height: 24px;">
+      </a>
+      <a href="https://www.instagram.com/d_rajdeep_/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"
+          style="height: 24px;">
+      </a>
+      <a href="https://www.linkedin.com/in/d-rajdeep/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"
+          style="height: 24px;">
+      </a>
+      <a href="https://github.com/d-rajdeep" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+          style="height: 24px;">
+      </a>
+      <a href="https://x.com/d_rajdeep_" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" style="height: 24px;">
+      </a>
 
-</div>
+    </div>
   </section>
 
   <footer>
@@ -533,30 +604,31 @@
   <script>
 
     const toggleBtn = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
+    const navLinks = document.getElementById('nav-links');
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
 
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = this;
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
 
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form)
-  })
-  .then(res => res.text())
-  .then(() => {
-    alert('Thank you! Your message has been sent.');
-    window.location.href = 'thank-you.html';
-  })
-  .catch(err => {
-    alert('Something went wrong. Please try again.');
-    console.error(err);
-  });
-});
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(res => res.text())
+        .then(() => {
+          alert('Thank you! Your message has been sent.');
+          window.location.href = 'thank-you.html';
+        })
+        .catch(err => {
+          alert('Something went wrong. Please try again.');
+          console.error(err);
+        });
+    });
   </script>
 </body>
+
 </html>

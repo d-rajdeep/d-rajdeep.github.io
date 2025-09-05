@@ -17,7 +17,7 @@ try {
     $mail->Username = 'designme.rajdeep@gmail.com';  // 🔁 your Gmail
     $mail->Password = 'lndclrhgsqxswyhu';     // 🔁 App password (not Gmail password)
     $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->Port = 465;
 
     // Sender & recipient
     $mail->setFrom('designme.rajdeep@gmail.com', 'Your Name');
