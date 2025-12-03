@@ -2,646 +2,608 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajdeep | Web Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      background: #f1f1f1;
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: #111;
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: background 0.3s;
-      flex-wrap: wrap;
-    }
-
-    nav.scrolled {
-      background: #000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    nav h1 {
-      font-weight: 600;
-      font-size: 24px;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .nav-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: #00f7ff;
-      bottom: -4px;
-      left: 0;
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    header {
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    header h2 {
-      font-size: 48px;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: #00f7ff;
-      color: #111;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 15px;
-  justify-items: center;
-}
-
-.skills-grid div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.skills-grid div:hover {
-  background: #00f7ff;
-  color: #111;
-  border-color: #00f7ff;
-  transform: translateY(-3px);
-}
-
-.skills-grid i {
-  font-size: 20px;
-}
-
-
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card a {
-      color: #00f7ff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: 30px auto 0;
-    }
-
-    input,
-    textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #00f7ff;
-      color: #111;
-      border: none;
-      padding: 12px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #00d7d7;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      color: #111;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #00f7ff;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      header h2 {
-        font-size: 32px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
-
-      .btn {
-        padding: 10px 20px;
-      }
-
-      .section {
-        padding: 60px 10px;
-      }
-
-      form {
-        width: 90%;
-      }
-
-      .nav-links {
-        transition: all 0.3s ease;
-      }
-    }
-  </style>
+	<meta charset="UTF-8">
+	<title>Rajdeep - Personal Portfolio</title>
+	<link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Css Fils -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/flaticon-31.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/typer.css">
+	<link rel="stylesheet" href="assets/css/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style-31.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
-  <nav>
-    <h1>Rajdeep</h1>
-    <div class="nav-toggle" id="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<body class="apihu-port-body">
 
-  <header>
-    <h2>Hello, I'm Rajdeep</h2>
-    <p>A Software Developer | Proficient in both the front-end and back-end</p><br>
-    <a href="#projects" class="btn">View Projects</a>
-  </header>
+	<div class="apihu-port-body-overlay"></div>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>Results-driven Developer with 4+ years of experience in designing, developing, and maintaining high-performance,
-      responsive, and user-friendly websites. Recently expanding into Laravel development, working on hands-on projects
-      including CRUD applications, blog CMS platforms, landing pages, and CRM software. Proficient in custom WordPress
-      themes and plugins, and now building full-stack Laravel solutions with a focus on clean code, scalability, and
-      user-centric design. Eager to grow as a Laravel developer while leveraging strong design, content management, and
-      client collaboration skills.</p>
-  </section>
+	<!-- Preloader-->
+	<div class="loading-preloader">
+		<div id="loading-preloader">
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+			<div class="line_shape"></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
 
-  <section id="skills" class="section">
-  <h2>Skills</h2><br>
-  <div class="skills-grid">
-    <div><i class="devicon-html5-plain colored"></i> HTML</div>
-    <div><i class="devicon-css3-plain colored"></i> CSS</div>
-    <div><i class="devicon-javascript-plain colored"></i> JavaScript</div>
-    <div><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
-    <div><i class="devicon-git-plain colored"></i> Git & GitHub</div>
-    <div><i class="devicon-php-plain colored"></i> PHP</div>
-    <div><i class="fa-solid fa-plug"></i> APIs</div>
-    <div><i class="devicon-wordpress-plain colored"></i> WordPress</div>
-    <div><i class="devicon-woocommerce-plain colored"></i> WooCommerce</div>
-    <div><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
-    <div><i class="devicon-laravel-plain colored"></i> Laravel</div>
-    <div><i class="devicon-mysql-plain colored"></i> MySQL</div>
-    <div><i class="devicon-figma-plain colored"></i> Figma</div>
-    <div><i class="fa-solid fa-layer-group"></i> Elementor Pro</div>
-    <div><i class="fa-solid fa-magnifying-glass"></i> SEO</div>
-    <div><i class="fa-solid fa-pen-nib"></i> Logo Design</div>
-    <div><i class="fa-solid fa-paintbrush"></i> Graphics Design</div>
-    <div><i class="fa-solid fa-mobile-screen"></i> Responsive Design</div>
-  </div>
-</section>
+	<!-- ScrollTop Button -->
+	<a href="#" class="apihu-port-scroll-top"><i class="fas fa-chevron-up"></i></a>
 
-  <section id="projects" class="section">
-    <h2>WordPress Projects</h2>
-    <div class="projects-grid">
+	<!-- Header Start -->
+	<header class="apihu-port-header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-2 col-lg-2 col-md-2 col-3">
+					<div class="apihu-port-logo">
+						<img src="assets/img/port-img-31/logo.png" alt="SaaSio Portfolio">
+					</div>
+				</div>
+				<div class="col-xl-8 d-none d-lg-block text-center col-lg-8">
+					<div class="apihu-port-main-navigation">
+						<ul>
+							<li><a href="#apihu-port-hero">Home</a></li>
+							<li><a href="#apihu-port-resume">Resume</a></li>
+							<li><a href="#apihu-port-feature">Feature</a></li>
+							<li><a href="#apihu-port-portfolio">Portfolio</a></li>
+							<li><a href="#apihu-port-contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-2 col-lg-2 col-md-10 col-9 text-right">
+					<div class="apihu-port-header-cta">
+						<a href="https://wa.me/918638116318?text=Hello%20I%20need%20support" target="_blank">
+							Let's Chat <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+						</a>
+					</div>
 
-      <div class="project-card">
-        <img src="images/project1.png" alt="WordPress Site Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Petshop Website</h3>
-        <p>Woocommerce Website with payment & shipping API integration.</p>
-        <a href="https://nextlevelpets.in/" target="_blank">Live Demo</a>
-      </div>
+					<div class="apihu-port-mobile-menu-hamburger">
+						<a href="#"><i class="fas fa-bars"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header End -->
 
-      <div class="project-card">
-        <img src="images/project2.png" alt="PHP Landing Page Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Online Medicine Order</h3>
-        <p>Woocommerce responsive website with order management website.</p>
-        <a href="https://oukhodexpress.com/" target="_blank">Live Demo</a>
-      </div>
+	<!-- Mobile Menu -->
+	<div class="apihu-port-mobile-menu">
+		<a href="#" class="apihu-port-menu-close"><i class="fas fa-times"></i></a>
+		<a href="#" class="apihu-port-logo-wrapper"><img src="assets/img/port-img-31/white-logo.png" alt=""></a>
+		<ul>
+			<li><a href="#apihu-port-hero">Home</a></li>
+			<li><a href="#apihu-port-resume">Resume</a></li>
+			<li><a href="#apihu-port-feature">Feature</a></li>
+			<li><a href="#apihu-port-portfolio">Portfolio</a></li>
+			<li><a href="#apihu-port-contact">Contact</a></li>
+		</ul>
+	</div>
+	<!-- Mobile Menu End -->
 
-      <div class="project-card">
-        <img src="images/project3.png" alt="CRM Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Digital Agency</h3>
-        <p>Portfolio and Service based website with responsive design.</p>
-        <a href="https://adceleb.in/" target="_blank">Live Demo</a>
-      </div>
+	<!-- Hero Start -->
+	<section class="apihu-port-hero-area" id="apihu-port-hero">
 
-      <div class="project-card">
-        <img src="images/project4.png" alt="Blog Site Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>E-Commerce Website</h3>
-        <p>Responsive website includes product veriation switches.</p>
-        <a href="https://kwiltmattress.com/" target="_blank">Live Demo</a>
-      </div>
+		<!-- Hero bg shape -->
+		<img class="apihu-port-hero-shape-1" src="assets/img/port-img-31/hero-shape.png" alt="Shape">
+		<img class="apihu-port-hero-shape-2" src="assets/img/port-img-31/hero-figma-logo.png" alt="Shape">
+		<img class="apihu-port-hero-shape-3" src="assets/img/port-img-31/hero-ai-logo.png" alt="Shape">
+		<img class="apihu-port-hero-shape-4" src="assets/img/port-img-31/hero-ps-logo.png" alt="Shape">
 
-      <div class="project-card">
-        <img src="images/project5.png" alt="CRM Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Real Estate</h3>
-        <p>Custom CRM built using WordPress & project showcase.</p>
-        <a href="https://a2zflats.com/" target="_blank">Live Demo</a>
-      </div>
+		<span class="apihu-port-hero-side-style-text">Rajdeep</span>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 col-lg-8">
+					<div class="apihu-port-hero-left">
+						<p class="apihu-port-hero-subtitle wow slideInDown">Welcome to My World</p>
+						<h1 class="apihu-port-hero-title cd-headline clip is-full-width">Hi I’m Rajdeep<br>
+							<span class="apihu-port-hero-title-color cd-words-wrapper">
+								<b class="is-visible">Developer</b>
+								<!-- <b>Developer</b> -->
+								<b>Designer</b>
+							</span>
+							<span class="apihu-port-hero-title-small-text">Software Developer</span>
+						</h1>
+						<p class="apihu-port-hero-text wow slideInUp">I specialize in designing, developing, and
+							maintaining high-performance, responsive, and user-friendly websites. </p>
+						<ul class="apihu-port-hero-btn-wrap wow slideInUp">
+							<li><a class="apihu-port-primary-btn apihu-port-hero-btn-gradient"
+									href="#apihu-port-contact">Hire Me +</a>
+							</li>
+							<li><a class="apihu-port-secondary-btn apihu-port-hero-btn-white" href="#">Download CV <i
+										class="fas fa-download"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4">
+					<!-- hero area social -->
+					<div class="apihu-port-hero-social">
+						<ul>
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="apihu-port-hero-right wow slideInRight">
+						<div class="apihu-port-hero-right-img">
+							<img src="assets/img/port-img-31/hero-right.png" alt="Hero Area">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero End -->
 
-      <div class="project-card">
-        <img src="images/project6.png" alt="Blog Site Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Personal Blog</h3>
-        <p>Single user content showcase with commenting blog.</p>
-        <a href="https://prideofapen.in/" target="_blank">Live Demo</a>
-      </div>
-    </div><br><br>
-    <h2>Laravel Projects</h2>
-    <div class="projects-grid">
+	<!-- About Start -->
+	<section class="apihu-port-about-area" id="apihu-port-resume">
+		<img src="assets/img/port-img-31/about-shape-1.png" alt="" class="apihu-port-about-shape">
 
-      <div class="project-card">
-        <img src="images/crud-app-laravel.png" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Laravel CRUD App</h3>
-        <p>Daily track your activity with this CRUD App user friendly design.</p>
-        <a href="https://github.com/d-rajdeep/crud-app-laravel.git" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6">
+					<div class="apihu-port-about-left wow slideInLeft">
+						<div class="apihu-port-about-img">
+							<img src="assets/img/port-img-31/about-left.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6">
+					<div class="apihu-port-about-right">
+						<h3 class="apihu-port-about-subtitle">About Rajdeep</h3>
+						<h2 class="apihu-port-about-title">5 Year’s Exprience on
+							Web <span>Development</span>.</h2>
+						<p class="apihu-port-about-text">I specialize in designing, developing, and maintaining
+							high-performance, responsive, and user-friendly websites. </p>
+						<div class="apihu-port-about-expertise">
+							<ul class="nav nav-pills" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+										role="tab" aria-controls="pills-home" aria-selected="true">Main Skills</a>
+								</li>
+								<!-- <li class="nav-item">
+									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+										role="tab" aria-controls="pills-profile" aria-selected="false">Awards</a>
+								</li> -->
+								<li class="nav-item">
+									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+										role="tab" aria-controls="pills-contact" aria-selected="false">Education</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+									aria-labelledby="pills-home-tab">
+									<ul>
+										<li>
+											<span class="apihu-port-expertise-title">User Experience Design -
+												UI/UX</span>
+											<span class="apihu-port-expertise-text">Delight the user and make it
+												work.</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">Web & User Interface Design -
+												Development</span>
+											<span class="apihu-port-expertise-text">Websites, web experiences,
+												...</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">Interaction Design -
+												Animation</span>
+											<span class="apihu-port-expertise-text">I like to move it move it.</span>
+										</li>
+									</ul>
+								</div>
+								<!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+									aria-labelledby="pills-profile-tab">
+									<ul>
+										<li>
+											<span class="apihu-port-expertise-title">UX Design Awards 2021</span>
+											<span class="apihu-port-expertise-text">Design Center Berlin</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">Web Development Awards 2021</span>
+											<span class="apihu-port-expertise-text">CSS Design Awards</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">Mobile App Designer Award
+												2021</span>
+											<span class="apihu-port-expertise-text">Design Studio USA</span>
+										</li>
+									</ul>
+								</div> -->
+								<div class="tab-pane fade" id="pills-contact" role="tabpanel"
+									aria-labelledby="pills-contact-tab">
+									<ul>
+										<li>
+											<span class="apihu-port-expertise-title">Bachelor of Arts (B.A.)</span>
+											<span class="apihu-port-expertise-text">Stanford university USA</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">UX design Course</span>
+											<span class="apihu-port-expertise-text">UK UX design schools</span>
+										</li>
+										<li>
+											<span class="apihu-port-expertise-title">UI Design Course</span>
+											<span class="apihu-port-expertise-text">Austin Center for Design</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="apihu-port-about-btn">
+							<a href="#">Download CV <i class="fas fa-download"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About End -->
 
-      <div class="project-card">
-        <img src="images/blog-app.png" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Multiuser Blog App</h3>
-        <p>Role-based user management and content approval panel built using Laravel.</p>
-        <a href="https://github.com/d-rajdeep/blog-app.git" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+	<!-- Service Start -->
+	<section class="apihu-port-service-area" id="apihu-port-feature">
+		<img class="apihu-port-service-shape-1" src="assets/img/port-img-31/service-shape-1.png" alt="Service Shape">
+		<img class="apihu-port-service-shape-2" src="assets/img/port-img-31/service-shape-2.png" alt="Service Shape">
 
-      <div class="project-card">
-        <img src="images/inventory-system-php.jpg" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Inventory System</h3>
-        <p>Role-based user to manage inventory and billing of the product.</p>
-        <a href="https://github.com/d-rajdeep/inventory-system-php.git" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 text-center">
+					<div class="apihu-port-section-heading">
+						<p class="apihu-port-section-subtitle">What We Do</p>
+						<h2 class="apihu-port-section-title">We are Optimists who Love to <br>
+							work <span class="apihu-port-section-title-color">Together</span>.</h2>
+					</div>
+				</div>
+			</div>
 
-      <div class="project-card">
-        <img src="images/dairy-app.png" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Dairy App</h3>
-        <p>User private space note for thoughts and memories.</p>
-        <a href="https://github.com/d-rajdeep/dairy-system" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.2s">
+						<div class="apihu-port-service-icon-box">
+							<i class="flaticon-social-media-marketing"></i>
+						</div>
+						<h3 class="apihu-port-single-service-title">App Development</h3>
+						<p class="apihu-port-single-service-text">I throw myself down among the
+							tall grass by the stream as I lie
+							close to the earth.</p>
+						<a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.4s">
+						<div class="apihu-port-service-icon-box">
+							<i class="flaticon-social-media-marketing"></i>
+						</div>
+						<h3 class="apihu-port-single-service-title">Web Development</h3>
+						<p class="apihu-port-single-service-text">I throw myself down among the
+							tall grass by the stream as I lie
+							close to the earth.</p>
+						<a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.6s">
+						<div class="apihu-port-service-icon-box">
+							<i class="flaticon-social-media-marketing"></i>
+						</div>
+						<h3 class="apihu-port-single-service-title">UI/UX Design</h3>
+						<p class="apihu-port-single-service-text">I throw myself down among the
+							tall grass by the stream as I lie
+							close to the earth.</p>
+						<a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.8s">
+						<div class="apihu-port-service-icon-box">
+							<i class="flaticon-social-media-marketing"></i>
+						</div>
+						<h3 class="apihu-port-single-service-title">Digital Marketing</h3>
+						<p class="apihu-port-single-service-text">I throw myself down among the
+							tall grass by the stream as I lie
+							close to the earth.</p>
+						<a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12 text-center">
+					<div class="apihu-port-service-load-more-btn">
+						<a href="#">Load More <i class="fas fa-plus"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Service End -->
 
-      <div class="project-card">
-        <img src="images/Ecommerce-Solutions.jpg" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>E-Commerce Website</h3>
-        <p>Admin and customer based plateform with all e-commerce facilities.</p>
-        <a href="https://github.com/d-rajdeep/tech_store.git" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+	<!-- CTA Start -->
+	<section class="apihu-port-cta-area">
+		<img class="apihu-port-cta-shape" src="assets/img/port-img-31/cta-bg.png" alt="Cta shape">
 
-      <div class="project-card">
-        <img src="images/website_builder.png" alt="Laravel Project Screenshot"
-          style="width:100%; border-radius: 10px; margin-bottom: 15px;">
-        <h3>Website Builder CMS</h3>
-        <p>Admin can add fields and they appear on the frontend, no codding required.</p>
-        <a href="https://github.com/d-rajdeep/website_builder.git" target="_blank"
-          style="display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-            style="height: 20px;">
-          View on GitHub
-        </a>
-      </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="apihu-port-cta-content-wrap">
+
+						<img class="apihu-port-cta-container-shape" src="assets/img/port-img-31/cta-bg-shape.png"
+							alt="Cta container shape">
+
+						<div class="row">
+							<div class="col-xl-8 col-lg-8">
+								<div class="apihu-port-cta-content-text">
+									<p>Get It Touch</p>
+									<h2>Have a Project on Your Mind</h2>
+									<a href="#">Contact Me +</a>
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-4">
+								<div class="apihu-port-cta-content-img">
+									<img src="assets/img/port-img-31/cta-right.png" alt="Call to action area">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- CTA End -->
+
+	<!-- Portfolio Start -->
+	<section class="apihu-port-portfolio-area" id="apihu-port-portfolio">
+		<img class="apihu-port-portfolio-shape" src="assets/img/port-img-31/portfolio-shape.png" alt="">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 text-center">
+					<div class="apihu-port-section-heading">
+						<p class="apihu-port-section-subtitle">Portfolio</p>
+						<h2 class="apihu-port-section-title">My Creative Wroks</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xl-12 text-center">
+					<div class="apihu-port-portfolio-navigation">
+						<ul>
+							<li class="active" data-filter="*">All Works</li>
+							<li data-filter=".webdev">Web Development</li>
+							<li data-filter=".uiux">UI/UX Design</li>
+							<li data-filter=".brand">Branding Design</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row apihu-port-portfolio-grid">
+				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item uiux">
+					<div class="apihu-port-single-portfolio">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6">
+								<span>Product Design</span>
+								<h3>The Services Provide
+									for Web Design </h3>
+								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								</p>
+								<a href="">Explore More <i class="fas fa-plus"></i></a>
+							</div>
+							<div class="col-xl-6 col-lg-6">
+								<div class="apihu-port-portfolio-img">
+									<img src="assets/img/port-img-31/port-1.png" alt="Portfolio">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item webdev">
+					<div class="apihu-port-single-portfolio">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6">
+								<span>App Development</span>
+								<h3>The Services Provide
+									for App Development </h3>
+								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								</p>
+								<a href="">Explore More <i class="fas fa-plus"></i></a>
+							</div>
+							<div class="col-xl-6 col-lg-6">
+								<div class="apihu-port-portfolio-img">
+									<img src="assets/img/port-img-31/port-2.png" alt="Portfolio">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item webdev">
+					<div class="apihu-port-single-portfolio">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6">
+								<span>Web Development</span>
+								<h3>The Services Provide
+									for Web Development </h3>
+								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								</p>
+								<a href="">Explore More <i class="fas fa-plus"></i></a>
+							</div>
+							<div class="col-xl-6 col-lg-6">
+								<div class="apihu-port-portfolio-img">
+									<img src="assets/img/port-img-31/port-3.png" alt="Portfolio">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item brand">
+					<div class="apihu-port-single-portfolio">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6">
+								<span>Marketing</span>
+								<h3>The Services Provide
+									for Marketing </h3>
+								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								</p>
+								<a href="">Explore More <i class="fas fa-plus"></i></a>
+							</div>
+							<div class="col-xl-6 col-lg-6">
+								<div class="apihu-port-portfolio-img">
+									<img src="assets/img/port-img-31/port-4.png" alt="Portfolio">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Portfolio End -->
+
+	<!-- contact Area -->
+	<section class="apihu-port-contact-area" id="apihu-port-contact">
+
+	</section>
+	<!-- contact End -->
+
+	<!-- Contact Start -->
+	<section class="apihu-port-contact-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 text-left">
+					<div class="apihu-port-section-heading">
+						<p class="apihu-port-section-subtitle">Contact Me</p>
+						<h2 class="apihu-port-section-title">Get in Touch With Me</h2>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6">
+					<div class="apihu-port-section-heading">
+						<p class="apihu-port-section-text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="apihu-port-contact-left">
+						<form>
+							<div class="row">
+								<div class="col-xl-6">
+									<input type="text" placeholder="First Name">
+								</div>
+								<div class="col-xl-6">
+									<input type="text" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12">
+									<input type="email" placeholder="Email">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12">
+									<input type="text" placeholder="Subject">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12">
+									<textarea placeholder="Message"></textarea>
+								</div>
+								<div class="col-xl-12">
+									<button type="submit">Submit Now <i class="fas fa-plus"></i></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-xl-6">
+					<div class="apihu-port-contact-right">
+						<div class="apihu-port-contact-right-img">
+							<img src="assets/img/port-img-31/contact-right.jpg" alt="Contact Right">
+						</div>
+						<div class="apihu-port-contact-right-content">
+							<div class="apihu-port-contact-icon-box">
+								<i class="flaticon-help"></i>
+							</div>
+							<div class="apihu-port-contact-text">
+								<span class="apihu-port-contact-number">+974784895</span>
+								<span class="apihu-port-contact-email">admin@example.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact End -->
+
+	<!-- Footer Start -->
+	<footer class="apihu-port-footer-area" data-background="assets/img/port-img-31/footer-bg.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="apihu-port-footer-content">
+						<div class="apihu-port-foooter-logo">
+							<a href="">
+								<img src="assets/img/port-img-31/footer-logo.png" alt="Footer Logo">
+							</a>
+							<p>
+								Labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus <br>
+								viverra maecenas accumsan lacus vel facilisis.
+							</p>
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="apihu-port-copyright-content">
+						<p>Copyright &copy; 2023
+							<meta name="keywords"
+								content="	accountant, advertising, advisor, agency, broker, business, clean, consulting, creative, elementor, finance, insurance, marketing, modern, portfolio">
+							<a href="#">SaaSio-Themes</a>. All Rights Reserved.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer End -->
+
+	<!-- For Js Library -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/isotope.pkgd.js"></script>
+	<script src="assets/js/typer-new.js"></script>
+	<script src="assets/js/appear.js"></script>
+	<script src="assets/js/progress-bar.js"></script>
+	<script src="assets/js/scripts-31.js"></script>
 
 
-    </div>
-  </section>
-  <!-- Resume Section -->
-
-  <section id="resume" class="section">
-    <h2>Resume</h2>
-    <div class="container"
-      style="max-width: 900px; margin: auto; background: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 8px; text-align: left;">
-      <h1 style="font-size: 28px; margin-bottom: 5px;">Rajdeep Dutta</h1>
-      <p>Email: designme.rajdeep@gmail.com<br>
-        Phone: +91 8638116318<br>
-        Location: Guwahati, Assam<br>
-
-
-      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Professional
-        Summary</h2>
-      <p>Experienced Web Developer transitioning into Laravel, building projects like CRUD apps, blog CMS, landing
-        pages, and CRM tools. Skilled in custom themes, plugins, and client-focused web solutions.</p>
-
-      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Skills</h2>
-      <ul style="padding-left: 20px;">
-        <li>HTML, CSS, JavaScript, Bootstrap, Tailwind CSS</li>
-        <li>PHP, Laravel, MySQL</li>
-        <li>WordPress, WooCommerce, Elementor Pro</li>
-        <li>Git & GitHub, Figma</li>
-        <li>SEO, Digital Marketing</li>
-        <li>Graphics & Logo Design</li>
-      </ul>
-
-      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Experience</h2>
-      <h3 style="margin-top: 10px;">Software Developer | April 2025 - Present at <a href="https://siqes.com/">SIQES</a>
-      </h3>
-      <ul style="padding-left: 20px;">
-        <li>Full time Software developer, focusing on Laravel</li>
-
-      </ul><br>
-      <h3 style="margin-top: 10px;">Php and WordPress Developer | Nov 2021 - Dec 2024 at <a
-          href="https://adceleb.in/">Adceleb</a></h3>
-      <ul style="padding-left: 20px;">
-        <li>Developed and maintained responsive WordPress websites with performance optimization, error resolution,
-          domain management, and hosting setup (cPanel, FTP, SSH)</li>
-        <li>Integrated Razorpay with WooCommerce and automated shipping workflows using the Shiprocket API</li>
-        <li>Built multiple web apps using PHP & MySQL, including an Inventory System, Blog CMS with authentication, and
-          a To-Do App with task tracking and reminders</li>
-        <li>Developed a Laravel CRUD app with authentication, validation, and role-based access using Eloquent ORM</li>
-      </ul><br>
-      <h3 style="margin-top: 10px;">Web Designer & Developer | Feb 2020 - May 2021 at <a
-          href="https://indiawebdesigns.in/">India Web Designs</a></h3>
-      <ul style="padding-left: 20px;">
-        <li>Developed and maintained WordPress websites, including custom designs and functionality</li>
-        <li>Diagnosed and fixed technical issues, including plugin conflicts and server errors</li>
-        <li>Managed website migrations and domain configurations</li>
-        <li>Provided ongoing support and training to clients for website management</li>
-      </ul>
-
-      <!-- <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Projects</h2>
-    <ul style="padding-left: 20px;">
-      <li><strong>Next Level Pets:</strong> WooCommerce site with shipping and payment gateway integration</li>
-      <li><strong>AdCeleb:</strong> Digital agency portfolio site</li>
-      <li><strong>Dreamzone CRM:</strong> Custom Laravel CRM with role-based login</li>
-      <li><strong>Pride of a Pen:</strong> Blog site with commenting system</li>
-    </ul> -->
-
-      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Education</h2>
-      <p><strong>Bachelor of Computer Application</strong><br>Tihu College, Gauhati University<br>2016 – 2019</p>
-
-      <h2 style="font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Certifications
-      </h2>
-      <ul style="padding-left: 20px;">
-        <li>Internship of Web Development – <a href="https://cssghy.in">Convergence Software Solution</a></li>
-      </ul>
-    </div>
-  </section>
-
-
-  <section id="contact" class="section">
-    <h2>You Think, We Build</h2>
-    <p>Share your idea</p>
-    <form id="contact-form" action="mailer.php" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Your Contact Number" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <select name="service" required
-        style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
-        <option value="">Select Service</option>
-        <option value="Website">Website</option>
-        <option value="Software">Software</option>
-        <option value="SEO">SEO</option>
-        <option value="Digital Marketing">Digital Marketing</option>
-        <option value="General Enquiry">General Enquiry</option>
-      </select>
-      <textarea name="message" rows="5" placeholder="Your Message (Optional)"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="social-links">
-      <a href="https://wa.me/8638116318" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="X"
-          style="height: 24px;">
-      </a>
-      <a href="https://www.instagram.com/d_rajdeep_/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"
-          style="height: 24px;">
-      </a>
-      <a href="https://www.linkedin.com/in/d-rajdeep/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"
-          style="height: 24px;">
-      </a>
-      <a href="https://github.com/d-rajdeep" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
-          style="height: 24px;">
-      </a>
-      <a href="https://x.com/d_rajdeep_" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" style="height: 24px;">
-      </a>
-
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Rajdeep. All rights reserved.</p>
-  </footer>
-
-  <script>
-
-    const toggleBtn = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = this;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-      })
-        .then(res => res.text())
-        .then(() => {
-          alert('Thank you! Your message has been sent.');
-          window.location.href = 'thank-you.html';
-        })
-        .catch(err => {
-          alert('Something went wrong. Please try again.');
-          console.error(err);
-        });
-    });
-  </script>
 </body>
 
 </html>
