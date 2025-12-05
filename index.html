@@ -27,6 +27,78 @@
 		flex-direction: column;
 		justify-content: space-between;
 	}
+
+	/* Modern Form Box */
+	.modern-contact-box {
+		background: #ffffff;
+		padding: 35px;
+		border-radius: 14px;
+		box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+	}
+
+	.modern-contact-box input,
+	.modern-contact-box select,
+	.modern-contact-box textarea {
+		width: 100%;
+		padding: 14px 18px;
+		border: 1px solid #e4e4e4;
+		border-radius: 8px;
+		font-size: 15px;
+		background: #fafafa;
+		transition: 0.3s;
+	}
+
+	.modern-contact-box input:focus,
+	.modern-contact-box select:focus,
+	.modern-contact-box textarea:focus {
+		border-color: #E35336;
+		background: #fff;
+	}
+
+	/* Button */
+	.modern-btn {
+		background: #E35336;
+		border: none;
+		padding: 14px 28px;
+		color: #fff;
+		border-radius: 8px;
+		font-size: 16px;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+
+	.modern-btn:hover {
+		background: #532bc6;
+	}
+
+	/* Right Section */
+	.modern-contact-right {
+		padding-left: 20px;
+	}
+
+	.contact-map-box {
+		height: 330px;
+		border-radius: 14px;
+		overflow: hidden;
+		box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+		margin-bottom: 25px;
+	}
+
+	/* Info Box */
+	.contact-info-box {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		padding: 20px;
+		border-radius: 12px;
+		background: #f7f5ff;
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+	}
+
+	.modern-icon i {
+		font-size: 26px;
+		color: #E35336;
+	}
 </style>
 
 <body class="apihu-port-body">
@@ -379,7 +451,7 @@
 	<!-- CTA End -->
 
 	<!-- Portfolio Start -->
-	<!-- <section class="apihu-port-portfolio-area" id="apihu-port-portfolio">
+	<section class="apihu-port-portfolio-area" id="apihu-port-portfolio">
 		<img class="apihu-port-portfolio-shape" src="assets/img/port-img-31/portfolio-shape.png" alt="">
 
 		<div class="container">
@@ -399,7 +471,7 @@
 							<li class="active" data-filter="*">All Works</li>
 							<li data-filter=".webdev">Web Development</li>
 							<li data-filter=".uiux">UI/UX Design</li>
-							<li data-filter=".brand">Branding Design</li>
+							<li data-filter=".brand">Digital Marketing</li>
 						</ul>
 					</div>
 				</div>
@@ -410,16 +482,18 @@
 					<div class="apihu-port-single-portfolio">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6">
-								<span>Product Design</span>
-								<h3>The Services Provide
-									for Web Design </h3>
-								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								<!-- <span>Product Design</span> -->
+								<h3>UI/UX Design Design </h3>
+								<p style="text-align: justify;">I craft intuitive and visually appealing user interfaces
+									that enhance engagement and
+									improve usability. From wireframes to high-fidelity prototypes, I focus on creating
+									seamless user journeys that blend aesthetics with functionality.
 								</p>
 								<a href="">Explore More <i class="fas fa-plus"></i></a>
 							</div>
 							<div class="col-xl-6 col-lg-6">
 								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-1.png" alt="Portfolio">
+									<img src="assets/img/port-img-31/port-1.jpg" alt="Portfolio">
 								</div>
 							</div>
 						</div>
@@ -429,16 +503,18 @@
 					<div class="apihu-port-single-portfolio">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6">
-								<span>App Development</span>
-								<h3>The Services Provide
-									for App Development </h3>
-								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								<!-- <span>Website Development</span> -->
+								<h3>Website Development Services</h3>
+								<p style="text-align: justify;">I develop fast, secure, and fully responsive websites
+									tailored to your business
+									needs—ensuring smooth performance, clean UI, and a user-friendly experience that
+									helps you convert visitors into customers.
 								</p>
 								<a href="">Explore More <i class="fas fa-plus"></i></a>
 							</div>
 							<div class="col-xl-6 col-lg-6">
 								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-2.png" alt="Portfolio">
+									<img src="assets/img/port-img-31/port-2.jpg" alt="Portfolio">
 								</div>
 							</div>
 						</div>
@@ -448,16 +524,18 @@
 					<div class="apihu-port-single-portfolio">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6">
-								<span>Web Development</span>
-								<h3>The Services Provide
-									for Web Development </h3>
-								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								<!-- <span>Software Development</span> -->
+								<h3>Software Development Services</h3>
+								<p style="text-align: justify;">I develop secure, scalable, and high-performance
+									software solutions using Laravel and
+									PHP—building custom systems, dashboards, and API-driven platforms tailored to
+									streamline operations and enhance business efficiency.
 								</p>
 								<a href="">Explore More <i class="fas fa-plus"></i></a>
 							</div>
 							<div class="col-xl-6 col-lg-6">
 								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-3.png" alt="Portfolio">
+									<img src="assets/img/port-img-31/port-3.jpg" alt="Portfolio">
 								</div>
 							</div>
 						</div>
@@ -467,16 +545,19 @@
 					<div class="apihu-port-single-portfolio">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6">
-								<span>Marketing</span>
-								<h3>The Services Provide
-									for Marketing </h3>
-								<p>Disse ultrices gravida. Risus comod viverra maecenas accumsan Lacus vel facilisis.
+								<!-- <span>Marketing</span> -->
+								<h3>Digital Marketing</h3>
+								<p style="text-align: justify;">I help businesses grow online through strategic digital
+									marketing solutions,
+									including SEO, social media management, content strategy, and data-driven campaigns.
+									My focus is on improving visibility, attracting the right audience, and driving
+									measurable results.
 								</p>
 								<a href="">Explore More <i class="fas fa-plus"></i></a>
 							</div>
 							<div class="col-xl-6 col-lg-6">
 								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-4.png" alt="Portfolio">
+									<img src="assets/img/port-img-31/port-4.jpg" alt="Portfolio">
 								</div>
 							</div>
 						</div>
@@ -484,7 +565,7 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- Portfolio End -->
 
 	<!-- contact Area -->
@@ -496,90 +577,117 @@
 	<!-- Contact Start -->
 	<section class="apihu-port-contact-area">
 		<div class="container">
-			<div class="row">
-				<div class="col-xl-6 col-lg-6 text-left">
+
+			<!-- Heading Row -->
+			<div class="row align-items-center mb-4">
+				<div class="col-xl-6 col-lg-6">
 					<div class="apihu-port-section-heading">
 						<p class="apihu-port-section-subtitle">Contact Me</p>
 						<h2 class="apihu-port-section-title">Get in Touch With Me</h2>
 					</div>
 				</div>
+
 				<div class="col-xl-6 col-lg-6">
 					<div class="apihu-port-section-heading">
-						<p class="apihu-port-section-text">
-							We’d love to hear from you. Reach out for inquiries, support, or just a friendly hello!
+						<p class="apihu-port-section-text" style="font-size: 16px; line-height: 28px;">
+							Feel free to reach out for project inquiries, collaborations, or any kind of assistance.
+							I'm always excited to connect and create meaningful digital solutions.
 						</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
+
+				<!-- LEFT FORM -->
 				<div class="col-xl-6">
-					<div class="apihu-port-contact-left">
+					<div class="apihu-port-contact-left modern-contact-box">
+
 						<form>
+
+							<!-- Name + Phone -->
 							<div class="row">
-								<div class="col-xl-6">
-									<input type="text" placeholder="First Name">
+								<div class="col-xl-6 mb-3">
+									<input type="text" placeholder="Full Name" name="name" required>
 								</div>
-								<div class="col-xl-6">
-									<input type="text" placeholder="Last Name">
+								<div class="col-xl-6 mb-3">
+									<input type="text" placeholder="Phone Number" name="phone" required maxlength="10"
+										pattern="[0-9]{10}" inputmode="numeric"
+										title="Please enter a valid 10-digit phone number">
 								</div>
 							</div>
+
+							<!-- Email + Service -->
 							<div class="row">
-								<div class="col-xl-12">
-									<input type="email" placeholder="Email">
+								<div class="col-xl-6 mb-3">
+									<input type="email" placeholder="Email" name="email" required>
+								</div>
+								<div class="col-xl-6 mb-3">
+									<select name="services" required>
+										<option value="">Select Service</option>
+										<option value="website">Website Development</option>
+										<option value="software">Software Development</option>
+										<option value="mobile_app">Mobile App Development</option>
+										<option value="digital_marketing">Digital Marketing</option>
+										<option value="other">Other</option>
+									</select>
 								</div>
 							</div>
+
+							<!-- Message -->
 							<div class="row">
+								<div class="col-xl-12 mb-3">
+									<textarea placeholder="Message" name="message" required></textarea>
+								</div>
+
 								<div class="col-xl-12">
-									<input type="text" placeholder="Subject">
+									<button type="submit" class="modern-btn">
+										Submit Now <i class="fas fa-paper-plane"></i>
+									</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-xl-12">
-									<textarea placeholder="Message"></textarea>
-								</div>
-								<div class="col-xl-12">
-									<button type="submit">Submit Now <i class="fas fa-plus"></i></button>
-								</div>
-							</div>
+
 						</form>
+
 					</div>
 				</div>
-				<div class="col-xl-6">
-					<div class="apihu-port-contact-right">
 
-						<!-- Google Map Embed -->
-						<div class="apihu-port-contact-map"
-							style="width: 100%; height: 330px; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+				<!-- RIGHT MAP + INFO -->
+				<div class="col-xl-6">
+					<!-- <div class="apihu-port-contact-right modern-contact-right"> -->
+
+						<!-- Google Map -->
+						<div class="contact-map-box">
 							<iframe width="100%" height="100%" style="border:0;" loading="lazy"
 								referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7163.211505773024!2d91.7807030236769!3d26.144394622405795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a59186b56f27b%3A0x221cdbe130b90235!2sDispur%2C%20Guwahati%2C%20Assam%20781006%2C%20India!5e0!3m2!1sen!2sus!4v1764876802682!5m2!1sen!2sus">
-							</iframe>
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7163.211505773024!2d91.7807030236769!3d26.144394622405795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a59186b56f27b%3A0x221cdbe130b90235!2sDispur%2C%20Guwahati%2C%20Assam%20781006%2C%20India!5e0!3m2!1sen!2sus!4v1764876802682!5m2!1sen!2sus"></iframe>
 						</div>
 
-						<!-- Contact Info -->
-						<div class="apihu-port-contact-right-content">
-							<div class="apihu-port-contact-icon-box">
-								<i class="flaticon-help"></i>
+						<!-- Info -->
+						<div class="contact-info-box">
+							<div class="apihu-port-contact-icon-box modern-icon">
+								<i class="fas fa-phone-alt"></i>
 							</div>
+
 							<div class="apihu-port-contact-text">
-								<span class="apihu-port-contact-number">+91 8638116318</span>
+								<span class="apihu-port-contact-number">+91 8638116318</span><br>
 								<span class="apihu-port-contact-email">designme.rajdeep@gmail.com</span>
 							</div>
 						</div>
 
-					</div>
+					<!-- </div> -->
 				</div>
 
 			</div>
 		</div>
 	</section>
+
 	<!-- Contact End -->
 
 	<!-- Footer Start -->
-	<footer class="apihu-port-footer-area" data-background="assets/img/port-img-31/footer-bg.jpg">
+	<!-- <footer class="apihu-port-footer-area" data-background="assets/img/port-img-31/footer-bg.jpg"> -->
 		<div class="container">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-xl-12">
 					<div class="apihu-port-footer-content">
 						<div class="apihu-port-foooter-logo">
@@ -587,7 +695,8 @@
 								<img src="assets/img/port-img-31/footer-logo.png" alt="Footer Logo">
 							</a>
 							<p>
-								I’m a Web Developer specializing in modern web applications, clean UI/UX, and scalable digital solutions.
+								I’m a Web Developer specializing in modern web applications, clean UI/UX, and scalable
+								digital solutions.
 							</p>
 							<ul>
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -597,11 +706,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="row">
 				<div class="col-xl-12">
-					<div class="apihu-port-copyright-content">
-						<p>Copyright &copy; 2025
+					<div class="apihu-port-copyright-content"><br>
+						<p style="text-align: center;">Copyright &copy; 2025
 							<meta name="keywords"
 								content="	accountant, advertising, advisor, agency, broker, business, clean, consulting, creative, elementor, finance, insurance, marketing, modern, portfolio">
 							| All Rights Reserved.
