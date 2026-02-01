@@ -2,780 +2,542 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Rajdeep - Personal Portfolio</title>
-	<link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon">
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--Css Fils -->
-	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="assets/css/flaticon-31.css">
-	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
-	<link rel="stylesheet" href="assets/css/typer.css">
-	<link rel="stylesheet" href="assets/css/slick-theme.css">
-	<link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style-31.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajdeep Dutta | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<style>
-	.apihu-port-single-service {
-		height: 100%;
-		/* allow equal height */
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
 
-	/* Modern Form Box */
-	.modern-contact-box {
-		background: #ffffff;
-		padding: 35px;
-		border-radius: 14px;
-		box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-	}
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-indigo-500 selection:text-white">
 
-	.modern-contact-box input,
-	.modern-contact-box select,
-	.modern-contact-box textarea {
-		width: 100%;
-		padding: 14px 18px;
-		border: 1px solid #e4e4e4;
-		border-radius: 8px;
-		font-size: 15px;
-		background: #fafafa;
-		transition: 0.3s;
-	}
+    <nav class="bg-white shadow-sm fixed w-full z-10 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">RD.</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about"
+                        class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="#skills"
+                        class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                    <a href="#experience"
+                        class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                    <a href="#projects"
+                        class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                    <a href="#contact"
+                        class="bg-indigo-600 text-white hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium">Hire
+                        Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-	.modern-contact-box input:focus,
-	.modern-contact-box select:focus,
-	.modern-contact-box textarea:focus {
-		border-color: #E35336;
-		background: #fff;
-	}
+    <header id="about" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 max-w-7xl mx-auto text-center sm:text-left">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-indigo-600 font-semibold tracking-wide uppercase mb-2">Hello, I'm</p>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Rajdeep Dutta</h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Software Developer & Laravel Specialist</h2>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Building scalable web applications and CMS systems with 5+ years of experience. Expert in Laravel,
+                    clean architecture, and performance optimization.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center sm:justify-start">
+                    <a href="https://github.com/d-rajdeep" target="_blank"
+                        class="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/d-rajdeep" target="_blank"
+                        class="flex items-center gap-2 border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:designme.rajdeep@gmail.com"
+                        class="flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block relative">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-20 blur-2xl">
+                </div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                    <pre class="text-sm font-mono text-gray-600 overflow-hidden">
+<span class="text-purple-600">class</span> <span class="text-yellow-600">Developer</span> {
+    <span class="text-purple-600">protected</span> $name = <span class="text-green-600">'Rajdeep'</span>;
+    <span class="text-purple-600">protected</span> $stack = [
+        <span class="text-green-600">'Laravel'</span>, 
+        <span class="text-green-600">'PHP'</span>, 
+        <span class="text-green-600">'MySQL'</span>
+    ];
 
-	/* Button */
-	.modern-btn {
-		background: #E35336;
-		border: none;
-		padding: 14px 28px;
-		color: #fff;
-		border-radius: 8px;
-		font-size: 16px;
-		cursor: pointer;
-		transition: 0.3s;
-	}
+    <span class="text-purple-600">public function</span> <span class="text-blue-600">build</span>() {
+        <span class="text-purple-600">return</span> <span class="text-green-600">'Scalable Solutions'</span>;
+    }
+}</pre>
+                </div>
+            </div>
+        </div>
+    </header>
 
-	.modern-btn:hover {
-		background: #532bc6;
-	}
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Technical Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-laravel text-4xl text-red-600 mb-4"></i>
+                    <h3 class="font-semibold">Laravel</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-php text-4xl text-indigo-600 mb-4"></i>
+                    <h3 class="font-semibold">PHP</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-database text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold">MySQL</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-react text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-semibold">React</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-wordpress text-4xl text-blue-700 mb-4"></i>
+                    <h3 class="font-semibold">WordPress</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold">Tailwind CSS</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-git-alt text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="font-semibold">Git/GitHub</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-server text-4xl text-gray-600 mb-4"></i>
+                    <h3 class="font-semibold">DevOps & SSH</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	/* Right Section */
-	.modern-contact-right {
-		padding-left: 20px;
-	}
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Work History</h2>
+            <div
+                class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-200 before:z-0">
 
-	.contact-map-box {
-		height: 330px;
-		border-radius: 14px;
-		overflow: hidden;
-		box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
-		margin-bottom: 25px;
-	}
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-indigo-600 bg-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <i class="fas fa-briefcase text-indigo-600 text-sm"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-gray-900">Software Developer</h3>
+                            <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded">2025 -
+                                Present</span>
+                        </div>
+                        <h4 class="text-indigo-600 font-medium mb-2">SIQES</h4>
+                        <p class="text-gray-600 text-sm">Architected Student Management Systems and Lead Management
+                            platforms. Reduced database query times by 50% and improved process efficiency by 35%.</p>
+                    </div>
+                </div>
 
-	/* Info Box */
-	.contact-info-box {
-		display: flex;
-		align-items: center;
-		gap: 18px;
-		padding: 20px;
-		border-radius: 12px;
-		background: #f7f5ff;
-		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-	}
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-300 bg-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <i class="fas fa-code text-gray-500 text-sm"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-gray-900">PHP & WordPress Developer</h3>
+                            <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">2021 -
+                                2025</span>
+                        </div>
+                        <h4 class="text-indigo-600 font-medium mb-2">Adceleb</h4>
+                        <p class="text-gray-600 text-sm">Developed 30+ responsive websites. Integrated RazorPay and
+                            Shiprocket APIs for e-commerce stores handling 1000+ monthly transactions.</p>
+                    </div>
+                </div>
 
-	.modern-icon i {
-		font-size: 26px;
-		color: #E35336;
-	}
-</style>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-300 bg-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <i class="fas fa-laptop-code text-gray-500 text-sm"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-gray-900">Web Designer & Developer</h3>
+                            <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">2020 -
+                                2021</span>
+                        </div>
+                        <h4 class="text-indigo-600 font-medium mb-2">India Web Designs</h4>
+                        <p class="text-gray-600 text-sm">Delivered 25+ custom WordPress solutions. Implemented SEO
+                            strategies improving organic traffic by 60%.</p>
+                    </div>
+                </div>
 
-<body class="apihu-port-body">
+            </div>
+        </div>
+    </section>
 
-	<div class="apihu-port-body-overlay"></div>
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Featured Projects</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">A selection of my technical work ranging from
+                Laravel SaaS platforms to WordPress e-commerce solutions.</p>
 
-	<!-- Preloader-->
-	<div class="loading-preloader">
-		<div id="loading-preloader">
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-			<div class="line_shape"></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-	<!-- ScrollTop Button -->
-	<a href="#" class="apihu-port-scroll-top"><i class="fas fa-chevron-up"></i></a>
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Dynamic Website Builder</h3>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Laravel</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">SaaS platform enabling non-technical users to create
+                            customizable websites with very simple interface.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">SaaS</span>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/website_builder.git"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://apps.d-rajdeep.in/wb/website_builder/"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
 
-	<!-- Header Start -->
-	<header class="apihu-port-header-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-3">
-					<div class="apihu-port-logo">
-						<img src="assets/img/port-img-31/logo.png" alt="SaaSio Portfolio">
-					</div>
-				</div>
-				<div class="col-xl-8 d-none d-lg-block text-center col-lg-8">
-					<div class="apihu-port-main-navigation">
-						<ul>
-							<li><a href="#apihu-port-hero">Home</a></li>
-							<li><a href="#apihu-port-resume">Resume</a></li>
-							<li><a href="#apihu-port-feature">Feature</a></li>
-							<li><a href="#apihu-port-portfolio">Portfolio</a></li>
-							<li><a href="#apihu-port-contact">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-10 col-9 text-right">
-					<div class="apihu-port-header-cta">
-						<a href="https://wa.me/918638116318?text=Hello%20I%20need%20support" target="_blank">
-							Let's Chat <i class="fab fa-whatsapp" style="color:#25D366;"></i>
-						</a>
-					</div>
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">E-Commerce Platform</h3>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Laravel</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Admin and customer based platform with all e-commerce
+                            facilities including payment integration and order management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Auth Sanctum</span>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Symfony Mailer</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/tech_store.git"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://d-rajdeep.in/apps/tech-store/"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
 
-					<div class="apihu-port-mobile-menu-hamburger">
-						<a href="#"><i class="fas fa-bars"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header End -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Content Moderation Blog</h3>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Laravel</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Role-based user management and content approval panel
+                            built using Laravel with advanced user permissions.</p>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Auth Sanctum</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/blog-app"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://echomag.d-rajdeep.in"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
 
-	<!-- Mobile Menu -->
-	<div class="apihu-port-mobile-menu">
-		<a href="#" class="apihu-port-menu-close"><i class="fas fa-times"></i></a>
-		<a href="#" class="apihu-port-logo-wrapper"><img src="assets/img/port-img-31/white-logo.png" alt=""></a>
-		<ul>
-			<li><a href="#apihu-port-hero">Home</a></li>
-			<li><a href="#apihu-port-resume">Resume</a></li>
-			<li><a href="#apihu-port-feature">Feature</a></li>
-			<li><a href="#apihu-port-portfolio">Portfolio</a></li>
-			<li><a href="#apihu-port-contact">Contact</a></li>
-		</ul>
-	</div>
-	<!-- Mobile Menu End -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Pharmacy Management</h3>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Laravel</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">A Laravel-based Pharmacy ERP with dynamic billing, stock
+                            adjustments, customer-wise sales summaries, and interactive daily/weekly/monthly reports.
+                        </p>
+                        <!-- <span class="text-xs bg-gray-100 px-2 py-1 rounded">Auth Sanctum</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span> -->
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/pharmacy"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://medhimedicos.d-rajdeep.in/"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
 
-	<!-- Hero Start -->
-	<section class="apihu-port-hero-area" id="apihu-port-hero">
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Inventory System</h3>
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Core
+                                php</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Role-based user system to manage inventory and billing of
+                            products with comprehensive reporting features.</p>
+                        <!-- <span class="text-xs bg-gray-100 px-2 py-1 rounded">Auth Sanctum</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span> -->
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/inventory-system-php.git"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="#"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
 
-		<!-- Hero bg shape -->
-		<img class="apihu-port-hero-shape-1" src="assets/img/port-img-31/hero-shape.png" alt="Shape">
-		<img class="apihu-port-hero-shape-2" src="assets/img/port-img-31/hero-figma-logo.png" alt="Shape">
-		<img class="apihu-port-hero-shape-3" src="assets/img/port-img-31/hero-ai-logo.png" alt="Shape">
-		<img class="apihu-port-hero-shape-4" src="assets/img/port-img-31/hero-ps-logo.png" alt="Shape">
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">CRUD App</h3>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Laravel</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Daily track your activity with this CRUD App featuring a
+                            user-friendly design for managing tasks and activities.</p>
+                        <!-- <span class="text-xs bg-gray-100 px-2 py-1 rounded">Auth Sanctum</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Bootstrap</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span> -->
+                    </div>
+                    <div class="p-6 pt-0 mt-auto flex gap-4">
+                        <a href="https://github.com/d-rajdeep/crud-app-laravel"
+                            class="flex-1 text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <!-- <a href="#"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a> -->
+                    </div>
+                </div>
 
-		<span class="apihu-port-hero-side-style-text">Rajdeep</span>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8 col-lg-8">
-					<div class="apihu-port-hero-left">
-						<p class="apihu-port-hero-subtitle wow slideInDown">Welcome to My World</p>
-						<h1 class="apihu-port-hero-title cd-headline clip is-full-width">Hi I’m Rajdeep<br>
-							<span class="apihu-port-hero-title-color cd-words-wrapper">
-								<b class="is-visible">Developer</b>
-								<!-- <b>Developer</b> -->
-								<b>Designer</b>
-							</span>
-							<span class="apihu-port-hero-title-small-text">Software Developer</span>
-						</h1>
-						<p class="apihu-port-hero-text wow slideInUp">I specialize in designing, developing, and
-							maintaining high-performance, responsive, and user-friendly websites. </p>
-						<ul class="apihu-port-hero-btn-wrap wow slideInUp">
-							<li><a class="apihu-port-primary-btn apihu-port-hero-btn-gradient"
-									href="https://wa.me/918638116318?text=Hello%20Are%20you%20interested">Hire Me +</a>
-							</li>
-							<li><a class="apihu-port-secondary-btn apihu-port-hero-btn-white" href="https://drive.google.com/file/d/1RoqA8YSXTWCsm-uFXg0iX1dZH6nJJtLx/view?usp=sharing">Download CV <i
-										class="fas fa-download"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4">
-					<!-- hero area social -->
-					<div class="apihu-port-hero-social">
-						<ul>
-							<li><a href="https://www.linkedin.com/in/d-rajdeep/"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="https://github.com/d-rajdeep"><i class="fab fa-github"></i></a></li>
-							<li><a href="https://www.instagram.com/d_rajdeep_/"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-					<div class="apihu-port-hero-right wow slideInRight">
-						<div class="apihu-port-hero-right-img">
-							<img src="assets/img/port-img-31/hero-right.png" alt="Hero Area" width="609" height="782"
-								style="width: 609px; height: 782px; object-fit: contain;">
-						</div>
-					</div>
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
 
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero End -->
+                    <!-- Content -->
+                    <div class="p-6 flex-1">
 
-	<!-- About Start -->
-	<section class="apihu-port-about-area" id="apihu-port-resume">
-		<img src="assets/img/port-img-31/about-shape-1.png" alt="" class="apihu-port-about-shape">
+                        <!-- Title -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Real Estate Portfolio
+                        </h3>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-6 col-lg-6">
-					<div class="apihu-port-about-left wow slideInLeft">
-						<div class="apihu-port-about-img">
-							<img src="assets/img/port-img-31/about-left.png" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="apihu-port-about-right">
-						<h3 class="apihu-port-about-subtitle">About Rajdeep</h3>
-						<h2 class="apihu-port-about-title">5 Year’s Exprience on
-							Web <span>Development</span>.</h2>
-						<p class="apihu-port-about-text">I specialize in designing, developing, and maintaining
-							high-performance, responsive, and user-friendly websites. </p>
-						<div class="apihu-port-about-expertise">
-							<ul class="nav nav-pills" id="pills-tab" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-										role="tab" aria-controls="pills-home" aria-selected="true">Main Skills</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-										role="tab" aria-controls="pills-profile" aria-selected="false">Experience</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
-										role="tab" aria-controls="pills-contact" aria-selected="false">Education</a>
-								</li>
-							</ul>
-							<div class="tab-content" id="pills-tabContent">
-								<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-									aria-labelledby="pills-home-tab">
-									<ul>
-										<li>
-											<span class="apihu-port-expertise-title">Backend Development</span>
-											<span class="apihu-port-expertise-text">PHP, Laravel, APIs, MySQL, Basic
-												Server Environment</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">CMS & Web Systems</span>
-											<span class="apihu-port-expertise-text">WordPress, WooCommerce, Custom Theme
-												& Plugin
-												Customization</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">Frontend Development</span>
-											<span class="apihu-port-expertise-text">HTML5, CSS3, JavaScript, Tailwind
-												CSS, Bootstrap5</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">Dev Tools & Server
-												Management</span>
-											<span class="apihu-port-expertise-text">Git, GitLab, VS Code, Figma,
-												Postman, Laragon, cPanel, FTP, SSH, DNS, SSL, AWS</span>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-pane fade" id="pills-profile" role="tabpanel"
-									aria-labelledby="pills-profile-tab">
-									<ul>
-										<li>
-											<span class="apihu-port-expertise-title">SIQES - 04/2025-Present</span>
-											<span class="apihu-port-expertise-text">Software Developer</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">Adceleb - 11/2021-01/2025</span>
-											<span class="apihu-port-expertise-text">PHP & WordPress Developer</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">India Web Designs -
-												02/2020-05/2021</span>
-											<span class="apihu-port-expertise-text">Web Designer & Developer</span>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-pane fade" id="pills-contact" role="tabpanel"
-									aria-labelledby="pills-contact-tab">
-									<ul>
-										<li>
-											<span class="apihu-port-expertise-title">Bachelor of Computer Application
-												(B.C.A) - 2019</span>
-											<span class="apihu-port-expertise-text">Gauhati university</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">HS Science - 2016</span>
-											<span class="apihu-port-expertise-text">AHSEC Board</span>
-										</li>
-										<li>
-											<span class="apihu-port-expertise-title">HSLC - 2014</span>
-											<span class="apihu-port-expertise-text">SEBA Board</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- <div class="apihu-port-about-btn">
-							<a href="#">Download CV <i class="fas fa-download"></i></a>
-						</div> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- About End -->
+                        <!-- Tech badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold">WordPress</span>
+                            <span
+                                class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-semibold">Custom
+                                Theme</span>
+                            <span
+                                class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Property
+                                Search</span>
+                        </div>
 
-	<!-- Service Start -->
-	<section class="apihu-port-service-area" id="apihu-port-feature">
-		<img class="apihu-port-service-shape-1" src="assets/img/port-img-31/service-shape-1.png" alt="Service Shape">
-		<img class="apihu-port-service-shape-2" src="assets/img/port-img-31/service-shape-2.png" alt="Service Shape">
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm">
+                            Custom WordPress real estate website with dynamic property listings,
+                            advanced search filters, and modern property showcase layout.
+                        </p>
+                    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12 text-center">
-					<div class="apihu-port-section-heading">
-						<p class="apihu-port-section-subtitle">What We Do</p>
-						<h2 class="apihu-port-section-title">We are Optimists who Love to <br>
-							work <span class="apihu-port-section-title-color">Together</span>.</h2>
-					</div>
-				</div>
-			</div>
+                    <!-- Buttons -->
+                    <div class="p-6 pt-0 mt-auto flex gap-3">
 
-			<div class="row">
-				<div class="col-xl-3 col-lg-3 col-md-6">
-					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.2s">
-						<div class="apihu-port-service-icon-box">
-							<i class="flaticon-social-media-marketing"></i>
-						</div>
-						<h3 class="apihu-port-single-service-title">Website Design</h3>
-						<p class="apihu-port-single-service-text">I design modern, responsive, and conversion-focused
-							websites with clean UI, optimized performance, and seamless user experience.</p>
-						<!-- <a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a> -->
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-6">
-					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.4s">
-						<div class="apihu-port-service-icon-box">
-							<i class="flaticon-social-media-marketing"></i>
-						</div>
-						<h3 class="apihu-port-single-service-title">Software Development</h3>
-						<p class="apihu-port-single-service-text">I build scalable, secure web applications using
-							Laravel and PHP, including custom management systems, dashboards, and API-driven platforms.
-						</p>
-						<!-- <a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a> -->
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-6">
-					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.6s">
-						<div class="apihu-port-service-icon-box">
-							<i class="flaticon-social-media-marketing"></i>
-						</div>
-						<h3 class="apihu-port-single-service-title">UI/UX & Graphics Design</h3>
-						<p class="apihu-port-single-service-text">I create intuitive UI layouts and visually engaging
-							designs aligned with brand identity, ensuring smooth user flow and consistent aesthetics.
-						</p>
-						<!-- <a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a> -->
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-6">
-					<div class="apihu-port-single-service wow fadeInUp" data-wow-delay="0.2s">
-						<div class="apihu-port-service-icon-box">
-							<i class="flaticon-social-media-marketing"></i>
-						</div>
-						<h3 class="apihu-port-single-service-title">App Development</h3>
-						<p class="apihu-port-single-service-text">I develop fast, intuitive mobile apps with modern
-							technologies and clean architectures, ensuring reliability and high usability.</p>
-						<!-- <a class="apihu-port-single-service-btn" href="#">Read More <i class="fas fa-plus"></i></a> -->
-					</div>
-				</div>
-			</div>
-			<!-- <div class="row">
-				<div class="col-xl-12 text-center">
-					<div class="apihu-port-service-load-more-btn">
-						<a href="#">Load More <i class="fas fa-plus"></i></a>
-					</div>
-				</div>
-			</div> -->
-		</div>
-	</section>
-	<!-- Service End -->
+                        <!-- Live Website -->
+                        <a href="https://a2zflats.com" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Project
+                        </a>
 
-	<!-- CTA Start -->
-	<section class="apihu-port-cta-area">
-		<img class="apihu-port-cta-shape" src="assets/img/port-img-31/cta-bg.png" alt="Cta shape">
+                        
 
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-					<div class="apihu-port-cta-content-wrap">
+                    </div>
 
-						<img class="apihu-port-cta-container-shape" src="assets/img/port-img-31/cta-bg-shape.png"
-							alt="Cta container shape">
+                </div>
 
-						<div class="row">
-							<div class="col-xl-8 col-lg-8">
-								<div class="apihu-port-cta-content-text">
-									<p>Get It Touch</p>
-									<h2>Have a Project on Your Mind</h2>
-									<a href="https://wa.me/918638116318?text=Hello%20I%20need%20support">Contact Me +</a>
-								</div>
-							</div>
-							<div class="col-xl-4 col-lg-4">
-								<div class="apihu-port-cta-content-img">
-									<img src="assets/img/port-img-31/cta-right.png" alt="Call to action area">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- CTA End -->
 
-	<!-- Portfolio Start -->
-	<section class="apihu-port-portfolio-area" id="apihu-port-portfolio">
-		<img class="apihu-port-portfolio-shape" src="assets/img/port-img-31/portfolio-shape.png" alt="">
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12 text-center">
-					<div class="apihu-port-section-heading">
-						<p class="apihu-port-section-subtitle">Portfolio</p>
-						<h2 class="apihu-port-section-title">My Creative Wroks</h2>
-					</div>
-				</div>
-			</div>
+                    <!-- Content -->
+                    <div class="p-6 flex-1">
 
-			<div class="row">
-				<div class="col-xl-12 text-center">
-					<div class="apihu-port-portfolio-navigation">
-						<ul>
-							<li class="active" data-filter="*">All Works</li>
-							<li data-filter=".webdev">Web Development</li>
-							<li data-filter=".uiux">UI/UX Design</li>
-							<li data-filter=".brand">Digital Marketing</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+                        <!-- Title -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            E-Commerce Website
+                        </h3>
 
-			<div class="row apihu-port-portfolio-grid">
-				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item uiux">
-					<div class="apihu-port-single-portfolio">
-						<div class="row">
-							<div class="col-xl-6 col-lg-6">
-								<!-- <span>Product Design</span> -->
-								<h3>UI/UX Design Design </h3>
-								<p style="text-align: justify;">I craft intuitive and visually appealing user interfaces
-									that enhance engagement and
-									improve usability. From wireframes to high-fidelity prototypes, I focus on creating
-									seamless user journeys that blend aesthetics with functionality.
-								</p>
-								<a href="https://github.com/d-rajdeep">Explore More <i class="fas fa-plus"></i></a>
-							</div>
-							<div class="col-xl-6 col-lg-6">
-								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-1.jpg" alt="Portfolio">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item webdev">
-					<div class="apihu-port-single-portfolio">
-						<div class="row">
-							<div class="col-xl-6 col-lg-6">
-								<!-- <span>Website Development</span> -->
-								<h3>Website Development Services</h3>
-								<p style="text-align: justify;">I develop fast, secure, and fully responsive websites
-									tailored to your business
-									needs—ensuring smooth performance, clean UI, and a user-friendly experience that
-									helps you convert visitors into customers.
-								</p>
-								<a href="https://github.com/d-rajdeep">Explore More <i class="fas fa-plus"></i></a>
-							</div>
-							<div class="col-xl-6 col-lg-6">
-								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-2.jpg" alt="Portfolio">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item webdev">
-					<div class="apihu-port-single-portfolio">
-						<div class="row">
-							<div class="col-xl-6 col-lg-6">
-								<!-- <span>Software Development</span> -->
-								<h3>Software Development Services</h3>
-								<p style="text-align: justify;">I develop secure, scalable, and high-performance
-									software solutions using Laravel and
-									PHP—building custom systems, dashboards, and API-driven platforms tailored to
-									streamline operations and enhance business efficiency.
-								</p>
-								<a href="https://github.com/d-rajdeep">Explore More <i class="fas fa-plus"></i></a>
-							</div>
-							<div class="col-xl-6 col-lg-6">
-								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-3.jpg" alt="Portfolio">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6 col-md-6 apihu-port-portfolio-item brand">
-					<div class="apihu-port-single-portfolio">
-						<div class="row">
-							<div class="col-xl-6 col-lg-6">
-								<!-- <span>Marketing</span> -->
-								<h3>Digital Marketing</h3>
-								<p style="text-align: justify;">I help businesses grow online through strategic digital
-									marketing solutions,
-									including SEO, social media management, content strategy, and data-driven campaigns.
-									My focus is on improving visibility, attracting the right audience, and driving
-									measurable results.
-								</p>
-								<a href="https://github.com/d-rajdeep">Explore More <i class="fas fa-plus"></i></a>
-							</div>
-							<div class="col-xl-6 col-lg-6">
-								<div class="apihu-port-portfolio-img">
-									<img src="assets/img/port-img-31/port-4.jpg" alt="Portfolio">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Portfolio End -->
+                        <!-- Tech Badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold">WordPress</span>
+                            <span
+                                class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-semibold">Razorpay</span>
+                            <span
+                                class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Shiprocket</span>
+                        </div>
 
-	<!-- contact Area -->
-	<section class="apihu-port-contact-area" id="apihu-port-contact">
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm">
+                            WooCommerce store with secure payment gateway integration, shipping API automation,
+                            product filtering and variations for smooth customer experience.
+                        </p>
+                    </div>
 
-	</section>
-	<!-- contact End -->
+                    <!-- Buttons -->
+                    <div class="p-6 pt-0 mt-auto flex gap-3">
 
-	<!-- Contact Start -->
-	<section class="apihu-port-contact-area">
-		<div class="container">
+                        <!-- Frontend -->
+                        <a href="https://kwiltmattress.com" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Project
+                        </a>
+                        <a href="https://nextlevelpets.in" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Project
+                        </a>
 
-			<!-- Heading Row -->
-			<div class="row align-items-center mb-4">
-				<div class="col-xl-6 col-lg-6">
-					<div class="apihu-port-section-heading">
-						<p class="apihu-port-section-subtitle">Contact Me</p>
-						<h2 class="apihu-port-section-title">Get in Touch With Me</h2>
-					</div>
-				</div>
+                    </div>
+                </div>
 
-				<div class="col-xl-6 col-lg-6">
-					<div class="apihu-port-section-heading">
-						<p class="apihu-port-section-text" style="font-size: 16px; line-height: 28px;">
-							Feel free to reach out for project inquiries, collaborations, or any kind of assistance.
-							I'm always excited to connect and create meaningful digital solutions.
-						</p>
-					</div>
-				</div>
-			</div>
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full">
 
-			<div class="row">
+                    <!-- Content -->
+                    <div class="p-6 flex-1">
 
-				<!-- LEFT FORM -->
-				<div class="col-xl-6">
-					<div class="apihu-port-contact-left modern-contact-box">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Laravel Web Application
+                        </h3>
 
-						<form id="contact-form" action="https://wa.me/918638116318?text=Hello%20I%20need%20support" method="POST">
+                        <!-- Tech Badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-red-100 text-red-700 text-xs px-3 py-1 rounded-full font-semibold">Laravel</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-700 text-xs px-3 py-1 rounded-full font-semibold">Custom
+                                HTML</span>
+                            <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Admin
+                                Panel</span>
+                        </div>
 
-							<!-- Name + Phone -->
-							<div class="row">
-								<div class="col-xl-6 mb-3">
-									<input type="text" placeholder="Full Name" name="name" required>
-								</div>
-								<div class="col-xl-6 mb-3">
-									<input type="text" placeholder="Phone Number" name="phone" required maxlength="10"
-										pattern="[0-9]{10}" inputmode="numeric"
-										title="Please enter a valid 10-digit phone number">
-								</div>
-							</div>
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm">
+                            Fully custom-built Laravel website with dynamic admin dashboard, CRUD management,
+                            authentication system, and responsive frontend using clean HTML/CSS.
+                        </p>
+                    </div>
 
-							<!-- Email + Service -->
-							<div class="row">
-								<div class="col-xl-6 mb-3">
-									<input type="email" placeholder="Email" name="email" required>
-								</div>
-								<div class="col-xl-6 mb-3">
-									<select name="services" required>
-										<option value="">Select Service</option>
-										<option value="website">Website Development</option>
-										<option value="software">Software Development</option>
-										<option value="mobile_app">Mobile App Development</option>
-										<option value="digital_marketing">Digital Marketing</option>
-										<option value="other">Other</option>
-									</select>
-								</div>
-							</div>
+                    <!-- Buttons -->
+                    <div class="p-6 pt-0 mt-auto flex gap-3">
 
-							<!-- Message -->
-							<div class="row">
-								<div class="col-xl-12 mb-3">
-									<textarea placeholder="Message" name="message" required></textarea>
-								</div>
+                        <!-- Frontend Live -->
+                        <a href="https://echomag.d-rajdeep.in" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Project
+                        </a>
 
-								<div class="col-xl-12">
-									<button type="submit" class="modern-btn">
-										Submit Now <i class="fas fa-paper-plane"></i>
-									</button>
-								</div>
-							</div>
+                        <a href="https://kirtidhara.in" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Project
+                        </a>
 
-						</form>
+                    </div>
 
-					</div>
-				</div>
+                </div>
 
-				<!-- RIGHT MAP + INFO -->
-				<div class="col-xl-6">
-					<!-- <div class="apihu-port-contact-right modern-contact-right"> -->
 
-					<!-- Google Map -->
-					<div class="contact-map-box">
-						<iframe width="100%" height="100%" style="border:0;" loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7163.211505773024!2d91.7807030236769!3d26.144394622405795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a59186b56f27b%3A0x221cdbe130b90235!2sDispur%2C%20Guwahati%2C%20Assam%20781006%2C%20India!5e0!3m2!1sen!2sus!4v1764876802682!5m2!1sen!2sus"></iframe>
-					</div>
 
-					<!-- Info -->
-					<div class="contact-info-box">
-						<div class="apihu-port-contact-icon-box modern-icon">
-							<i class="fas fa-phone-alt"></i>
-						</div>
+            </div>
+        </div>
+    </section>
 
-						<div class="apihu-port-contact-text">
-							<span class="apihu-port-contact-number">+91 8638116318</span><br>
-							<span class="apihu-port-contact-email">designme.rajdeep@gmail.com</span>
-						</div>
-					</div>
+    <section id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-gray-400 mb-8">I'm currently available for freelance projects and full-time opportunities.
+            </p>
 
-					<!-- </div> -->
-				</div>
+            <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-phone text-indigo-400"></i>
+                    <span>+91 8638116318</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope text-indigo-400"></i>
+                    <span>designme.rajdeep@gmail.com</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                    <span>Guwahati, India</span>
+                </div>
+            </div>
 
-			</div>
-		</div>
-	</section>
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/d-rajdeep" class="text-gray-400 hover:text-white transition text-2xl"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/d-rajdeep"
+                    class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin"></i></a>
+            </div>
 
-	<!-- Contact End -->
-
-	<!-- Footer Start -->
-	<!-- <footer class="apihu-port-footer-area" data-background="assets/img/port-img-31/footer-bg.jpg"> -->
-	<div class="container">
-		<!-- <div class="row">
-				<div class="col-xl-12">
-					<div class="apihu-port-footer-content">
-						<div class="apihu-port-foooter-logo">
-							<a href="">
-								<img src="assets/img/port-img-31/footer-logo.png" alt="Footer Logo">
-							</a>
-							<p>
-								I’m a Web Developer specializing in modern web applications, clean UI/UX, and scalable
-								digital solutions.
-							</p>
-							<ul>
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> -->
-		<div class="row">
-			<div class="col-xl-12">
-				<div class="apihu-port-copyright-content"><br>
-					<p style="text-align: center;">Copyright &copy; 2026
-						<meta name="keywords"
-							content="	accountant, advertising, advisor, agency, broker, business, clean, consulting, creative, elementor, finance, insurance, marketing, modern, portfolio">
-						| All Rights Reserved.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	</footer>
-	<!-- Footer End -->
-
-	<!-- For Js Library -->
-	<script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/owl.js"></script>
-	<script src="assets/js/slick.js"></script>
-	<script src="assets/js/waypoints.min.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/isotope.pkgd.js"></script>
-	<script src="assets/js/typer-new.js"></script>
-	<script src="assets/js/appear.js"></script>
-	<script src="assets/js/progress-bar.js"></script>
-	<script src="assets/js/scripts-31.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const form = document.getElementById('contact-form');
-			if (!form) return;
-
-			form.addEventListener('submit', async function (e) {
-				e.preventDefault();
-				const btn = form.querySelector('button[type="submit"]');
-				btn.disabled = true;
-				btn.innerText = 'Sending...';
-
-				try {
-					const resp = await fetch(form.action, {
-						method: 'POST',
-						body: new FormData(form)
-					});
-
-					const text = await resp.text();
-					console.log('Fetch status:', resp.status);
-					console.log('Response body:', text);
-
-					// Try parse JSON, fallback to text
-					let data;
-					try { data = JSON.parse(text); } catch (err) { data = { status: resp.ok ? 'ok' : 'error', message: text }; }
-
-					if (resp.ok && (data.status === 'success' || data.status === 'ok')) {
-						alert(data.message || 'Thank you! Your message has been sent.');
-						window.location.href = 'thank-you.html';
-					} else {
-						alert(data.message || 'Something went wrong. Please try again.');
-					}
-
-				} catch (err) {
-					console.error('Fetch error:', err);
-					alert('Network error. Please try again.');
-				} finally {
-					btn.disabled = false;
-					btn.innerHTML = 'Submit Now <i class="fas fa-paper-plane"></i>';
-				}
-			});
-		});
-	</script>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+                &copy; 2026 Rajdeep Dutta. All rights reserved.
+            </div>
+        </div>
+    </section>
 
 </body>
 
