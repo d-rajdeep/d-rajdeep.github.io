@@ -4,460 +4,865 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms and Conditions | Rajdeep Dutta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+      :root {
+        --bg: #0a0a0f;
+        --bg2: #0f0f18;
+        --bg3: #13131f;
+        --card: #16162a;
+        --card-border: #2a2a45;
+        --accent: #6c63ff;
+        --accent2: #00d4aa;
+        --accent3: #ff6b6b;
+        --text: #e8e8f0;
+        --text-muted: #8888aa;
+        --text-dim: #55556a;
+        --white: #ffffff;
+        --gradient: linear-gradient(135deg, #6c63ff 0%, #00d4aa 100%);
+        --gradient2: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
 
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      /* Noise overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 0 2rem;
+        background: rgba(10, 10, 15, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+        letter-spacing: -0.5px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links a:hover {
+        color: var(--white);
+      }
+      .nav-links a.active {
+        color: var(--white);
+      }
+
+      .nav-cta {
+        background: var(--gradient);
+        color: white !important;
+        padding: 0.5rem 1.25rem;
+        border-radius: 8px;
+        font-weight: 600 !important;
+        transition: opacity 0.2s !important;
+      }
+      .nav-cta:hover {
+        opacity: 0.9;
+        color: white !important;
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        padding: 1rem 2rem 1.5rem;
+        gap: 0.75rem;
+        border-top: 1px solid var(--card-border);
+      }
+
+      .mobile-menu a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        transition: color 0.2s;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--white);
+      }
+
+      .mobile-menu .nav-cta {
+        display: inline-block;
+        background: var(--gradient);
+        color: white !important;
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      /* Main Content */
+      main {
+        padding-top: 100px;
+        padding-bottom: 80px;
+      }
+
+      .terms-card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .terms-header {
+        border-bottom: 1px solid var(--card-border);
+        padding: 2rem 2rem 1.5rem;
+        text-align: center;
+      }
+
+      .terms-header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.75rem;
+      }
+
+      .terms-header .update-date {
+        color: var(--accent2);
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .terms-header .intro-text {
+        color: var(--text-muted);
+        margin-top: 1.25rem;
+        line-height: 1.7;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .terms-header .intro-text a {
+        color: var(--accent2);
+        text-decoration: none;
+      }
+      .terms-header .intro-text a:hover {
+        text-decoration: underline;
+      }
+
+      .terms-body {
+        padding: 2rem;
+      }
+
+      .terms-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .terms-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .terms-section h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .terms-section h2 i {
+        color: var(--accent2);
+        font-size: 1.2rem;
+      }
+
+      .terms-section p {
+        color: var(--text-muted);
+        line-height: 1.75;
+        margin-bottom: 0.75rem;
+      }
+
+      .terms-section ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 1rem 0;
+      }
+
+      .terms-section ul li {
+        color: var(--text-muted);
+        line-height: 1.75;
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .terms-section ul li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--accent2);
+        font-size: 0.8rem;
+      }
+
+      .terms-section strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .warning-box {
+        background: rgba(255, 107, 107, 0.1);
+        border-left: 3px solid var(--accent3);
+        padding: 1rem 1.25rem;
+        margin-top: 1rem;
+        border-radius: 12px;
+      }
+
+      .warning-box p {
+        margin-bottom: 0;
+        color: #fca5a5;
+      }
+
+      .warning-box strong {
+        color: var(--accent3);
+      }
+
+      .contact-box {
+        background: rgba(108, 99, 255, 0.08);
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .contact-box h3 {
+        color: var(--white);
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .contact-box h3 i {
+        color: var(--accent2);
+      }
+
+      .contact-box p {
+        color: var(--text-muted);
+        margin-bottom: 0;
+      }
+
+      .contact-box a {
+        color: var(--accent2);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .contact-box a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer Contact Section */
+      .footer-section {
+        background: var(--bg3);
+        padding: 4rem 2rem;
+        border-top: 1px solid var(--card-border);
+        margin-top: 2rem;
+      }
+
+      .footer-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .footer-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+
+      .footer-section p {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+
+      .contact-details {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .contact-detail {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .contact-detail i {
+        color: var(--accent2);
+        font-size: 1rem;
+      }
+
+      .social-footer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .social-footer a {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.2s;
+      }
+
+      .social-footer a:hover {
+        border-color: var(--accent);
+        color: var(--white);
+        background: rgba(108, 99, 255, 0.1);
+      }
+
+      .footer-line {
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--card-border);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+      }
+
+      .footer-line a {
+        color: var(--text-dim);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-line a:hover {
+        color: var(--text);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .mobile-toggle {
+          display: block;
+        }
+        .terms-header h1 {
+          font-size: 1.8rem;
+        }
+        .terms-body {
+          padding: 1.5rem;
+        }
+        .terms-section h2 {
+          font-size: 1.2rem;
+        }
+        .contact-details {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+        .footer-section h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .nav-links {
+          gap: 1rem;
+        }
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--card-border);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+
+      ::selection {
+        background: rgba(108, 99, 255, 0.35);
+        color: var(--white);
       }
     </style>
   </head>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.getElementById("mobile-menu-button");
-      const menu = document.getElementById("mobile-menu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
-      const icon = btn.querySelector("i");
-
-      // Toggle menu open/close
-      if (btn) {
-        btn.addEventListener("click", () => {
-          menu.classList.toggle("hidden");
-          if (menu.classList.contains("hidden")) {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          } else {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-          }
-        });
-      }
-
-      // Close menu when a link is clicked
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          menu.classList.add("hidden");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
-      });
-    });
-  </script>
-
-  <body
-    class="bg-gray-50 text-gray-800 antialiased selection:bg-indigo-500 selection:text-white"
-  >
-    <nav
-      class="bg-white shadow-sm fixed w-full z-20 top-0 transition-all duration-300"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-          <div class="flex-shrink-0 flex items-center">
-            <a
-              href="index.html"
-              class="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition"
-              >RD.</a
-            >
-          </div>
-
-          <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="index.html#about"
-              class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >About</a
-            >
-            <a
-              href="index.html#skills"
-              class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >Skills</a
-            >
-            <a
-              href="index.html#experience"
-              class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >Experience</a
-            >
-            <a
-              href="index.html#projects"
-              class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >Projects</a
-            >
-
-            <a
-              href="terms.html"
-              class="text-indigo-600 font-bold px-3 py-2 rounded-md text-sm transition-colors duration-300"
+  <body>
+    <!-- NAVBAR (matching index page) -->
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="logo">RD.</a>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li>
+            <a href="terms.html" class="active" style="color: var(--white)"
               >Terms & Conditions</a
             >
-
-            <a
-              href="index.html#contact"
-              class="bg-indigo-600 text-white hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium"
-              >Hire Me</a
-            >
-          </div>
-
-          <div class="md:hidden flex items-center">
-            <button
-              id="mobile-menu-button"
-              class="text-gray-600 hover:text-indigo-600 focus:outline-none p-2"
-            >
-              <i class="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
-        </div>
+          </li>
+          <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0"
-      >
-        <div class="px-4 pt-2 pb-6 space-y-1">
-          <a
-            href="index.html#about"
-            class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50"
-            >About</a
-          >
-          <a
-            href="index.html#skills"
-            class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50"
-            >Skills</a
-          >
-          <a
-            href="index.html#experience"
-            class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50"
-            >Experience</a
-          >
-          <a
-            href="index.html#projects"
-            class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50"
-            >Projects</a
-          >
-
-          <a
-            href="terms.html"
-            class="mobile-link block px-3 py-3 rounded-md text-base font-bold text-indigo-600 bg-indigo-50"
-            >Terms & Conditions</a
-          >
-
-          <a
-            href="index.html#contact"
-            class="mobile-link block mt-4 text-center bg-indigo-600 text-white hover:bg-indigo-700 px-4 py-3 rounded-md text-base font-medium"
-            >Hire Me</a
-          >
-        </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="terms.html" style="color: var(--white)">Terms & Conditions</a>
+        <a href="index.html#contact" class="nav-cta">Hire Me</a>
       </div>
     </nav>
 
-    <main class="pt-32 pb-20 max-w-4xl mx-auto px-4 sm:px-6">
+    <!-- MAIN TERMS CONTENT -->
+    <main>
       <div
-        class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100"
+        class="container"
+        style="max-width: 900px; margin: 0 auto; padding: 0 1.5rem"
       >
-        <div
-          class="mb-10 border-b border-gray-100 pb-8 text-center md:text-left"
-        >
-          <h1 class="text-4xl font-bold text-gray-900 mb-4">
-            Terms and Conditions
-          </h1>
-          <p class="text-indigo-600 font-medium">Last Updated: March 2026</p>
-          <p class="text-gray-600 mt-6 leading-relaxed">
-            Welcome to
-            <a
-              href="https://d-rajdeep.github.io"
-              class="text-indigo-600 hover:underline"
-              >d-rajdeep.github.io</a
-            >. These Terms and Conditions govern the services provided by
-            Rajdeep Dutta as an individual freelance web and software developer.
-            By purchasing or using any service, you agree to the following
-            terms.
-          </p>
-        </div>
-
-        <div class="space-y-8 text-gray-700 leading-relaxed">
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              1. Domain and Hosting
-            </h2>
-            <p class="mb-3">
-              Domain and hosting charges are separate from website or software
-              development charges and are based on current market prices. After
-              purchase, all billing invoices will be sent directly to your
-              registered email by the hosting provider.
+        <div class="terms-card">
+          <div class="terms-header">
+            <h1>Terms and Conditions</h1>
+            <div class="update-date">Last Updated: March 2026</div>
+            <p class="intro-text">
+              Welcome to
+              <a href="https://d-rajdeep.github.io" target="_blank"
+                >d-rajdeep.github.io</a
+              >. These Terms and Conditions govern the services provided by
+              Rajdeep Dutta as an individual freelance web and software
+              developer. By purchasing or using any service, you agree to the
+              following terms.
             </p>
-            <p class="mb-3 font-semibold text-gray-800">
-              Hosting and domain can be purchased in two ways:
-            </p>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>
-                <strong class="text-gray-900">Purchased by Developer:</strong>
-                If hosting/domain is purchased and managed by the developer,
-                technical server-related issues will be handled responsibly by
-                the developer.
-              </li>
-              <li>
-                <strong class="text-gray-900">Purchased by Client:</strong> If
-                you purchase hosting/domain yourself, the developer will not be
-                responsible for server-related problems. Assistance can still be
-                provided, but charges will apply based on time and complexity,
-                and server access must be provided.
-              </li>
-            </ul>
-          </section>
+          </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              2. Website and Software Charges
-            </h2>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>
-                Website and software development costs vary depending on project
-                requirements, features, and complexity.
-              </li>
-              <li>
-                As an individual freelancer, services are offered at competitive
-                prices below standard market rates, where possible.
-              </li>
-            </ul>
-          </section>
+          <div class="terms-body">
+            <!-- 1. Domain and Hosting -->
+            <div class="terms-section">
+              <h2><i class="fas fa-globe"></i> 1. Domain and Hosting</h2>
+              <p>
+                Domain and hosting charges are separate from website or software
+                development charges and are based on current market prices.
+                After purchase, all billing invoices will be sent directly to
+                your registered email by the hosting provider.
+              </p>
+              <p>
+                <strong
+                  >Hosting and domain can be purchased in two ways:</strong
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong>Purchased by Developer:</strong> If hosting/domain is
+                  purchased and managed by the developer, technical
+                  server-related issues will be handled responsibly by the
+                  developer.
+                </li>
+                <li>
+                  <strong>Purchased by Client:</strong> If you purchase
+                  hosting/domain yourself, the developer will not be responsible
+                  for server-related problems. Assistance can still be provided,
+                  but charges will apply based on time and complexity, and
+                  server access must be provided.
+                </li>
+              </ul>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              3. Project Delivery Timeline
-            </h2>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>
-                Standard website delivery timeline:
-                <strong>7–10 working days</strong>.
-              </li>
-              <li>
-                Software or custom system delivery timelines depend on project
-                scope and requirements and will be communicated separately.
-              </li>
-            </ul>
-          </section>
+            <!-- 2. Website and Software Charges -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-tag"></i> 2. Website and Software Charges
+              </h2>
+              <ul>
+                <li>
+                  Website and software development costs vary depending on
+                  project requirements, features, and complexity.
+                </li>
+                <li>
+                  As an individual freelancer, services are offered at
+                  competitive prices below standard market rates, where
+                  possible.
+                </li>
+              </ul>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              4. Payment Terms
-            </h2>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>
-                <strong>50% advance payment</strong> is required before starting
-                the project.
-              </li>
-              <li>
-                Remaining <strong>50% payment</strong> must be completed after
-                project completion and before final delivery.
-              </li>
-              <li>
-                Admin panel access and full project handover will be provided
-                only after full payment.
-              </li>
-              <li>
-                If payment is delayed for more than 30 days, services may be
-                terminated and the project may be suspended or removed.
-              </li>
-            </ul>
-          </section>
+            <!-- 3. Project Delivery Timeline -->
+            <div class="terms-section">
+              <h2><i class="fas fa-clock"></i> 3. Project Delivery Timeline</h2>
+              <ul>
+                <li>
+                  Standard website delivery timeline:
+                  <strong>7–10 working days</strong>.
+                </li>
+                <li>
+                  Software or custom system delivery timelines depend on project
+                  scope and requirements and will be communicated separately.
+                </li>
+              </ul>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              5. Support and Maintenance
-            </h2>
-            <ul class="list-disc pl-6 space-y-2 mb-4">
-              <li>
-                Free technical support for technical errors will be provided for
-                <strong>one (1) year</strong> from the delivery date.
-              </li>
-              <li>
-                Free support includes fixing system or development-related
-                issues only.
-              </li>
-              <li>
-                If admin credentials are shared with third parties and issues
-                arise due to external modifications, the developer will not be
-                responsible. Fixes can be provided at additional cost.
-              </li>
-            </ul>
-            <p class="mb-2 font-semibold text-gray-800">
-              After one year, a nominal maintenance charge will apply for
-              services such as:
-            </p>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>Server configuration</li>
-              <li>PHP updates</li>
-              <li>Plugin updates</li>
-              <li>System maintenance and technical assistance</li>
-            </ul>
-          </section>
+            <!-- 4. Payment Terms -->
+            <div class="terms-section">
+              <h2><i class="fas fa-credit-card"></i> 4. Payment Terms</h2>
+              <ul>
+                <li>
+                  <strong>50% advance payment</strong> is required before
+                  starting the project.
+                </li>
+                <li>
+                  Remaining <strong>50% payment</strong> must be completed after
+                  project completion and before final delivery.
+                </li>
+                <li>
+                  Admin panel access and full project handover will be provided
+                  only after full payment.
+                </li>
+                <li>
+                  If payment is delayed for more than 30 days, services may be
+                  terminated and the project may be suspended or removed.
+                </li>
+              </ul>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              6. Website Usage Responsibility
-            </h2>
-            <p class="mb-3">
-              The client is fully responsible for the content published on their
-              website.
-            </p>
-            <p class="mb-3">
-              The developer will not be responsible for any legal or technical
-              issues arising from publishing content related to:
-            </p>
-            <ul class="list-disc pl-6 space-y-2 mb-3">
-              <li>Vulnerable or harmful material</li>
-              <li>Sexual or harassing content</li>
-              <li>Spam or fraudulent activities</li>
-              <li>Illegal products or services</li>
-              <li>Drugs or prohibited materials</li>
-            </ul>
-            <p>
-              Any consequences arising from such content are solely the client’s
-              responsibility.
-            </p>
-          </section>
+            <!-- 5. Support and Maintenance -->
+            <div class="terms-section">
+              <h2><i class="fas fa-headset"></i> 5. Support and Maintenance</h2>
+              <ul>
+                <li>
+                  Free technical support for technical errors will be provided
+                  for
+                  <strong>one (1) year</strong> from the delivery date.
+                </li>
+                <li>
+                  Free support includes fixing system or development-related
+                  issues only.
+                </li>
+                <li>
+                  If admin credentials are shared with third parties and issues
+                  arise due to external modifications, the developer will not be
+                  responsible. Fixes can be provided at additional cost.
+                </li>
+              </ul>
+              <p>
+                <strong
+                  >After one year, a nominal maintenance charge will apply for
+                  services such as:</strong
+                >
+              </p>
+              <ul>
+                <li>Server configuration</li>
+                <li>PHP updates</li>
+                <li>Plugin updates</li>
+                <li>System maintenance and technical assistance</li>
+              </ul>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              7. Domain & Hosting Renewal
-            </h2>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>
-                Domain and hosting services are valid for one year from the
-                purchase date.
-              </li>
-              <li>
-                Renewal must be completed annually at the prevailing market
-                price.
-              </li>
-              <li>
-                Failure to renew may result in website suspension or permanent
-                loss of services and data.
-              </li>
-            </ul>
-          </section>
+            <!-- 6. Website Usage Responsibility -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-gavel"></i> 6. Website Usage Responsibility
+              </h2>
+              <p>
+                The client is fully responsible for the content published on
+                their website.
+              </p>
+              <p>
+                The developer will not be responsible for any legal or technical
+                issues arising from publishing content related to:
+              </p>
+              <ul>
+                <li>Vulnerable or harmful material</li>
+                <li>Sexual or harassing content</li>
+                <li>Spam or fraudulent activities</li>
+                <li>Illegal products or services</li>
+                <li>Drugs or prohibited materials</li>
+              </ul>
+              <p>
+                Any consequences arising from such content are solely the
+                client's responsibility.
+              </p>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              8. Admin Panel Access & Customization
-            </h2>
-            <p class="mb-3">
-              Clients will receive access to an admin panel after full payment.
-              The admin panel allows clients to:
-            </p>
-            <ul class="list-disc pl-6 space-y-2 mb-3">
-              <li>Upload products or content</li>
-              <li>Change images</li>
-              <li>Modify website content</li>
-            </ul>
-            <p>
-              Step-by-step guidance will be provided to help clients manage
-              their website independently.
-            </p>
-          </section>
+            <!-- 7. Domain & Hosting Renewal - UPDATED with DNS charges -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-sync-alt"></i> 7. Domain & Hosting Renewal
+              </h2>
+              <ul>
+                <li>
+                  Domain and hosting services are valid for one year from the
+                  purchase date.
+                </li>
+                <li>
+                  Renewal must be completed annually at the prevailing market
+                  price.
+                </li>
+                <li>
+                  Failure to renew may result in website suspension or permanent
+                  loss of services and data.
+                </li>
+              </ul>
+              <div class="warning-box">
+                <p>
+                  <strong>⚠️ Domain Expiry Policy:</strong> If a domain expires
+                  and the renewal payment is not completed within
+                  <strong>3 (three) days</strong> from the expiry date, then any
+                  renewal configuration, DNS setup changes, or technical
+                  reconfiguration required to restore the domain and website
+                  will be chargeable to the client at the rate of
+                  <strong>₹500 per hour</strong>. This covers the time and
+                  effort required to reconfigure DNS settings, update
+                  nameservers, reconnect hosting, and resolve any technical
+                  issues caused by the domain expiry.
+                </p>
+              </div>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              9. Limitation of Responsibility
-            </h2>
-            <p class="mb-3">The developer is not responsible for:</p>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>Server failures when hosting is managed by the client</li>
-              <li>Issues caused by third-party modifications</li>
-              <li>Security problems resulting from credential sharing</li>
-              <li>
-                Legal issues arising from website content published by the
-                client
-              </li>
-            </ul>
-          </section>
+            <!-- 8. Admin Panel Access & Customization -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-user-cog"></i> 8. Admin Panel Access &
+                Customization
+              </h2>
+              <p>
+                Clients will receive access to an admin panel after full
+                payment. The admin panel allows clients to:
+              </p>
+              <ul>
+                <li>Upload products or content</li>
+                <li>Change images</li>
+                <li>Modify website content</li>
+              </ul>
+              <p>
+                Step-by-step guidance will be provided to help clients manage
+                their website independently.
+              </p>
+            </div>
 
-          <section>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Agreement</h2>
-            <p class="mb-6">
-              By using the services, you acknowledge that you have read,
-              understood, and agreed to these Terms and Conditions.
-            </p>
+            <!-- 9. Limitation of Responsibility -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-shield-alt"></i> 9. Limitation of
+                Responsibility
+              </h2>
+              <p>The developer is not responsible for:</p>
+              <ul>
+                <li>Server failures when hosting is managed by the client</li>
+                <li>Issues caused by third-party modifications</li>
+                <li>Security problems resulting from credential sharing</li>
+                <li>
+                  Legal issues arising from website content published by the
+                  client
+                </li>
+              </ul>
+            </div>
 
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              11. Suggestions and Communication
-            </h2>
-            <p class="mb-6">
-              If you have suggestions, additional requirements, or ideas
-              regarding your project or these terms, you are encouraged to
-              communicate them before or during the project discussion phase.
-            </p>
+            <!-- 10. Agreement -->
+            <div class="terms-section">
+              <h2><i class="fas fa-file-signature"></i> 10. Agreement</h2>
+              <p>
+                By using the services, you acknowledge that you have read,
+                understood, and agreed to these Terms and Conditions.
+              </p>
+            </div>
 
-            <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
-              <h3 class="font-bold text-indigo-900 mb-2">
-                <i class="fas fa-headset mr-2"></i>Contact
-              </h3>
-              <p class="text-indigo-800">
+            <!-- 11. Suggestions and Communication -->
+            <div class="terms-section">
+              <h2>
+                <i class="fas fa-comments"></i> 11. Suggestions and
+                Communication
+              </h2>
+              <p>
+                If you have suggestions, additional requirements, or ideas
+                regarding your project or these terms, you are encouraged to
+                communicate them before or during the project discussion phase.
+              </p>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="contact-box">
+              <h3><i class="fas fa-headset"></i> Contact</h3>
+              <p>
                 For any queries or support requests, please contact through the
                 official communication channel provided during project
                 discussion or email
-                <a
-                  href="mailto:designme.rajdeep@gmail.com"
-                  class="font-semibold underline hover:text-indigo-600"
+                <a href="mailto:designme.rajdeep@gmail.com"
                   >designme.rajdeep@gmail.com</a
                 >.
               </p>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </main>
 
-    <section id="contact" class="bg-gray-900 text-white py-16">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Interested in My Work?</h2>
-        <p class="text-gray-400 mb-8">
+    <!-- FOOTER SECTION (matching index page) -->
+    <section class="footer-section">
+      <div class="footer-inner">
+        <h2>Interested in My Work?</h2>
+        <p>
           Feel free to reach out if you'd like to collaborate, have questions
           about any of my projects, or need a Laravel developer for your next
           project.
         </p>
 
-        <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
-          <!-- <div class="flex items-center justify-center gap-3">
-            <i class="fas fa-phone text-indigo-400"></i>
-            <span>+91 8638116318</span>
-          </div> -->
-          <div class="flex items-center justify-center gap-3">
-            <i class="fas fa-envelope text-indigo-400"></i>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
             <span>designme.rajdeep@gmail.com</span>
           </div>
-          <div class="flex items-center justify-center gap-3">
-            <i class="fas fa-map-marker-alt text-indigo-400"></i>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
             <span>Guwahati, India</span>
           </div>
         </div>
 
-        <div class="flex justify-center gap-6">
-          <a
-            href="https://github.com/d-rajdeep"
-            class="text-gray-400 hover:text-white transition text-2xl"
+        <div class="social-footer">
+          <a href="https://github.com/d-rajdeep" target="_blank"
             ><i class="fab fa-github"></i
           ></a>
-          <a
-            href="https://linkedin.com/in/d-rajdeep"
-            class="text-gray-400 hover:text-white transition text-2xl"
+          <a href="https://linkedin.com/in/d-rajdeep" target="_blank"
             ><i class="fab fa-linkedin"></i
           ></a>
         </div>
 
-        <div
-          class="mt-12 pt-8 border-t border-gray-800 text-gray-500 text-sm flex flex-col md:flex-row justify-center items-center gap-4"
-        >
-          <span>&copy; 2026 Rajdeep Dutta. All rights reserved.</span>
-          <span class="hidden md:inline">|</span>
-          <a href="terms.html" class="hover:text-white transition"
-            >Terms & Conditions</a
-          >
+        <div class="footer-line">
+          <span>© 2026 Rajdeep Dutta. All rights reserved.</span>
+          <a href="terms.html">Terms & Conditions</a>
         </div>
       </div>
     </section>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const toggle = document.getElementById("mobileToggle");
+      const menu = document.getElementById("mobileMenu");
+      const icon = toggle.querySelector("i");
+
+      toggle.addEventListener("click", () => {
+        const open = menu.style.display === "flex";
+        menu.style.display = open ? "none" : "flex";
+        icon.className = open ? "fas fa-bars" : "fas fa-times";
+      });
+
+      document.querySelectorAll(".mobile-menu a").forEach((l) => {
+        l.addEventListener("click", () => {
+          menu.style.display = "none";
+          icon.className = "fas fa-bars";
+        });
+      });
+    </script>
   </body>
 </html>
