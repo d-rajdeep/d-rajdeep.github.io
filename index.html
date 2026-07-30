@@ -687,65 +687,88 @@
         background: var(--bg2);
       }
 
+      /* ─── PROJECTS GRID ─── */
       .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
 
-/* Featured cards span both columns */
-.projects-grid .featured {
-  grid-column: span 2;
-}
-@media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .hero-code {
-    display: none;
-  }
-  .timeline::before {
-    left: 20px;
-  }
-  .tl-item {
-    grid-template-columns: 44px 1fr;
-  }
-  .tl-item:nth-child(odd) .tl-content,
-  .tl-item:nth-child(even) .tl-content {
-    grid-column: 2;
-    text-align: left;
-  }
-  .tl-item:nth-child(odd) .tl-empty,
-  .tl-item:nth-child(even) .tl-empty {
-    display: none;
-  }
-  .tl-dot {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-grid .featured {
-    grid-column: span 1;
-  }
-}
+      /* Sub-section divider */
+      .sub-section {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-top: 2rem;
+        margin-bottom: 0.25rem;
+      }
 
-@media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-  .mobile-toggle {
-    display: block;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+      .sub-section-label {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        white-space: nowrap;
+      }
+
+      .sub-section-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+      }
+
+      .sub-section-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--white);
+      }
+
+      .sub-section-count {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: 100px;
+        letter-spacing: 0.05em;
+      }
+
+      .sub-section-line {
+        flex: 1;
+        height: 1px;
+        background: var(--card-border);
+      }
+
+      @media (max-width: 1100px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+        .hero-code { display: none; }
+        .timeline::before { left: 20px; }
+        .tl-item { grid-template-columns: 44px 1fr; }
+        .tl-item:nth-child(odd) .tl-content,
+        .tl-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; }
+        .tl-item:nth-child(odd) .tl-empty,
+        .tl-item:nth-child(even) .tl-empty { display: none; }
+        .tl-dot { grid-column: 1; grid-row: 1; }
+        .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links { display: none; }
+        .mobile-toggle { display: block; }
+        .projects-grid { grid-template-columns: 1fr; }
+        .skills-grid { grid-template-columns: repeat(3, 1fr); }
+        .sub-section { flex-wrap: wrap; }
+      }
 
       .project-card {
         background: var(--card);
@@ -1498,3210 +1521,690 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">Portfolio</span>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-sub">
-            A curated selection of my technical work — from Laravel SaaS
-            platforms to WordPress e-commerce solutions.
-          </p>
+          <h2 class="section-title">My Work</h2>
+          <p class="section-sub">Divided into Software Applications and Websites — from multi-tenant ERPs to WordPress e-commerce stores.</p>
         </div>
 
         <div class="projects-grid">
-          <!-- 1. School ERP (Featured) -->
-          <div class="project-card featured">
+
+          <!-- ── SOFTWARE SUB-SECTION ── -->
+          <div class="sub-section">
+            <div class="sub-section-label">
+              <div class="sub-section-icon" style="background:rgba(108,99,255,0.15);color:#a78bfa"><i class="fas fa-server"></i></div>
+              <span class="sub-section-title">Software &amp; Applications</span>
+              <span class="sub-section-count" style="background:rgba(108,99,255,0.12);color:#a78bfa;border:1px solid rgba(108,99,255,0.25);">8 Projects</span>
+            </div>
+            <div class="sub-section-line"></div>
+          </div>
+
+          <!-- S1. School Management System -->
+          <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 220px;
-                  background: linear-gradient(135deg, #0a1520 0%, #0d1f30 100%);
-                "
-                viewBox="0 0 800 220"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="grSchool" x1="0" y1="0" x2="1" y2="1">
-                    <stop
-                      offset="0%"
-                      stop-color="#00d4aa"
-                      stop-opacity="0.22"
-                    />
-                    <stop
-                      offset="100%"
-                      stop-color="#6c63ff"
-                      stop-opacity="0.07"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect width="800" height="220" fill="url(#grSchool)" />
-                <rect
-                  x="20"
-                  y="15"
-                  width="120"
-                  height="190"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="30"
-                  y="25"
-                  width="70"
-                  height="7"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.6"
-                />
-                <rect
-                  x="30"
-                  y="44"
-                  width="100"
-                  height="20"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.12"
-                />
-                <rect
-                  x="36"
-                  y="50"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.5"
-                />
-                <rect
-                  x="30"
-                  y="70"
-                  width="100"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="36"
-                  y="76"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="30"
-                  y="96"
-                  width="100"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="36"
-                  y="102"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="30"
-                  y="122"
-                  width="100"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="36"
-                  y="128"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="30"
-                  y="148"
-                  width="100"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="36"
-                  y="154"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="155"
-                  y="15"
-                  width="148"
-                  height="80"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <text
-                  x="165"
-                  y="57"
-                  fill="#00d4aa"
-                  font-family="sans-serif"
-                  font-size="22"
-                  font-weight="bold"
-                  opacity="0.8"
-                >
-                  1,240
-                </text>
-                <rect
-                  x="165"
-                  y="63"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="165"
-                  y="25"
-                  width="70"
-                  height="6"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="315"
-                  y="15"
-                  width="148"
-                  height="80"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <text
-                  x="325"
-                  y="57"
-                  fill="#6c63ff"
-                  font-family="sans-serif"
-                  font-size="22"
-                  font-weight="bold"
-                  opacity="0.8"
-                >
-                  86
-                </text>
-                <rect
-                  x="325"
-                  y="63"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="325"
-                  y="25"
-                  width="60"
-                  height="6"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="475"
-                  y="15"
-                  width="148"
-                  height="80"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <text
-                  x="485"
-                  y="57"
-                  fill="#fbbf24"
-                  font-family="sans-serif"
-                  font-size="22"
-                  font-weight="bold"
-                  opacity="0.8"
-                >
-                  12
-                </text>
-                <rect
-                  x="485"
-                  y="63"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="485"
-                  y="25"
-                  width="70"
-                  height="6"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="635"
-                  y="15"
-                  width="145"
-                  height="80"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <text
-                  x="645"
-                  y="57"
-                  fill="#ff6b6b"
-                  font-family="sans-serif"
-                  font-size="22"
-                  font-weight="bold"
-                  opacity="0.8"
-                >
-                  320
-                </text>
-                <rect
-                  x="645"
-                  y="63"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="645"
-                  y="25"
-                  width="60"
-                  height="6"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="155"
-                  y="108"
-                  width="185"
-                  height="97"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="165"
-                  y="118"
-                  width="80"
-                  height="6"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.45"
-                />
-                <rect
-                  x="165"
-                  y="132"
-                  width="165"
-                  height="18"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                />
-                <rect
-                  x="170"
-                  y="138"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="165"
-                  y="156"
-                  width="165"
-                  height="18"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                />
-                <rect
-                  x="170"
-                  y="162"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="165"
-                  y="180"
-                  width="165"
-                  height="18"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.08"
-                />
-                <rect
-                  x="170"
-                  y="186"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="350"
-                  y="108"
-                  width="185"
-                  height="97"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="360"
-                  y="118"
-                  width="60"
-                  height="6"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.45"
-                />
-                <rect
-                  x="360"
-                  y="168"
-                  width="15"
-                  height="28"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <rect
-                  x="381"
-                  y="155"
-                  width="15"
-                  height="41"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.6"
-                />
-                <rect
-                  x="402"
-                  y="148"
-                  width="15"
-                  height="48"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.8"
-                />
-                <rect
-                  x="423"
-                  y="158"
-                  width="15"
-                  height="38"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.5"
-                />
-                <rect
-                  x="444"
-                  y="145"
-                  width="15"
-                  height="51"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.7"
-                />
-                <rect
-                  x="465"
-                  y="150"
-                  width="15"
-                  height="46"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.6"
-                />
-                <rect x="360" y="196" width="120" height="1" fill="#2a2a45" />
-                <rect
-                  x="545"
-                  y="108"
-                  width="235"
-                  height="97"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="555"
-                  y="118"
-                  width="80"
-                  height="6"
-                  rx="3"
-                  fill="#fbbf24"
-                  opacity="0.45"
-                />
-                <rect
-                  x="555"
-                  y="133"
-                  width="215"
-                  height="20"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="561"
-                  y="139"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="680"
-                  y="135"
-                  width="40"
-                  height="12"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.25"
-                />
-                <rect
-                  x="555"
-                  y="159"
-                  width="215"
-                  height="20"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="561"
-                  y="165"
-                  width="65"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="680"
-                  y="161"
-                  width="40"
-                  height="12"
-                  rx="3"
-                  fill="#fbbf24"
-                  opacity="0.25"
-                />
-                <rect
-                  x="555"
-                  y="185"
-                  width="215"
-                  height="15"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="561"
-                  y="189"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.3"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0a1520 0%,#0d1f30 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="90" height="166" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="23" y="20" width="55" height="6" rx="3" fill="#00d4aa" opacity="0.6"/>
+                <rect x="23" y="36" width="74" height="16" rx="4" fill="#00d4aa" opacity="0.1"/><rect x="28" y="41" width="42" height="4" rx="2" fill="#00d4aa" opacity="0.5"/>
+                <rect x="23" y="58" width="74" height="16" rx="4" fill="#fff" opacity="0.03"/><rect x="28" y="63" width="35" height="4" rx="2" fill="#fff" opacity="0.12"/>
+                <rect x="23" y="80" width="74" height="16" rx="4" fill="#fff" opacity="0.03"/><rect x="28" y="85" width="48" height="4" rx="2" fill="#fff" opacity="0.12"/>
+                <rect x="23" y="102" width="74" height="16" rx="4" fill="#fff" opacity="0.03"/><rect x="28" y="107" width="38" height="4" rx="2" fill="#fff" opacity="0.12"/>
+                <rect x="23" y="124" width="74" height="16" rx="4" fill="#fff" opacity="0.03"/><rect x="28" y="129" width="52" height="4" rx="2" fill="#fff" opacity="0.12"/>
+                <rect x="115" y="12" width="118" height="52" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="128" y="42" fill="#00d4aa" font-family="sans-serif" font-size="18" font-weight="bold" opacity="0.85">1,240</text>
+                <rect x="128" y="48" width="55" height="4" rx="2" fill="#fff" opacity="0.08"/>
+                <rect x="243" y="12" width="122" height="52" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="256" y="42" fill="#6c63ff" font-family="sans-serif" font-size="18" font-weight="bold" opacity="0.85">86</text>
+                <rect x="256" y="48" width="55" height="4" rx="2" fill="#fff" opacity="0.08"/>
+                <rect x="115" y="74" width="118" height="52" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="128" y="104" fill="#fbbf24" font-family="sans-serif" font-size="18" font-weight="bold" opacity="0.85">12</text>
+                <rect x="128" y="110" width="55" height="4" rx="2" fill="#fff" opacity="0.08"/>
+                <rect x="243" y="74" width="122" height="52" rx="7" fill="#16162a" stroke="#ff6b6b" stroke-width="1" stroke-opacity="0.35"/>
+                <text x="256" y="104" fill="#ff6b6b" font-family="sans-serif" font-size="18" font-weight="bold" opacity="0.85">320</text>
+                <rect x="256" y="110" width="55" height="4" rx="2" fill="#fff" opacity="0.08"/>
+                <rect x="115" y="136" width="250" height="42" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="124" y="145" width="60" height="5" rx="3" fill="#00d4aa" opacity="0.45"/>
+                <rect x="124" y="157" width="40" height="4" rx="2" fill="#fff" opacity="0.1"/>
+                <rect x="234" y="145" width="60" height="5" rx="3" fill="#6c63ff" opacity="0.4"/>
+                <rect x="234" y="157" width="50" height="4" rx="2" fill="#fff" opacity="0.1"/>
+                <rect x="124" y="167" width="210" height="4" rx="2" fill="#2a2a45"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(0, 212, 170, 0.12); color: #6ee7b7"
-                >
-                  <i class="fas fa-school"></i>
-                </div>
-                <span
-                  class="project-badge"
-                  style="
-                    background: rgba(0, 212, 170, 0.12);
-                    color: #6ee7b7;
-                    border: 1px solid rgba(0, 212, 170, 0.25);
-                  "
-                  >Multi-Tenant ERP</span
-                >
+                <div class="project-icon" style="background:rgba(0,212,170,0.12);color:#6ee7b7"><i class="fas fa-school"></i></div>
+                <span class="project-badge" style="background:rgba(0,212,170,0.12);color:#6ee7b7;border:1px solid rgba(0,212,170,0.25);">Multi-Tenant ERP</span>
               </div>
               <h3 class="project-title">School Management System</h3>
-              <p class="project-desc">
-                Complete School Management Solution — streamline school
-                operations with a comprehensive multi-tenant ERP. Manage
-                multiple schools, admins, teachers, students, and parents from a
-                single platform.
-              </p>
+              <p class="project-desc">Complete multi-tenant school ERP — manage multiple schools, admins, teachers, students, and parents from a single platform.</p>
               <ul class="project-features">
-                <li>
-                  Multi-tenant: manage multiple schools from one dashboard
-                </li>
-                <li>
-                  Role-based access: Super Admin, School Admin, Teacher,
-                  Student, Parent
-                </li>
+                <li>Super Admin, School Admin, Teacher, Student &amp; Parent roles</li>
                 <li>Attendance, fee management &amp; academic records</li>
                 <li>Real-time reports &amp; analytics per school</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Laravel</span><span class="tag">MySQL</span
-                ><span class="tag">Multi-Tenant</span
-                ><span class="tag">REST API</span
-                ><span class="tag">Bootstrap</span>
+                <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Multi-Tenant</span><span class="tag">REST API</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/school_erp_system.git"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <span
-                class="btn-card-accent"
-                style="
-                  opacity: 0.45;
-                  cursor: default;
-                  flex: 1;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 0.4rem;
-                  font-size: 0.8rem;
-                  font-weight: 600;
-                "
-                ><i class="fas fa-clock"></i> Demo Coming Soon</span
-              >
+              <a href="https://github.com/d-rajdeep/school_erp_system.git" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <span class="btn-card-accent" style="opacity:0.45;cursor:default;"><i class="fas fa-clock"></i> Demo Soon</span>
             </div>
           </div>
 
-          <!-- 2. Theme Marketplace (Featured) -->
-          <div class="project-card featured">
+          <!-- S2. Theme Marketplace -->
+          <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 220px;
-                  background: linear-gradient(135deg, #0d0f1a 0%, #131525 100%);
-                "
-                viewBox="0 0 800 220"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="grMarket" x1="0" y1="0" x2="1" y2="1">
-                    <stop
-                      offset="0%"
-                      stop-color="#6c63ff"
-                      stop-opacity="0.22"
-                    />
-                    <stop
-                      offset="100%"
-                      stop-color="#a78bfa"
-                      stop-opacity="0.05"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect width="800" height="220" fill="url(#grMarket)" />
-                <rect
-                  x="20"
-                  y="15"
-                  width="760"
-                  height="40"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="32"
-                  y="26"
-                  width="70"
-                  height="8"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.7"
-                />
-                <rect
-                  x="200"
-                  y="24"
-                  width="55"
-                  height="14"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.04"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="265"
-                  y="24"
-                  width="55"
-                  height="14"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.04"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="330"
-                  y="24"
-                  width="55"
-                  height="14"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.04"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="650"
-                  y="23"
-                  width="60"
-                  height="16"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.5"
-                />
-                <rect
-                  x="720"
-                  y="23"
-                  width="48"
-                  height="16"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.06"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="20"
-                  y="68"
-                  width="140"
-                  height="140"
-                  rx="9"
-                  fill="#16162a"
-                  stroke="#6c63ff"
-                  stroke-width="1"
-                  stroke-opacity="0.45"
-                />
-                <rect
-                  x="29"
-                  y="77"
-                  width="122"
-                  height="75"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.1"
-                />
-                <text
-                  x="90"
-                  y="122"
-                  font-size="28"
-                  text-anchor="middle"
-                  opacity="0.5"
-                >
-                  🌐
-                </text>
-                <rect
-                  x="29"
-                  y="162"
-                  width="80"
-                  height="7"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="29"
-                  y="186"
-                  width="40"
-                  height="14"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <rect
-                  x="178"
-                  y="68"
-                  width="140"
-                  height="140"
-                  rx="9"
-                  fill="#16162a"
-                  stroke="#00d4aa"
-                  stroke-width="1"
-                  stroke-opacity="0.4"
-                />
-                <rect
-                  x="187"
-                  y="77"
-                  width="122"
-                  height="75"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.08"
-                />
-                <text
-                  x="248"
-                  y="122"
-                  font-size="28"
-                  text-anchor="middle"
-                  opacity="0.5"
-                >
-                  ⚛️
-                </text>
-                <rect
-                  x="187"
-                  y="162"
-                  width="80"
-                  height="7"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="187"
-                  y="186"
-                  width="40"
-                  height="14"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.35"
-                />
-                <rect
-                  x="336"
-                  y="68"
-                  width="140"
-                  height="140"
-                  rx="9"
-                  fill="#16162a"
-                  stroke="#fbbf24"
-                  stroke-width="1"
-                  stroke-opacity="0.35"
-                />
-                <rect
-                  x="345"
-                  y="77"
-                  width="122"
-                  height="75"
-                  rx="5"
-                  fill="#fbbf24"
-                  opacity="0.07"
-                />
-                <text
-                  x="406"
-                  y="122"
-                  font-size="28"
-                  text-anchor="middle"
-                  opacity="0.5"
-                >
-                  💚
-                </text>
-                <rect
-                  x="345"
-                  y="162"
-                  width="80"
-                  height="7"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="345"
-                  y="186"
-                  width="40"
-                  height="14"
-                  rx="4"
-                  fill="#fbbf24"
-                  opacity="0.35"
-                />
-                <rect
-                  x="494"
-                  y="68"
-                  width="140"
-                  height="140"
-                  rx="9"
-                  fill="#16162a"
-                  stroke="#a78bfa"
-                  stroke-width="1"
-                  stroke-opacity="0.4"
-                />
-                <rect
-                  x="503"
-                  y="77"
-                  width="122"
-                  height="75"
-                  rx="5"
-                  fill="#a78bfa"
-                  opacity="0.08"
-                />
-                <text
-                  x="564"
-                  y="122"
-                  font-size="28"
-                  text-anchor="middle"
-                  opacity="0.5"
-                >
-                  🗂️
-                </text>
-                <rect
-                  x="503"
-                  y="162"
-                  width="80"
-                  height="7"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="503"
-                  y="186"
-                  width="40"
-                  height="14"
-                  rx="4"
-                  fill="#a78bfa"
-                  opacity="0.35"
-                />
-                <rect
-                  x="648"
-                  y="68"
-                  width="132"
-                  height="140"
-                  rx="9"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="656"
-                  y="78"
-                  width="70"
-                  height="6"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.5"
-                />
-                <rect
-                  x="656"
-                  y="93"
-                  width="116"
-                  height="18"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="661"
-                  y="99"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.35"
-                />
-                <rect
-                  x="656"
-                  y="117"
-                  width="116"
-                  height="18"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                />
-                <rect
-                  x="661"
-                  y="123"
-                  width="75"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="656"
-                  y="141"
-                  width="116"
-                  height="18"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.03"
-                />
-                <rect
-                  x="661"
-                  y="147"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="656"
-                  y="168"
-                  width="55"
-                  height="16"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.45"
-                />
-                <rect
-                  x="718"
-                  y="168"
-                  width="46"
-                  height="16"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.25"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0d0f1a 0%,#131525 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="30" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="20" width="50" height="6" rx="3" fill="#6c63ff" opacity="0.7"/>
+                <rect x="220" y="18" width="40" height="12" rx="4" fill="#6c63ff" opacity="0.4"/>
+                <rect x="270" y="18" width="40" height="12" rx="4" fill="#fff" opacity="0.05" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="320" y="18" width="34" height="12" rx="4" fill="#fff" opacity="0.05" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="15" y="52" width="80" height="126" rx="7" fill="#16162a" stroke="#6c63ff" stroke-width="1" stroke-opacity="0.4"/>
+                <rect x="22" y="59" width="66" height="45" rx="4" fill="#6c63ff" opacity="0.1"/>
+                <text x="55" y="88" font-size="22" text-anchor="middle" opacity="0.5">🌐</text>
+                <rect x="22" y="112" width="50" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="22" y="132" width="36" height="12" rx="4" fill="#6c63ff" opacity="0.4"/>
+                <rect x="105" y="52" width="80" height="126" rx="7" fill="#16162a" stroke="#00d4aa" stroke-width="1" stroke-opacity="0.4"/>
+                <rect x="112" y="59" width="66" height="45" rx="4" fill="#00d4aa" opacity="0.08"/>
+                <text x="145" y="88" font-size="22" text-anchor="middle" opacity="0.5">⚛️</text>
+                <rect x="112" y="112" width="50" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="112" y="132" width="36" height="12" rx="4" fill="#00d4aa" opacity="0.35"/>
+                <rect x="195" y="52" width="80" height="126" rx="7" fill="#16162a" stroke="#fbbf24" stroke-width="1" stroke-opacity="0.35"/>
+                <rect x="202" y="59" width="66" height="45" rx="4" fill="#fbbf24" opacity="0.07"/>
+                <text x="235" y="88" font-size="22" text-anchor="middle" opacity="0.5">💚</text>
+                <rect x="202" y="112" width="50" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="202" y="132" width="36" height="12" rx="4" fill="#fbbf24" opacity="0.35"/>
+                <rect x="285" y="52" width="80" height="126" rx="7" fill="#16162a" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.4"/>
+                <rect x="292" y="59" width="66" height="45" rx="4" fill="#a78bfa" opacity="0.08"/>
+                <text x="325" y="88" font-size="22" text-anchor="middle" opacity="0.5">🗂️</text>
+                <rect x="292" y="112" width="50" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="292" y="132" width="36" height="12" rx="4" fill="#a78bfa" opacity="0.35"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(108, 99, 255, 0.12); color: #a78bfa"
-                >
-                  <i class="fas fa-store"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(108,99,255,0.12);color:#a78bfa"><i class="fas fa-store"></i></div>
                 <span class="project-badge badge-saas">Marketplace</span>
               </div>
               <h3 class="project-title">Theme Marketplace</h3>
-              <p class="project-desc">
-                A ThemeForest-style platform where users can browse, purchase,
-                and download premium themes for WordPress, HTML, React, Vue, and
-                more — with seller dashboards and payment integration.
-              </p>
+              <p class="project-desc">ThemeForest-style platform to buy &amp; sell premium themes for WordPress, HTML, React, Vue and more — with seller dashboards.</p>
               <ul class="project-features">
-                <li>
-                  Multi-category store: WordPress, React, Vue, HTML &amp; more
-                </li>
-                <li>
-                  Buyer &amp; seller role dashboards with earnings overview
-                </li>
+                <li>Multi-category store: WP, React, Vue, HTML &amp; more</li>
+                <li>Buyer &amp; seller dashboards with earnings</li>
                 <li>Secure purchase &amp; instant download system</li>
-                <li>Review, rating &amp; theme preview system</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Laravel</span><span class="tag">MySQL</span
-                ><span class="tag">REST API</span
-                ><span class="tag">Payment Gateway</span
-                ><span class="tag">Bootstrap</span>
+                <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">REST API</span><span class="tag">Payment</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/theme_marketplace.git"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <span
-                class="btn-card-accent"
-                style="
-                  opacity: 0.45;
-                  cursor: default;
-                  flex: 1;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 0.4rem;
-                  font-size: 0.8rem;
-                  font-weight: 600;
-                "
-                ><i class="fas fa-clock"></i> Coming Soon</span
-              >
+              <a href="https://github.com/d-rajdeep/theme_marketplace.git" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <span class="btn-card-accent" style="opacity:0.45;cursor:default;"><i class="fas fa-clock"></i> Coming Soon</span>
             </div>
           </div>
 
-          <!-- 3. Cloud Pharmacy Management (Featured) -->
-          <div class="project-card featured">
+          <!-- S3. Online CBT System -->
+          <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 220px;
-                  background: linear-gradient(135deg, #0f0f25 0%, #1a1a3e 100%);
-                "
-                viewBox="0 0 800 220"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="gr1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#6c63ff" stop-opacity="0.3" />
-                    <stop
-                      offset="100%"
-                      stop-color="#00d4aa"
-                      stop-opacity="0.1"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect width="800" height="220" fill="url(#gr1)" />
-                <rect
-                  x="40"
-                  y="30"
-                  width="180"
-                  height="110"
-                  rx="10"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="50"
-                  y="40"
-                  width="160"
-                  height="8"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.6"
-                />
-                <rect
-                  x="50"
-                  y="58"
-                  width="120"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="50"
-                  y="70"
-                  width="140"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="50"
-                  y="82"
-                  width="100"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="50"
-                  y="100"
-                  width="60"
-                  height="20"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <rect
-                  x="120"
-                  y="100"
-                  width="60"
-                  height="20"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.25"
-                />
-                <rect
-                  x="240"
-                  y="20"
-                  width="140"
-                  height="130"
-                  rx="10"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <!-- bar chart -->
-                <rect
-                  x="255"
-                  y="110"
-                  width="16"
-                  height="25"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.5"
-                />
-                <rect
-                  x="277"
-                  y="90"
-                  width="16"
-                  height="45"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.7"
-                />
-                <rect
-                  x="299"
-                  y="75"
-                  width="16"
-                  height="60"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.9"
-                />
-                <rect
-                  x="321"
-                  y="95"
-                  width="16"
-                  height="40"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.6"
-                />
-                <rect
-                  x="343"
-                  y="80"
-                  width="16"
-                  height="55"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.8"
-                />
-                <rect x="255" y="140" width="104" height="1" fill="#2a2a45" />
-                <rect
-                  x="400"
-                  y="30"
-                  width="200"
-                  height="50"
-                  rx="10"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <circle cx="425" cy="55" r="12" fill="#6c63ff" opacity="0.2" />
-                <text
-                  x="420"
-                  y="60"
-                  fill="#6c63ff"
-                  font-size="14"
-                  text-anchor="middle"
-                >
-                  💊
-                </text>
-                <rect
-                  x="445"
-                  y="45"
-                  width="80"
-                  height="6"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="445"
-                  y="58"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="400"
-                  y="100"
-                  width="200"
-                  height="50"
-                  rx="10"
-                  fill="#16162a"
-                  stroke="#00d4aa"
-                  stroke-width="1"
-                  stroke-opacity="0.3"
-                />
-                <circle cx="425" cy="125" r="12" fill="#00d4aa" opacity="0.2" />
-                <text
-                  x="420"
-                  y="130"
-                  fill="#00d4aa"
-                  font-size="12"
-                  text-anchor="middle"
-                >
-                  📦
-                </text>
-                <rect
-                  x="445"
-                  y="115"
-                  width="100"
-                  height="6"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="445"
-                  y="128"
-                  width="70"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="620"
-                  y="20"
-                  width="150"
-                  height="170"
-                  rx="10"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="630"
-                  y="30"
-                  width="130"
-                  height="6"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <rect
-                  x="630"
-                  y="44"
-                  width="130"
-                  height="25"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="636"
-                  y="50"
-                  width="70"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="630"
-                  y="76"
-                  width="130"
-                  height="25"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="636"
-                  y="82"
-                  width="90"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="630"
-                  y="108"
-                  width="130"
-                  height="25"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="636"
-                  y="114"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.3"
-                />
-                <rect
-                  x="630"
-                  y="160"
-                  width="60"
-                  height="18"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.5"
-                />
-                <rect
-                  x="700"
-                  y="160"
-                  width="50"
-                  height="18"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#120a20 0%,#1a1030 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <!-- timer bar -->
+                <rect x="15" y="12" width="350" height="30" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="20" width="80" height="6" rx="3" fill="#a78bfa" opacity="0.6"/>
+                <rect x="290" y="17" width="65" height="14" rx="5" fill="#ff6b6b" opacity="0.2"/>
+                <rect x="296" y="20" width="12" height="8" rx="2" fill="#ff6b6b" opacity="0.5"/>
+                <rect x="314" y="22" width="35" height="4" rx="2" fill="#ff6b6b" opacity="0.4"/>
+                <!-- progress -->
+                <rect x="15" y="52" width="350" height="8" rx="4" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="15" y="52" width="210" height="8" rx="4" fill="#6c63ff" opacity="0.5"/>
+                <text x="370" y="59" fill="#a78bfa" font-family="sans-serif" font-size="9" text-anchor="end" opacity="0.7">Q 6/10</text>
+                <!-- question box -->
+                <rect x="15" y="70" width="350" height="40" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="80" width="280" height="6" rx="3" fill="#fff" opacity="0.16"/>
+                <rect x="24" y="93" width="200" height="5" rx="3" fill="#fff" opacity="0.08"/>
+                <!-- options -->
+                <rect x="15" y="120" width="165" height="28" rx="6" fill="#6c63ff" opacity="0.12" stroke="#6c63ff" stroke-width="1" stroke-opacity="0.3"/>
+                <rect x="22" y="130" width="100" height="5" rx="3" fill="#a78bfa" opacity="0.5"/>
+                <rect x="200" y="120" width="165" height="28" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="208" y="130" width="100" height="5" rx="3" fill="#fff" opacity="0.1"/>
+                <rect x="15" y="157" width="165" height="28" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="22" y="167" width="100" height="5" rx="3" fill="#fff" opacity="0.1"/>
+                <rect x="200" y="157" width="165" height="28" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="208" y="167" width="100" height="5" rx="3" fill="#fff" opacity="0.1"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(108, 99, 255, 0.12); color: #a78bfa"
-                >
-                  <i class="fas fa-server"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(167,139,250,0.12);color:#c4b5fd"><i class="fas fa-pen-alt"></i></div>
+                <span class="project-badge badge-php">Laravel</span>
+              </div>
+              <h3 class="project-title">Online CBT System</h3>
+              <p class="project-desc">Computer-Based Testing platform for conducting online exams with timer, auto-grading, result analytics, and role-based management.</p>
+              <ul class="project-features">
+                <li>Timed exams with auto-submit</li>
+                <li>Multiple question types &amp; auto-grading</li>
+                <li>Result analytics &amp; report generation</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <span class="btn-card-dark" style="opacity:0.45;cursor:default;"><i class="fab fa-github"></i> GitHub Soon</span>
+              <span class="btn-card-accent" style="opacity:0.45;cursor:default;"><i class="fas fa-clock"></i> Demo Soon</span>
+            </div>
+          </div>
+
+          <!-- S4. Cloud Pharmacy Management -->
+          <div class="project-card">
+            <div class="top-bar"></div>
+            <div class="project-img-wrap">
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0f0f25 0%,#1a1a3e 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="150" height="90" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="21" width="80" height="5" rx="3" fill="#6c63ff" opacity="0.55"/>
+                <rect x="24" y="34" width="130" height="5" rx="3" fill="#fff" opacity="0.08"/>
+                <rect x="24" y="46" width="110" height="5" rx="3" fill="#fff" opacity="0.06"/>
+                <rect x="24" y="58" width="120" height="5" rx="3" fill="#fff" opacity="0.06"/>
+                <rect x="24" y="74" width="50" height="18" rx="5" fill="#6c63ff" opacity="0.38"/>
+                <rect x="84" y="74" width="55" height="18" rx="5" fill="#00d4aa" opacity="0.22"/>
+                <rect x="175" y="12" width="190" height="90" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="186" y="85" width="14" height="10" rx="3" fill="#6c63ff" opacity="0.5"/>
+                <rect x="206" y="72" width="14" height="23" rx="3" fill="#6c63ff" opacity="0.7"/>
+                <rect x="226" y="62" width="14" height="33" rx="3" fill="#6c63ff" opacity="0.9"/>
+                <rect x="246" y="74" width="14" height="21" rx="3" fill="#00d4aa" opacity="0.55"/>
+                <rect x="266" y="60" width="14" height="35" rx="3" fill="#00d4aa" opacity="0.75"/>
+                <rect x="286" y="66" width="14" height="29" rx="3" fill="#00d4aa" opacity="0.65"/>
+                <rect x="186" y="95" width="114" height="1" fill="#2a2a45"/>
+                <rect x="15" y="112" width="165" height="70" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <circle cx="40" cy="133" r="10" fill="#6c63ff" opacity="0.15"/>
+                <text x="35" y="138" fill="#6c63ff" font-size="12" opacity="0.6">💊</text>
+                <rect x="56" y="127" width="80" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="56" y="138" width="55" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <circle cx="40" cy="158" r="10" fill="#00d4aa" opacity="0.12"/>
+                <text x="35" y="163" fill="#00d4aa" font-size="12" opacity="0.6">📦</text>
+                <rect x="56" y="152" width="90" height="5" rx="3" fill="#00d4aa" opacity="0.28"/>
+                <rect x="56" y="163" width="60" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="190" y="112" width="175" height="70" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="200" y="121" width="100" height="5" rx="3" fill="#6c63ff" opacity="0.4"/>
+                <rect x="200" y="134" width="155" height="16" rx="4" fill="#fff" opacity="0.03"/><rect x="205" y="139" width="60" height="4" rx="2" fill="#fff" opacity="0.1"/>
+                <rect x="200" y="155" width="155" height="16" rx="4" fill="#6c63ff" opacity="0.06"/><rect x="205" y="160" width="80" height="4" rx="2" fill="#6c63ff" opacity="0.28"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <div class="project-icon" style="background:rgba(108,99,255,0.12);color:#a78bfa"><i class="fas fa-pills"></i></div>
                 <span class="project-badge badge-saas">SaaS ERP</span>
               </div>
               <h3 class="project-title">Cloud Pharmacy Management</h3>
-              <p class="project-desc">
-                A comprehensive Laravel-based ERP featuring dynamic billing,
-                automated stock adjustments, and seamless WhatsApp invoice
-                integration to streamline daily medical operations.
-              </p>
+              <p class="project-desc">Laravel ERP with dynamic billing, automated stock adjustments, and WhatsApp invoice integration for daily medical operations.</p>
               <ul class="project-features">
-                <li>Real-time inventory tracking & stock alerts</li>
+                <li>Real-time inventory &amp; stock alerts</li>
                 <li>Automated WhatsApp invoice notifications</li>
-                <li>Dynamic billing with customer-wise sales summaries</li>
-                <li>Interactive daily / weekly / monthly reports</li>
+                <li>Daily / weekly / monthly reports</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Laravel 10</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">REST API</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">WhatsApp API</span>
+                <span class="tag">Laravel 10</span><span class="tag">MySQL</span><span class="tag">REST API</span><span class="tag">WhatsApp API</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/pharmacy"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <a
-                href="https://medhimedicos.d-rajdeep.in/"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> Live Demo</a
-              >
+              <a href="https://github.com/d-rajdeep/pharmacy" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <a href="https://medhimedicos.d-rajdeep.in/" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
 
-          <!-- 2. E-Commerce Platform -->
+          <!-- S5. E-Commerce Platform -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #1a0f0f 0%, #2a1010 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="grRed" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.2" />
-                    <stop
-                      offset="100%"
-                      stop-color="#ffa500"
-                      stop-opacity="0.05"
-                    />
-                  </linearGradient>
-                </defs>
-                <rect width="380" height="210" fill="url(#grRed)" />
-                <!-- product cards -->
-                <rect
-                  x="20"
-                  y="30"
-                  width="100"
-                  height="130"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="28"
-                  y="38"
-                  width="84"
-                  height="60"
-                  rx="5"
-                  fill="#ff6b6b"
-                  opacity="0.12"
-                />
-                <text
-                  x="70"
-                  y="75"
-                  fill="#ff6b6b"
-                  font-size="24"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  🛍
-                </text>
-                <rect
-                  x="28"
-                  y="108"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="28"
-                  y="120"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#ff6b6b"
-                  opacity="0.4"
-                />
-                <rect
-                  x="28"
-                  y="135"
-                  width="84"
-                  height="16"
-                  rx="4"
-                  fill="#ff6b6b"
-                  opacity="0.3"
-                />
-                <rect
-                  x="140"
-                  y="30"
-                  width="100"
-                  height="130"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="148"
-                  y="38"
-                  width="84"
-                  height="60"
-                  rx="5"
-                  fill="#ffa500"
-                  opacity="0.1"
-                />
-                <text
-                  x="190"
-                  y="75"
-                  fill="#ffa500"
-                  font-size="24"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  💻
-                </text>
-                <rect
-                  x="148"
-                  y="108"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="148"
-                  y="120"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#ffa500"
-                  opacity="0.4"
-                />
-                <rect
-                  x="148"
-                  y="135"
-                  width="84"
-                  height="16"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.3"
-                />
-                <rect
-                  x="260"
-                  y="30"
-                  width="100"
-                  height="130"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#ff6b6b"
-                  stroke-width="1"
-                  stroke-opacity="0.3"
-                />
-                <rect
-                  x="268"
-                  y="38"
-                  width="84"
-                  height="60"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.1"
-                />
-                <text
-                  x="310"
-                  y="75"
-                  fill="#a78bfa"
-                  font-size="24"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  ⌚
-                </text>
-                <rect
-                  x="268"
-                  y="108"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="268"
-                  y="120"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#a78bfa"
-                  opacity="0.4"
-                />
-                <rect
-                  x="268"
-                  y="135"
-                  width="84"
-                  height="16"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.3"
-                />
-                <!-- cart badge -->
-                <rect
-                  x="300"
-                  y="170"
-                  width="60"
-                  height="25"
-                  rx="8"
-                  fill="#ff6b6b"
-                  opacity="0.5"
-                />
-                <text
-                  x="330"
-                  y="187"
-                  fill="white"
-                  font-size="11"
-                  text-anchor="middle"
-                  font-family="sans-serif"
-                >
-                  Cart (3)
-                </text>
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#1a0f0f 0%,#2a1010 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="106" height="130" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="23" y="20" width="90" height="58" rx="4" fill="#ff6b6b" opacity="0.1"/>
+                <text x="68" y="55" font-size="26" text-anchor="middle" opacity="0.55">🛍</text>
+                <rect x="23" y="86" width="60" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="23" y="98" width="40" height="5" rx="3" fill="#ff6b6b" opacity="0.4"/>
+                <rect x="23" y="112" width="90" height="18" rx="4" fill="#ff6b6b" opacity="0.28"/>
+                <rect x="131" y="12" width="106" height="130" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="139" y="20" width="90" height="58" rx="4" fill="#ffa500" opacity="0.08"/>
+                <text x="184" y="55" font-size="26" text-anchor="middle" opacity="0.55">💻</text>
+                <rect x="139" y="86" width="60" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="139" y="98" width="40" height="5" rx="3" fill="#ffa500" opacity="0.4"/>
+                <rect x="139" y="112" width="90" height="18" rx="4" fill="#ffa500" opacity="0.25"/>
+                <rect x="247" y="12" width="118" height="130" rx="7" fill="#16162a" stroke="#6c63ff" stroke-width="1" stroke-opacity="0.35"/>
+                <rect x="255" y="20" width="102" height="58" rx="4" fill="#6c63ff" opacity="0.08"/>
+                <text x="306" y="55" font-size="26" text-anchor="middle" opacity="0.55">⌚</text>
+                <rect x="255" y="86" width="60" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="255" y="98" width="40" height="5" rx="3" fill="#a78bfa" opacity="0.4"/>
+                <rect x="255" y="112" width="90" height="18" rx="4" fill="#6c63ff" opacity="0.28"/>
+                <rect x="15" y="152" width="350" height="30" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="162" width="55" height="5" rx="3" fill="#ff6b6b" opacity="0.4"/>
+                <rect x="95" y="162" width="55" height="5" rx="3" fill="#ffa500" opacity="0.35"/>
+                <rect x="165" y="162" width="55" height="5" rx="3" fill="#a78bfa" opacity="0.35"/>
+                <rect x="300" y="158" width="55" height="14" rx="5" fill="#ff6b6b" opacity="0.45"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(255, 107, 107, 0.1); color: #fca5a5"
-                >
-                  <i class="fas fa-shopping-bag"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(255,107,107,0.1);color:#fca5a5"><i class="fas fa-shopping-bag"></i></div>
                 <span class="project-badge badge-laravel">Laravel</span>
               </div>
               <h3 class="project-title">E-Commerce Platform</h3>
-              <p class="project-desc">
-                Admin and customer-facing platform with full e-commerce
-                facilities including payment integration, order management, and
-                email notifications.
-              </p>
+              <p class="project-desc">Admin and customer-facing platform with full e-commerce facilities including payment integration and order management.</p>
               <ul class="project-features">
-                <li>Secure Sanctum-based authentication</li>
-                <li>Integrated Symfony Mailer for order emails</li>
-                <li>Role-based admin dashboard</li>
+                <li>Sanctum auth &amp; role-based dashboard</li>
+                <li>Payment integration &amp; order tracking</li>
+                <li>Symfony Mailer for order emails</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Auth Sanctum</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Symfony Mailer</span>
+                <span class="tag">Auth Sanctum</span><span class="tag">Bootstrap</span><span class="tag">MySQL</span><span class="tag">Mailer</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/tech_store.git"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <a
-                href="https://d-rajdeep.in/apps/tech-store/"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> Live Demo</a
-              >
+              <a href="https://github.com/d-rajdeep/tech_store.git" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <a href="https://d-rajdeep.in/apps/tech-store/" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
 
-          <!-- 3. Content Moderation Blog -->
+          <!-- S6. Content Moderation Blog -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #0a1520 0%, #0f1f30 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- header bar -->
-                <rect
-                  x="20"
-                  y="20"
-                  width="340"
-                  height="40"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="30"
-                  y="30"
-                  width="80"
-                  height="6"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.6"
-                />
-                <rect
-                  x="270"
-                  y="28"
-                  width="40"
-                  height="12"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="320"
-                  y="28"
-                  width="30"
-                  height="12"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.3"
-                />
-                <!-- article cards -->
-                <rect
-                  x="20"
-                  y="75"
-                  width="220"
-                  height="120"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="28"
-                  y="83"
-                  width="180"
-                  height="7"
-                  rx="4"
-                  fill="#ffffff"
-                  opacity="0.18"
-                />
-                <rect
-                  x="28"
-                  y="98"
-                  width="200"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="28"
-                  y="110"
-                  width="160"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="28"
-                  y="122"
-                  width="180"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <!-- status badge -->
-                <rect
-                  x="28"
-                  y="140"
-                  width="55"
-                  height="18"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.2"
-                />
-                <rect
-                  x="92"
-                  y="140"
-                  width="60"
-                  height="18"
-                  rx="5"
-                  fill="#ffa500"
-                  opacity="0.2"
-                />
-                <rect
-                  x="160"
-                  y="140"
-                  width="50"
-                  height="18"
-                  rx="5"
-                  fill="#ff6b6b"
-                  opacity="0.2"
-                />
-                <rect
-                  x="28"
-                  y="168"
-                  width="60"
-                  height="18"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <!-- right panel - roles -->
-                <rect
-                  x="255"
-                  y="75"
-                  width="105"
-                  height="120"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="263"
-                  y="83"
-                  width="60"
-                  height="5"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.5"
-                />
-                <rect
-                  x="263"
-                  y="97"
-                  width="89"
-                  height="20"
-                  rx="5"
-                  fill="#6c63ff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="268"
-                  y="103"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#a78bfa"
-                  opacity="0.5"
-                />
-                <rect
-                  x="263"
-                  y="123"
-                  width="89"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="268"
-                  y="129"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
-                <rect
-                  x="263"
-                  y="149"
-                  width="89"
-                  height="20"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="268"
-                  y="155"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.15"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0a1520 0%,#0f1f30 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="36" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="22" width="70" height="6" rx="3" fill="#6c63ff" opacity="0.6"/>
+                <rect x="280" y="20" width="38" height="12" rx="4" fill="#00d4aa" opacity="0.28"/>
+                <rect x="327" y="20" width="28" height="12" rx="4" fill="#6c63ff" opacity="0.28"/>
+                <rect x="15" y="58" width="220" height="125" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="67" width="160" height="7" rx="4" fill="#fff" opacity="0.18"/>
+                <rect x="24" y="82" width="195" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="24" y="93" width="170" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="24" y="104" width="180" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="24" y="120" width="48" height="16" rx="5" fill="#00d4aa" opacity="0.2"/>
+                <rect x="80" y="120" width="52" height="16" rx="5" fill="#ffa500" opacity="0.2"/>
+                <rect x="140" y="120" width="44" height="16" rx="5" fill="#ff6b6b" opacity="0.2"/>
+                <rect x="24" y="148" width="55" height="18" rx="5" fill="#6c63ff" opacity="0.4"/>
+                <rect x="245" y="58" width="120" height="125" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="254" y="67" width="55" height="5" rx="3" fill="#6c63ff" opacity="0.5"/>
+                <rect x="254" y="82" width="102" height="18" rx="5" fill="#6c63ff" opacity="0.07"/><rect x="259" y="88" width="55" height="4" rx="2" fill="#a78bfa" opacity="0.5"/>
+                <rect x="254" y="106" width="102" height="18" rx="5" fill="#fff" opacity="0.03"/><rect x="259" y="112" width="40" height="4" rx="2" fill="#fff" opacity="0.14"/>
+                <rect x="254" y="130" width="102" height="18" rx="5" fill="#fff" opacity="0.03"/><rect x="259" y="136" width="55" height="4" rx="2" fill="#fff" opacity="0.14"/>
+                <rect x="254" y="155" width="50" height="18" rx="5" fill="#6c63ff" opacity="0.38"/>
+                <rect x="312" y="155" width="40" height="18" rx="5" fill="#00d4aa" opacity="0.22"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(0, 212, 170, 0.1); color: #6ee7b7"
-                >
-                  <i class="fas fa-pen-nib"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(0,212,170,0.1);color:#6ee7b7"><i class="fas fa-pen-nib"></i></div>
                 <span class="project-badge badge-laravel">Laravel</span>
               </div>
               <h3 class="project-title">Content Moderation Blog</h3>
-              <p class="project-desc">
-                Role-based user management and content approval panel built
-                using Laravel with advanced user permissions and moderation
-                workflows.
-              </p>
+              <p class="project-desc">Role-based content management with approval panels, advanced user permissions, and multi-stage moderation workflows.</p>
               <ul class="project-features">
                 <li>Multi-role permission system</li>
-                <li>Content approval & rejection flow</li>
+                <li>Content approval &amp; rejection flow</li>
                 <li>Sanctum API authentication</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Auth Sanctum</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">MySQL</span>
+                <span class="tag">Auth Sanctum</span><span class="tag">Bootstrap</span><span class="tag">MySQL</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/blog-app"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <a
-                href="https://echomag.d-rajdeep.in"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> Live Demo</a
-              >
+              <a href="https://github.com/d-rajdeep/blog-app" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <a href="https://echomag.d-rajdeep.in" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
 
-          <!-- 4. Inventory System -->
+          <!-- S7. Inventory System -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #0d1520 0%, #0f2520 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- shelves -->
-                <rect
-                  x="20"
-                  y="25"
-                  width="340"
-                  height="8"
-                  rx="4"
-                  fill="#2a2a45"
-                />
-                <rect
-                  x="20"
-                  y="80"
-                  width="340"
-                  height="8"
-                  rx="4"
-                  fill="#2a2a45"
-                />
-                <rect
-                  x="20"
-                  y="135"
-                  width="340"
-                  height="8"
-                  rx="4"
-                  fill="#2a2a45"
-                />
-                <!-- products row 1 -->
-                <rect
-                  x="30"
-                  y="40"
-                  width="40"
-                  height="38"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.3"
-                />
-                <rect
-                  x="80"
-                  y="45"
-                  width="35"
-                  height="33"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="125"
-                  y="42"
-                  width="45"
-                  height="36"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.25"
-                />
-                <rect
-                  x="180"
-                  y="40"
-                  width="38"
-                  height="38"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.2"
-                />
-                <rect
-                  x="228"
-                  y="44"
-                  width="42"
-                  height="34"
-                  rx="4"
-                  fill="#ff6b6b"
-                  opacity="0.25"
-                />
-                <rect
-                  x="280"
-                  y="40"
-                  width="35"
-                  height="38"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.2"
-                />
-                <rect
-                  x="325"
-                  y="42"
-                  width="30"
-                  height="36"
-                  rx="4"
-                  fill="#a78bfa"
-                  opacity="0.25"
-                />
-                <!-- row 2 -->
-                <rect
-                  x="30"
-                  y="95"
-                  width="50"
-                  height="38"
-                  rx="4"
-                  fill="#ff6b6b"
-                  opacity="0.2"
-                />
-                <rect
-                  x="90"
-                  y="98"
-                  width="38"
-                  height="35"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.25"
-                />
-                <rect
-                  x="138"
-                  y="95"
-                  width="44"
-                  height="38"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="192"
-                  y="97"
-                  width="40"
-                  height="36"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.2"
-                />
-                <rect
-                  x="242"
-                  y="95"
-                  width="36"
-                  height="38"
-                  rx="4"
-                  fill="#a78bfa"
-                  opacity="0.25"
-                />
-                <rect
-                  x="288"
-                  y="97"
-                  width="50"
-                  height="36"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.15"
-                />
-                <!-- count bar -->
-                <rect
-                  x="20"
-                  y="160"
-                  width="340"
-                  height="35"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="30"
-                  y="170"
-                  width="50"
-                  height="8"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.5"
-                />
-                <rect
-                  x="110"
-                  y="170"
-                  width="50"
-                  height="8"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.4"
-                />
-                <rect
-                  x="190"
-                  y="170"
-                  width="50"
-                  height="8"
-                  rx="4"
-                  fill="#ff6b6b"
-                  opacity="0.4"
-                />
-                <rect
-                  x="270"
-                  y="168"
-                  width="80"
-                  height="12"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0d1520 0%,#0f2520 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="6" rx="3" fill="#2a2a45"/>
+                <rect x="15" y="60" width="350" height="6" rx="3" fill="#2a2a45"/>
+                <rect x="15" y="108" width="350" height="6" rx="3" fill="#2a2a45"/>
+                <rect x="25" y="24" width="36" height="34" rx="4" fill="#6c63ff" opacity="0.28"/>
+                <rect x="70" y="28" width="32" height="30" rx="4" fill="#00d4aa" opacity="0.28"/>
+                <rect x="112" y="25" width="40" height="33" rx="4" fill="#ffa500" opacity="0.22"/>
+                <rect x="162" y="24" width="34" height="34" rx="4" fill="#6c63ff" opacity="0.18"/>
+                <rect x="206" y="27" width="38" height="31" rx="4" fill="#ff6b6b" opacity="0.22"/>
+                <rect x="254" y="24" width="32" height="34" rx="4" fill="#00d4aa" opacity="0.18"/>
+                <rect x="296" y="25" width="34" height="33" rx="4" fill="#a78bfa" opacity="0.22"/>
+                <rect x="340" y="24" width="18" height="34" rx="3" fill="#6c63ff" opacity="0.14"/>
+                <rect x="25" y="72" width="46" height="34" rx="4" fill="#ff6b6b" opacity="0.18"/>
+                <rect x="82" y="75" width="34" height="31" rx="4" fill="#6c63ff" opacity="0.22"/>
+                <rect x="126" y="72" width="40" height="34" rx="4" fill="#00d4aa" opacity="0.28"/>
+                <rect x="176" y="74" width="36" height="32" rx="4" fill="#ffa500" opacity="0.18"/>
+                <rect x="222" y="72" width="32" height="34" rx="4" fill="#a78bfa" opacity="0.22"/>
+                <rect x="264" y="74" width="46" height="32" rx="4" fill="#6c63ff" opacity="0.13"/>
+                <rect x="320" y="72" width="38" height="34" rx="4" fill="#ff6b6b" opacity="0.15"/>
+                <rect x="15" y="122" width="350" height="60" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="132" width="55" height="6" rx="3" fill="#00d4aa" opacity="0.45"/>
+                <rect x="110" y="132" width="55" height="6" rx="3" fill="#ffa500" opacity="0.38"/>
+                <rect x="196" y="132" width="55" height="6" rx="3" fill="#ff6b6b" opacity="0.38"/>
+                <rect x="282" y="130" width="74" height="12" rx="4" fill="#6c63ff" opacity="0.38"/>
+                <rect x="24" y="148" width="330" height="5" rx="3" fill="#2a2a45"/>
+                <rect x="24" y="148" width="200" height="5" rx="3" fill="#00d4aa" opacity="0.3"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(0, 212, 170, 0.1); color: #6ee7b7"
-                >
-                  <i class="fas fa-boxes"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(0,212,170,0.1);color:#6ee7b7"><i class="fas fa-boxes"></i></div>
                 <span class="project-badge badge-php">Core PHP</span>
               </div>
               <h3 class="project-title">Inventory System</h3>
-              <p class="project-desc">
-                Role-based user system to manage inventory and billing of
-                products with comprehensive reporting features built on Core
-                PHP.
-              </p>
+              <p class="project-desc">Role-based inventory and billing management system with comprehensive reporting features, built on Core PHP.</p>
               <ul class="project-features">
                 <li>Role-based access control</li>
                 <li>Product stock management</li>
                 <li>Comprehensive billing reports</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Core PHP</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Bootstrap</span>
+                <span class="tag">Core PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/inventory-system-php.git"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
-              <a
-                href="#"
-                class="btn-card-accent"
-                style="opacity: 0.5; pointer-events: none"
-                ><i class="fas fa-external-link-alt"></i> Coming Soon</a
-              >
+              <a href="https://github.com/d-rajdeep/inventory-system-php.git" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
+              <span class="btn-card-accent" style="opacity:0.45;cursor:default;"><i class="fas fa-clock"></i> Demo Soon</span>
             </div>
           </div>
 
-          <!-- 5. CRUD App -->
+          <!-- S8. CRUD App -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #0f0f1a 0%, #1a1530 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- task list -->
-                <rect
-                  x="20"
-                  y="20"
-                  width="340"
-                  height="45"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <circle cx="40" cy="42" r="9" fill="#00d4aa" opacity="0.3" />
-                <rect
-                  x="55"
-                  y="37"
-                  width="140"
-                  height="7"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.18"
-                />
-                <rect
-                  x="55"
-                  y="48"
-                  width="90"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="315"
-                  y="36"
-                  width="30"
-                  height="12"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <!-- task 2 -->
-                <rect
-                  x="20"
-                  y="75"
-                  width="340"
-                  height="45"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#6c63ff"
-                  stroke-width="1"
-                  stroke-opacity="0.35"
-                />
-                <circle cx="40" cy="97" r="9" fill="#6c63ff" opacity="0.25" />
-                <rect
-                  x="55"
-                  y="92"
-                  width="160"
-                  height="7"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <rect
-                  x="55"
-                  y="103"
-                  width="100"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="310"
-                  y="91"
-                  width="35"
-                  height="12"
-                  rx="4"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
-                <!-- task 3 in progress -->
-                <rect
-                  x="20"
-                  y="130"
-                  width="340"
-                  height="45"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <circle cx="40" cy="152" r="9" fill="#ffa500" opacity="0.25" />
-                <rect
-                  x="55"
-                  y="147"
-                  width="120"
-                  height="7"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="55"
-                  y="158"
-                  width="80"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.07"
-                />
-                <rect
-                  x="308"
-                  y="146"
-                  width="37"
-                  height="14"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.35"
-                />
-                <!-- fab -->
-                <circle cx="340" cy="190" r="16" fill="#6c63ff" opacity="0.6" />
-                <rect
-                  x="333"
-                  y="188"
-                  width="14"
-                  height="3"
-                  rx="2"
-                  fill="white"
-                />
-                <rect
-                  x="339"
-                  y="182"
-                  width="3"
-                  height="14"
-                  rx="2"
-                  fill="white"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0f0f1a 0%,#1a1530 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="44" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <circle cx="38" cy="34" r="9" fill="#00d4aa" opacity="0.28"/>
+                <rect x="53" y="29" width="130" height="6" rx="3" fill="#fff" opacity="0.16"/>
+                <rect x="53" y="40" width="90" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="308" y="27" width="45" height="14" rx="4" fill="#00d4aa" opacity="0.28"/>
+                <rect x="15" y="66" width="350" height="44" rx="7" fill="#16162a" stroke="#6c63ff" stroke-width="1" stroke-opacity="0.4"/>
+                <circle cx="38" cy="88" r="9" fill="#6c63ff" opacity="0.22"/>
+                <rect x="53" y="83" width="150" height="6" rx="3" fill="#6c63ff" opacity="0.38"/>
+                <rect x="53" y="94" width="100" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="305" y="81" width="50" height="14" rx="4" fill="#6c63ff" opacity="0.38"/>
+                <rect x="15" y="120" width="350" height="44" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <circle cx="38" cy="142" r="9" fill="#ffa500" opacity="0.22"/>
+                <rect x="53" y="137" width="115" height="6" rx="3" fill="#fff" opacity="0.12"/>
+                <rect x="53" y="148" width="80" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="303" y="135" width="52" height="14" rx="4" fill="#ffa500" opacity="0.32"/>
+                <circle cx="350" cy="175" r="14" fill="#6c63ff" opacity="0.55"/>
+                <rect x="343" y="173" width="14" height="3" rx="2" fill="white"/>
+                <rect x="349" y="167" width="3" height="14" rx="2" fill="white"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(108, 99, 255, 0.1); color: #a78bfa"
-                >
-                  <i class="fas fa-tasks"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(108,99,255,0.1);color:#a78bfa"><i class="fas fa-tasks"></i></div>
                 <span class="project-badge badge-laravel">Laravel</span>
               </div>
               <h3 class="project-title">Daily Activity CRUD App</h3>
-              <p class="project-desc">
-                Track your daily activities with this clean CRUD App featuring a
-                user-friendly design for managing tasks and routines.
-              </p>
+              <p class="project-desc">Track daily activities with a clean CRUD app featuring user-friendly design, session management, and activity history.</p>
               <ul class="project-features">
-                <li>Create, update, delete tasks</li>
-                <li>User authentication & sessions</li>
+                <li>Create, update &amp; delete tasks</li>
+                <li>User authentication &amp; sessions</li>
                 <li>Clean minimal UI</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Bootstrap</span>
+                <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://github.com/d-rajdeep/crud-app-laravel"
-                target="_blank"
-                class="btn-card-dark"
-                ><i class="fab fa-github"></i> Source Code</a
-              >
+              <a href="https://github.com/d-rajdeep/crud-app-laravel" target="_blank" class="btn-card-dark"><i class="fab fa-github"></i> Source Code</a>
             </div>
           </div>
 
-          <!-- 6. Real Estate Portfolio -->
+          <!-- ── WEBSITES SUB-SECTION ── -->
+          <div class="sub-section">
+            <div class="sub-section-label">
+              <div class="sub-section-icon" style="background:rgba(0,212,170,0.12);color:#6ee7b7"><i class="fas fa-globe"></i></div>
+              <span class="sub-section-title">Websites &amp; E-Commerce</span>
+              <span class="sub-section-count" style="background:rgba(0,212,170,0.1);color:#6ee7b7;border:1px solid rgba(0,212,170,0.22);">6 Projects</span>
+            </div>
+            <div class="sub-section-line"></div>
+          </div>
+
+          <!-- W1. The Wedbees -->
           <div class="project-card">
-            <div class="top-bar"></div>
+            <div class="top-bar" style="background:linear-gradient(135deg,#f97316,#e11d48);"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #0a1a10 0%, #101f15 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- house icon backdrop -->
-                <polygon
-                  points="190,30 280,90 280,175 100,175 100,90"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <polygon
-                  points="190,20 295,95 85,95"
-                  fill="#0f2f20"
-                  stroke="#00d4aa"
-                  stroke-width="1"
-                  stroke-opacity="0.3"
-                />
-                <!-- windows -->
-                <rect
-                  x="130"
-                  y="105"
-                  width="30"
-                  height="25"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.15"
-                />
-                <rect
-                  x="220"
-                  y="105"
-                  width="30"
-                  height="25"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.15"
-                />
-                <!-- door -->
-                <rect
-                  x="173"
-                  y="135"
-                  width="35"
-                  height="40"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.2"
-                />
-                <circle cx="203" cy="157" r="3" fill="#00d4aa" opacity="0.5" />
-                <!-- property cards at bottom -->
-                <rect
-                  x="20"
-                  y="170"
-                  width="80"
-                  height="30"
-                  rx="6"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="27"
-                  y="177"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.4"
-                />
-                <rect
-                  x="27"
-                  y="186"
-                  width="55"
-                  height="4"
-                  rx="2"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="150"
-                  y="170"
-                  width="80"
-                  height="30"
-                  rx="6"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="157"
-                  y="177"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.4"
-                />
-                <rect
-                  x="157"
-                  y="186"
-                  width="55"
-                  height="4"
-                  rx="2"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="280"
-                  y="170"
-                  width="80"
-                  height="30"
-                  rx="6"
-                  fill="#16162a"
-                  stroke="#00d4aa"
-                  stroke-width="1"
-                  stroke-opacity="0.4"
-                />
-                <rect
-                  x="287"
-                  y="177"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.6"
-                />
-                <rect
-                  x="287"
-                  y="186"
-                  width="55"
-                  height="4"
-                  rx="2"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#1a0a10 0%,#250f18 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="38" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="22" width="65" height="7" rx="4" fill="#e11d48" opacity="0.7"/>
+                <rect x="210" y="20" width="50" height="14" rx="4" fill="#fff" opacity="0.04" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="270" y="20" width="50" height="14" rx="4" fill="#fff" opacity="0.04" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="330" y="20" width="24" height="14" rx="5" fill="#e11d48" opacity="0.45"/>
+                <rect x="15" y="60" width="168" height="122" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="23" y="68" width="152" height="65" rx="4" fill="#e11d48" opacity="0.08"/>
+                <text x="99" y="105" font-size="30" text-anchor="middle" opacity="0.5">💍</text>
+                <rect x="23" y="142" width="90" height="6" rx="3" fill="#fff" opacity="0.16"/>
+                <rect x="23" y="155" width="65" height="5" rx="3" fill="#fff" opacity="0.08"/>
+                <rect x="23" y="168" width="50" height="7" rx="3" fill="#e11d48" opacity="0.4"/>
+                <rect x="197" y="60" width="168" height="58" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="205" y="70" width="100" height="5" rx="3" fill="#fff" opacity="0.16"/>
+                <rect x="205" y="82" width="150" height="4" rx="2" fill="#fff" opacity="0.08"/>
+                <rect x="205" y="91" width="130" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="205" y="100" width="145" height="4" rx="2" fill="#fff" opacity="0.07"/>
+                <rect x="197" y="128" width="80" height="54" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="237" y="160" font-size="24" text-anchor="middle" opacity="0.4">📸</text>
+                <rect x="287" y="128" width="78" height="54" rx="7" fill="#16162a" stroke="#e11d48" stroke-width="1" stroke-opacity="0.35"/>
+                <text x="326" y="160" font-size="24" text-anchor="middle" opacity="0.4">🎂</text>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(0, 212, 170, 0.1); color: #6ee7b7"
-                >
-                  <i class="fas fa-home"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(225,29,72,0.1);color:#fda4af"><i class="fas fa-ring"></i></div>
+                <span class="project-badge" style="background:rgba(225,29,72,0.1);color:#fda4af;border:1px solid rgba(225,29,72,0.2);">Wedding</span>
+              </div>
+              <h3 class="project-title">The Wedbees</h3>
+              <p class="project-desc">Full wedding planning &amp; services business website with gallery, service showcases, vendor listings, and inquiry forms.</p>
+              <ul class="project-features">
+                <li>Wedding services showcase &amp; gallery</li>
+                <li>Vendor &amp; package listing pages</li>
+                <li>Inquiry &amp; booking contact forms</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">React</span><span class="tag">Custom Theme</span><span class="tag">Gallery</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://thewedbees.com/" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Project</a>
+            </div>
+          </div>
+
+          <!-- W2. WedNesty -->
+          <div class="project-card">
+            <div class="top-bar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);"></div>
+            <div class="project-img-wrap">
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#120a1a 0%,#1a0f28 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="38" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="22" width="70" height="7" rx="4" fill="#8b5cf6" opacity="0.7"/>
+                <rect x="208" y="20" width="50" height="14" rx="4" fill="#fff" opacity="0.04" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="268" y="20" width="50" height="14" rx="4" fill="#fff" opacity="0.04" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="328" y="20" width="25" height="14" rx="5" fill="#8b5cf6" opacity="0.45"/>
+                <!-- hero banner -->
+                <rect x="15" y="60" width="350" height="80" rx="7" fill="#1a0f28" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="24" y="73" width="120" height="8" rx="4" fill="#8b5cf6" opacity="0.55"/>
+                <rect x="24" y="88" width="180" height="5" rx="3" fill="#fff" opacity="0.1"/>
+                <rect x="24" y="100" width="150" height="5" rx="3" fill="#fff" opacity="0.07"/>
+                <rect x="24" y="115" width="70" height="16" rx="5" fill="#8b5cf6" opacity="0.45"/>
+                <text x="300" y="108" font-size="42" text-anchor="middle" opacity="0.35">💐</text>
+                <!-- service cards -->
+                <rect x="15" y="150" width="105" height="32" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="68" y="170" font-size="12" text-anchor="middle" opacity="0.4">📸</text>
+                <rect x="128" y="150" width="105" height="32" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="181" y="170" font-size="12" text-anchor="middle" opacity="0.4">🎵</text>
+                <rect x="242" y="150" width="105" height="32" rx="6" fill="#16162a" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.4"/>
+                <text x="295" y="170" font-size="12" text-anchor="middle" opacity="0.4">🌸</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <div class="project-icon" style="background:rgba(139,92,246,0.1);color:#c4b5fd"><i class="fas fa-heart"></i></div>
+                <span class="project-badge" style="background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2);">Event</span>
+              </div>
+              <h3 class="project-title">WedNesty</h3>
+              <p class="project-desc">Wedding &amp; event management business website for a North East India client, with service pages, portfolio, and contact system.</p>
+              <ul class="project-features">
+                <li>Event &amp; wedding service pages</li>
+                <li>Portfolio gallery &amp; vendor profiles</li>
+                <li>Lead capture &amp; inquiry forms</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Static HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://wednesty.in/" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Project</a>
+            </div>
+          </div>
+
+          <!-- W3. Real Estate Portfolio -->
+          <div class="project-card">
+            <div class="top-bar"></div>
+            <div class="project-img-wrap">
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0a1a10 0%,#101f15 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <polygon points="190,22 285,80 285,165 95,165 95,80" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <polygon points="190,12 298,85 82,85" fill="#0f2f20" stroke="#00d4aa" stroke-width="1" stroke-opacity="0.3"/>
+                <rect x="130" y="98" width="28" height="22" rx="3" fill="#00d4aa" opacity="0.14"/>
+                <rect x="222" y="98" width="28" height="22" rx="3" fill="#00d4aa" opacity="0.14"/>
+                <rect x="168" y="125" width="44" height="40" rx="3" fill="#00d4aa" opacity="0.18"/>
+                <circle cx="206" cy="146" r="3" fill="#00d4aa" opacity="0.5"/>
+                <rect x="15" y="162" width="78" height="22" rx="5" fill="#16162a" stroke="#2a2a45" stroke-width="1"/><rect x="22" y="170" width="38" height="5" rx="3" fill="#00d4aa" opacity="0.38"/>
+                <rect x="151" y="162" width="78" height="22" rx="5" fill="#16162a" stroke="#2a2a45" stroke-width="1"/><rect x="158" y="170" width="38" height="5" rx="3" fill="#00d4aa" opacity="0.38"/>
+                <rect x="287" y="162" width="78" height="22" rx="5" fill="#16162a" stroke="#00d4aa" stroke-width="1" stroke-opacity="0.4"/><rect x="294" y="170" width="38" height="5" rx="3" fill="#00d4aa" opacity="0.55"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <div class="project-icon" style="background:rgba(0,212,170,0.1);color:#6ee7b7"><i class="fas fa-home"></i></div>
                 <span class="project-badge badge-wp">WordPress</span>
               </div>
               <h3 class="project-title">Real Estate Portfolio</h3>
-              <p class="project-desc">
-                Custom WordPress real estate website with dynamic property
-                listings, advanced search filters, and a modern property
-                showcase layout.
-              </p>
+              <p class="project-desc">Custom WordPress real estate website with dynamic property listings, advanced search filters, and a modern showcase layout.</p>
               <ul class="project-features">
                 <li>Dynamic property listing system</li>
-                <li>Advanced search & filters</li>
+                <li>Advanced search &amp; filter</li>
                 <li>Custom WordPress theme</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">Custom Theme</span>
-                <span class="tag">Property Search</span>
+                <span class="tag">WordPress</span><span class="tag">Custom Theme</span><span class="tag">Property Search</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://a2zflats.com"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> Live Project</a
-              >
+              <a href="https://a2zflats.com" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Live Project</a>
             </div>
           </div>
 
-          <!-- 7. WooCommerce Stores -->
+          <!-- W4. WooCommerce Store 1 — Oukhod Express -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #0f0d20 0%, #1a1535 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- WooCommerce cart illustration -->
-                <rect
-                  x="20"
-                  y="20"
-                  width="340"
-                  height="55"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <text
-                  x="35"
-                  y="50"
-                  fill="#7c3aed"
-                  font-family="sans-serif"
-                  font-size="13"
-                  font-weight="bold"
-                  opacity="0.8"
-                >
-                  WooCommerce
-                </text>
-                <rect
-                  x="200"
-                  y="30"
-                  width="70"
-                  height="16"
-                  rx="5"
-                  fill="#7c3aed"
-                  opacity="0.25"
-                />
-                <text
-                  x="235"
-                  y="42"
-                  fill="#a78bfa"
-                  font-family="sans-serif"
-                  font-size="9"
-                  text-anchor="middle"
-                >
-                  Razorpay ✓
-                </text>
-                <rect
-                  x="280"
-                  y="30"
-                  width="65"
-                  height="16"
-                  rx="5"
-                  fill="#00d4aa"
-                  opacity="0.2"
-                />
-                <text
-                  x="312"
-                  y="42"
-                  fill="#6ee7b7"
-                  font-family="sans-serif"
-                  font-size="9"
-                  text-anchor="middle"
-                >
-                  Shiprocket ✓
-                </text>
-                <!-- product row -->
-                <rect
-                  x="20"
-                  y="88"
-                  width="75"
-                  height="95"
-                  rx="7"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="28"
-                  y="96"
-                  width="59"
-                  height="50"
-                  rx="4"
-                  fill="#7c3aed"
-                  opacity="0.12"
-                />
-                <text
-                  x="57"
-                  y="126"
-                  fill="#a78bfa"
-                  font-size="20"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  🛒
-                </text>
-                <rect
-                  x="28"
-                  y="152"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="28"
-                  y="162"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#7c3aed"
-                  opacity="0.3"
-                />
-                <rect
-                  x="110"
-                  y="88"
-                  width="75"
-                  height="95"
-                  rx="7"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="118"
-                  y="96"
-                  width="59"
-                  height="50"
-                  rx="4"
-                  fill="#00d4aa"
-                  opacity="0.1"
-                />
-                <text
-                  x="147"
-                  y="126"
-                  fill="#6ee7b7"
-                  font-size="20"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  🐾
-                </text>
-                <rect
-                  x="118"
-                  y="152"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="118"
-                  y="162"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.25"
-                />
-                <rect
-                  x="200"
-                  y="88"
-                  width="75"
-                  height="95"
-                  rx="7"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="208"
-                  y="96"
-                  width="59"
-                  height="50"
-                  rx="4"
-                  fill="#ffa500"
-                  opacity="0.1"
-                />
-                <text
-                  x="237"
-                  y="126"
-                  fill="#fbbf24"
-                  font-size="20"
-                  text-anchor="middle"
-                  opacity="0.6"
-                >
-                  🛏
-                </text>
-                <rect
-                  x="208"
-                  y="152"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="208"
-                  y="162"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#ffa500"
-                  opacity="0.25"
-                />
-                <!-- payment graphic -->
-                <rect
-                  x="290"
-                  y="88"
-                  width="70"
-                  height="50"
-                  rx="7"
-                  fill="#16162a"
-                  stroke="#7c3aed"
-                  stroke-width="1"
-                  stroke-opacity="0.4"
-                />
-                <rect
-                  x="298"
-                  y="97"
-                  width="54"
-                  height="8"
-                  rx="4"
-                  fill="#7c3aed"
-                  opacity="0.3"
-                />
-                <rect
-                  x="298"
-                  y="111"
-                  width="30"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.1"
-                />
-                <rect
-                  x="298"
-                  y="120"
-                  width="40"
-                  height="8"
-                  rx="3"
-                  fill="#7c3aed"
-                  opacity="0.4"
-                />
-                <rect
-                  x="290"
-                  y="150"
-                  width="70"
-                  height="33"
-                  rx="7"
-                  fill="#16162a"
-                  stroke="#00d4aa"
-                  stroke-width="1"
-                  stroke-opacity="0.4"
-                />
-                <rect
-                  x="298"
-                  y="158"
-                  width="54"
-                  height="5"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect
-                  x="298"
-                  y="168"
-                  width="35"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#0f0d20 0%,#1a1535 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="350" height="30" rx="6" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <text x="28" y="31" fill="#7c3aed" font-family="sans-serif" font-size="11" font-weight="bold" opacity="0.8">WooCommerce</text>
+                <rect x="230" y="17" width="60" height="12" rx="4" fill="#7c3aed" opacity="0.22"/><text x="260" y="26" fill="#a78bfa" font-family="sans-serif" font-size="8" text-anchor="middle">Razorpay ✓</text>
+                <rect x="300" y="17" width="55" height="12" rx="4" fill="#00d4aa" opacity="0.18"/><text x="327" y="26" fill="#6ee7b7" font-family="sans-serif" font-size="8" text-anchor="middle">Shiprocket ✓</text>
+                <rect x="15" y="52" width="106" height="130" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="23" y="60" width="90" height="55" rx="4" fill="#7c3aed" opacity="0.1"/>
+                <text x="68" y="93" font-size="26" text-anchor="middle" opacity="0.5">🛒</text>
+                <rect x="23" y="122" width="65" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="23" y="145" width="42" height="14" rx="4" fill="#7c3aed" opacity="0.38"/>
+                <rect x="131" y="52" width="106" height="130" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="139" y="60" width="90" height="55" rx="4" fill="#00d4aa" opacity="0.08"/>
+                <text x="184" y="93" font-size="26" text-anchor="middle" opacity="0.5">🐾</text>
+                <rect x="139" y="122" width="65" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="139" y="145" width="42" height="14" rx="4" fill="#00d4aa" opacity="0.3"/>
+                <rect x="247" y="52" width="118" height="130" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="255" y="60" width="102" height="55" rx="4" fill="#ffa500" opacity="0.08"/>
+                <text x="306" y="93" font-size="26" text-anchor="middle" opacity="0.5">🛏</text>
+                <rect x="255" y="122" width="65" height="5" rx="3" fill="#fff" opacity="0.14"/>
+                <rect x="255" y="145" width="42" height="14" rx="4" fill="#ffa500" opacity="0.3"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(124, 58, 237, 0.1); color: #c4b5fd"
-                >
-                  <i class="fab fa-wordpress"></i>
-                </div>
-                <span class="project-badge badge-wp">WordPress</span>
+                <div class="project-icon" style="background:rgba(124,58,237,0.1);color:#c4b5fd"><i class="fab fa-wordpress"></i></div>
+                <span class="project-badge badge-wp">WooCommerce</span>
               </div>
               <h3 class="project-title">WooCommerce E-Commerce Stores</h3>
-              <p class="project-desc">
-                WooCommerce stores with secure payment gateway integration,
-                shipping API automation, product filtering and variations for
-                smooth customer experience.
-              </p>
+              <p class="project-desc">WooCommerce stores with Razorpay payment gateway, Shiprocket shipping automation, and product filtering — handling 1000+ monthly transactions.</p>
               <ul class="project-features">
-                <li>Razorpay payment gateway</li>
-                <li>Shiprocket shipping automation</li>
-                <li>1000+ monthly transactions handled</li>
+                <li>Razorpay payment &amp; Shiprocket shipping</li>
+                <li>Product variations &amp; filtering</li>
+                <li>1000+ monthly transactions</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">WooCommerce</span>
-                <span class="tag">Razorpay</span>
-                <span class="tag">Shiprocket</span>
+                <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Razorpay</span><span class="tag">Shiprocket</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://oukhodexpress.com"
-                target="_blank"
-                class="btn-card-accent"
-                style="font-size: 0.75rem"
-                ><i class="fas fa-external-link-alt"></i> Project 1</a
-              >
-              <a
-                href="https://nextlevelpets.in"
-                target="_blank"
-                class="btn-card-accent"
-                style="font-size: 0.75rem"
-                ><i class="fas fa-external-link-alt"></i> Project 2</a
-              >
-              <a
-                href="https://kwiltmattress.com/"
-                target="_blank"
-                class="btn-card-accent"
-                style="font-size: 0.75rem"
-                ><i class="fas fa-external-link-alt"></i> Project 3</a
-              >
+              <a href="https://oukhodexpress.com" target="_blank" class="btn-card-accent" style="font-size:0.75rem;"><i class="fas fa-external-link-alt"></i> Oukhod</a>
+              <a href="https://nextlevelpets.in" target="_blank" class="btn-card-accent" style="font-size:0.75rem;"><i class="fas fa-external-link-alt"></i> NextLevel</a>
+              <a href="https://kwiltmattress.com/" target="_blank" class="btn-card-accent" style="font-size:0.75rem;"><i class="fas fa-external-link-alt"></i> Kwilt</a>
             </div>
           </div>
 
-          <!-- 8. Laravel Web Application -->
+          <!-- W5. Laravel Web Application -->
           <div class="project-card">
             <div class="top-bar"></div>
             <div class="project-img-wrap">
-              <svg
-                class="project-placeholder"
-                style="
-                  height: 210px;
-                  background: linear-gradient(135deg, #1a0a0a 0%, #250f0f 100%);
-                "
-                viewBox="0 0 380 210"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="380" height="210" fill="none" />
-                <!-- sidebar -->
-                <rect
-                  x="20"
-                  y="20"
-                  width="80"
-                  height="175"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="30"
-                  y="32"
-                  width="60"
-                  height="6"
-                  rx="3"
-                  fill="#ff4040"
-                  opacity="0.5"
-                />
-                <rect
-                  x="30"
-                  y="50"
-                  width="60"
-                  height="22"
-                  rx="5"
-                  fill="#ff4040"
-                  opacity="0.15"
-                />
-                <rect
-                  x="35"
-                  y="57"
-                  width="40"
-                  height="5"
-                  rx="3"
-                  fill="#ff4040"
-                  opacity="0.5"
-                />
-                <rect
-                  x="30"
-                  y="78"
-                  width="60"
-                  height="22"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="35"
-                  y="85"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="30"
-                  y="106"
-                  width="60"
-                  height="22"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="35"
-                  y="113"
-                  width="35"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="30"
-                  y="134"
-                  width="60"
-                  height="22"
-                  rx="5"
-                  fill="#ffffff"
-                  opacity="0.04"
-                />
-                <rect
-                  x="35"
-                  y="141"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <!-- main content -->
-                <rect
-                  x="115"
-                  y="20"
-                  width="245"
-                  height="50"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="125"
-                  y="30"
-                  width="100"
-                  height="7"
-                  rx="4"
-                  fill="#ff4040"
-                  opacity="0.4"
-                />
-                <rect
-                  x="125"
-                  y="44"
-                  width="70"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="300"
-                  y="29"
-                  width="45"
-                  height="22"
-                  rx="5"
-                  fill="#ff4040"
-                  opacity="0.3"
-                />
-                <!-- table -->
-                <rect
-                  x="115"
-                  y="82"
-                  width="245"
-                  height="113"
-                  rx="8"
-                  fill="#16162a"
-                  stroke="#2a2a45"
-                  stroke-width="1"
-                />
-                <rect
-                  x="115"
-                  y="82"
-                  width="245"
-                  height="24"
-                  rx="8"
-                  fill="#ff4040"
-                  opacity="0.08"
-                />
-                <rect
-                  x="125"
-                  y="90"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ff4040"
-                  opacity="0.4"
-                />
-                <rect
-                  x="220"
-                  y="90"
-                  width="50"
-                  height="5"
-                  rx="3"
-                  fill="#ff4040"
-                  opacity="0.25"
-                />
-                <rect
-                  x="310"
-                  y="90"
-                  width="35"
-                  height="5"
-                  rx="3"
-                  fill="#ff4040"
-                  opacity="0.25"
-                />
-                <rect
-                  x="125"
-                  y="116"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="220"
-                  y="116"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="310"
-                  y="113"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#00d4aa"
-                  opacity="0.3"
-                />
-                <rect x="115" y="130" width="245" height="1" fill="#2a2a45" />
-                <rect
-                  x="125"
-                  y="140"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="220"
-                  y="140"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="310"
-                  y="137"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#ff6b6b"
-                  opacity="0.3"
-                />
-                <rect x="115" y="154" width="245" height="1" fill="#2a2a45" />
-                <rect
-                  x="125"
-                  y="164"
-                  width="55"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.12"
-                />
-                <rect
-                  x="220"
-                  y="164"
-                  width="45"
-                  height="5"
-                  rx="3"
-                  fill="#ffffff"
-                  opacity="0.08"
-                />
-                <rect
-                  x="310"
-                  y="161"
-                  width="35"
-                  height="12"
-                  rx="3"
-                  fill="#6c63ff"
-                  opacity="0.4"
-                />
+              <svg class="project-placeholder" style="height:190px;background:linear-gradient(135deg,#1a0a0a 0%,#250f0f 100%);" viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg">
+                <rect width="380" height="190" fill="none"/>
+                <rect x="15" y="12" width="80" height="170" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="23" y="22" width="55" height="5" rx="3" fill="#ff4040" opacity="0.5"/>
+                <rect x="23" y="38" width="64" height="18" rx="5" fill="#ff4040" opacity="0.14"/><rect x="28" y="44" width="38" height="5" rx="3" fill="#ff4040" opacity="0.5"/>
+                <rect x="23" y="62" width="64" height="18" rx="5" fill="#fff" opacity="0.03"/><rect x="28" y="68" width="35" height="5" rx="3" fill="#fff" opacity="0.12"/>
+                <rect x="23" y="86" width="64" height="18" rx="5" fill="#fff" opacity="0.03"/><rect x="28" y="92" width="28" height="5" rx="3" fill="#fff" opacity="0.12"/>
+                <rect x="23" y="110" width="64" height="18" rx="5" fill="#fff" opacity="0.03"/><rect x="28" y="116" width="42" height="5" rx="3" fill="#fff" opacity="0.12"/>
+                <rect x="105" y="12" width="260" height="48" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="115" y="22" width="80" height="6" rx="3" fill="#ff4040" opacity="0.38"/>
+                <rect x="115" y="36" width="50" height="5" rx="3" fill="#fff" opacity="0.08"/>
+                <rect x="310" y="20" width="40" height="20" rx="5" fill="#ff4040" opacity="0.3"/>
+                <rect x="105" y="70" width="260" height="112" rx="7" fill="#16162a" stroke="#2a2a45" stroke-width="1"/>
+                <rect x="105" y="70" width="260" height="22" rx="7" fill="#ff4040" opacity="0.07"/>
+                <rect x="115" y="78" width="45" height="5" rx="3" fill="#ff4040" opacity="0.38"/>
+                <rect x="200" y="78" width="45" height="5" rx="3" fill="#ff4040" opacity="0.22"/>
+                <rect x="295" y="78" width="30" height="5" rx="3" fill="#ff4040" opacity="0.22"/>
+                <rect x="115" y="104" width="48" height="5" rx="3" fill="#fff" opacity="0.12"/><rect x="200" y="104" width="40" height="5" rx="3" fill="#fff" opacity="0.08"/><rect x="294" y="101" width="35" height="10" rx="3" fill="#00d4aa" opacity="0.28"/>
+                <rect x="105" y="118" width="260" height="1" fill="#2a2a45"/>
+                <rect x="115" y="126" width="48" height="5" rx="3" fill="#fff" opacity="0.12"/><rect x="200" y="126" width="40" height="5" rx="3" fill="#fff" opacity="0.08"/><rect x="294" y="123" width="35" height="10" rx="3" fill="#ff6b6b" opacity="0.28"/>
+                <rect x="105" y="140" width="260" height="1" fill="#2a2a45"/>
+                <rect x="115" y="148" width="48" height="5" rx="3" fill="#fff" opacity="0.12"/><rect x="200" y="148" width="40" height="5" rx="3" fill="#fff" opacity="0.08"/><rect x="294" y="145" width="35" height="10" rx="3" fill="#6c63ff" opacity="0.38"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <div
-                  class="project-icon"
-                  style="background: rgba(255, 64, 64, 0.1); color: #fca5a5"
-                >
-                  <i class="fas fa-layer-group"></i>
-                </div>
+                <div class="project-icon" style="background:rgba(255,64,64,0.1);color:#fca5a5"><i class="fas fa-layer-group"></i></div>
                 <span class="project-badge badge-laravel">Laravel</span>
               </div>
-              <h3 class="project-title">Laravel Web Application</h3>
-              <p class="project-desc">
-                Fully custom-built Laravel website with dynamic admin dashboard,
-                CRUD management, authentication system, and responsive frontend
-                using clean HTML/CSS.
-              </p>
+              <h3 class="project-title">Laravel Web Applications</h3>
+              <p class="project-desc">Custom-built Laravel websites with dynamic admin dashboards, CRUD management, auth systems, and responsive HTML/CSS frontends.</p>
               <ul class="project-features">
                 <li>Custom admin dashboard</li>
-                <li>Full CRUD management</li>
-                <li>Auth system & responsive frontend</li>
+                <li>Full CRUD &amp; role management</li>
+                <li>Auth system &amp; responsive frontend</li>
               </ul>
               <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">Custom HTML</span>
-                <span class="tag">Admin Panel</span>
+                <span class="tag">Laravel</span><span class="tag">Custom HTML</span><span class="tag">Admin Panel</span>
               </div>
             </div>
             <div class="project-actions">
-              <a
-                href="https://echomag.d-rajdeep.in"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> EchoMag</a
-              >
-              <a
-                href="https://kirtidhara.in"
-                target="_blank"
-                class="btn-card-accent"
-                ><i class="fas fa-external-link-alt"></i> Kirtidhara</a
-              >
+              <a href="https://echomag.d-rajdeep.in" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> EchoMag</a>
+              <a href="https://kirtidhara.in" target="_blank" class="btn-card-accent"><i class="fas fa-external-link-alt"></i> Kirtidhara</a>
             </div>
           </div>
 
@@ -4709,7 +2212,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+        <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="contact-box">
